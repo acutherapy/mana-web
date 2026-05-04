@@ -114,5 +114,33 @@
     "blog": "Blog de Recuperación",
     "faq": "Preguntas Frecuentes",
     "copyright": "© 2026 Mana Reset. Honolulu, Hawái."
+  },
+  "booking": {
+    "title": "Comienza Tu Reinicio.",
+    "subtitle": "Reserva segura y confidencial para tu experiencia en el hotel.",
+    "desc": "Este es tu tiempo. Completa este breve formulario para que podamos adaptar la sesión exactamente a lo que tu mente y cuerpo anhelan.",
+    "step1": "1. Tus Datos",
+    "name": "Tu Nombre",
+    "name_placeholder": "¿Cómo debemos llamarte?",
+    "email": "Correo Electrónico",
+    "email_placeholder": "Estrictamente confidencial",
+    "hotel": "Hotel en Honolulu / Ubicación",
+    "hotel_placeholder": "Ej: The Royal Hawaiian, Habitación 402",
+    "notes": "¿Qué buscas liberar?",
+    "notes_placeholder": "Cuéntanos brevemente qué te trae aquí...",
+    "step2": "2. Seleccionar Experiencia",
+    "choose_pkg": "Elige tu paquete",
+    "submit": "Reserva Segura y Pago",
+    "redirecting": "Redirigiendo...",
+    "ssl": "🔒 Pago Cifrado y Seguro con SSL",
+    "policy": "Política de cancelación: Las cancelaciones realizadas dentro de las 48 horas de la cita se cobrarán el 50% de la tarifa del servicio. Las inasistencias se cobrarán en su totalidad.",
+    "error": "Ocurrió un error. Por favor inténtalo de nuevo."
+  },
+  "success": {
+    "title": "Tu Reinicio está Confirmado.",
+    "desc": "Gracias por elegir Mana Reset. Hemos recibido de forma segura tus datos de pago y reserva. Un correo electrónico de confirmación con tu invitación de calendario y guía previa a la llegada está volando hacia tu bandeja de entrada.",
+    "ref": "Referencia:",
+    "return": "Volver a la página principal",
+    "loading": "Cargando tu confirmación..."
   }
 }

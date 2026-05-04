@@ -116,5 +116,33 @@
     "blog": "Burnout Recovery Blog",
     "faq": "FAQ",
     "copyright": "© 2026 Mana Reset. Honolulu, Hawaii."
+  },
+  "booking": {
+    "title": "Begin Your Reset.",
+    "subtitle": "Secure, confidential booking for your in-hotel experience.",
+    "desc": "This is your time. Fill out this brief application so we can tailor the session exactly to what your mind and body are craving.",
+    "step1": "1. Your Details",
+    "name": "Your Name",
+    "name_placeholder": "How should we address you?",
+    "email": "Email Address",
+    "email_placeholder": "Strictly confidential",
+    "hotel": "Honolulu Hotel / Location",
+    "hotel_placeholder": "e.g. The Royal Hawaiian, Room 402",
+    "notes": "What are you looking to release?",
+    "notes_placeholder": "Tell us briefly what brings you here...",
+    "step2": "2. Select Experience",
+    "choose_pkg": "Choose your package",
+    "submit": "Secure Booking & Pay",
+    "redirecting": "Redirecting...",
+    "ssl": "🔒 SSL Secure Encrypted Payment",
+    "policy": "Cancellation Policy: Cancellations made within 48 hours of the appointment will be charged 50% of the service fee. No-shows will be charged the full amount.",
+    "error": "An error occurred. Please try again."
+  },
+  "success": {
+    "title": "Your Reset is Confirmed.",
+    "desc": "Thank you for choosing Mana Reset. We have securely received your payment and booking details. A confirmation email with your calendar invite and pre-arrival guide is flying to your inbox right now.",
+    "ref": "Reference:",
+    "return": "Return to Homepage",
+    "loading": "Loading your confirmation..."
   }
 }

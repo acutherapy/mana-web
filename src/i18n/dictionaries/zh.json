@@ -116,5 +116,33 @@
     "blog": "抗内耗恢复博客",
     "faq": "常见问题",
     "copyright": "© 2026 Mana Reset. 夏威夷火奴鲁鲁."
+  },
+  "booking": {
+    "title": "开启您的重置之旅",
+    "subtitle": "安全、保密的酒店内体验预约",
+    "desc": "这是属于您的专属时间。请填写这份简短的表单，以便我们将体验完美契合您身心的渴求。",
+    "step1": "1. 您的个人信息",
+    "name": "您的称呼",
+    "name_placeholder": "我们该如何称呼您？",
+    "email": "电子邮箱",
+    "email_placeholder": "严格保密",
+    "hotel": "檀香山入住酒店及房间号",
+    "hotel_placeholder": "例如：The Royal Hawaiian，402房",
+    "notes": "您希望释放什么？",
+    "notes_placeholder": "请简要告诉我们您此行的目的...",
+    "step2": "2. 选择您的体验",
+    "choose_pkg": "选择您的套餐",
+    "submit": "安全预约并付款",
+    "redirecting": "正在安全跳转...",
+    "ssl": "🔒 SSL 安全加密支付",
+    "policy": "取消政策：在预约时间48小时内取消将收取50%的服务费。未出境将收取全额费用。",
+    "error": "发生错误，请重试。"
+  },
+  "success": {
+    "title": "您的重置之旅已确认。",
+    "desc": "感谢您选择 Mana Reset。我们已安全收到您的付款和预约详情。一封包含日历邀请和行前指南的确认邮件正在发送至您的邮箱。",
+    "ref": "订单编号：",
+    "return": "返回首页",
+    "loading": "正在加载您的确认信息..."
   }
 }
