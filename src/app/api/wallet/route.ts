@@ -80,7 +80,7 @@ async function generatePass(req: Request | null) {
 
     const buffer = pass.getAsBuffer();
 
-    return new NextResponse(buffer, {
+    return new NextResponse(buffer as unknown as BodyInit, {
       headers: {
         "Content-Type": "application/vnd.apple.pkpass",
         "Content-Disposition": "attachment; filename=mana.pkpass",

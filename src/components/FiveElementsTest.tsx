@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Sparkles, ArrowRight, Loader2, Download, Clock, Calendar } from 'lucide-react';
+// @ts-ignore
 import { Lunar } from 'lunar-javascript';
 
 type ElementType = 'Wood' | 'Fire' | 'Earth' | 'Metal' | 'Water' | null;
@@ -274,9 +275,9 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
       }));
       
       const acquiredChars = (cY + cM + cD + (cT === '未知' ? '' : cT)).split('');
-      const acquiredBeads: Bead[] = acquiredChars.map(char => ({
-        element: FIVE_ELEMENTS_MAP[char as keyof typeof FIVE_ELEMENTS_MAP] || 'Water',
-        type: 'acquired',
+      const acquiredBeads: Bead[] = acquiredChars.map((char: string) => ({
+        element: (FIVE_ELEMENTS_MAP[char as keyof typeof FIVE_ELEMENTS_MAP] || 'Water') as any,
+        type: 'acquired' as const,
         char
       }));
 
@@ -304,7 +305,7 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
 
   const handleAnswer = (element: string) => {
     setBeads(prev => {
-      const newBeads = [...prev, { element, type: 'subconscious', char: step === 4 ? '念' : '心' }];
+      const newBeads = [...prev, { element: element as any, type: 'subconscious' as const, char: step === 4 ? '念' : '心' }];
       
       if (step === 5) {
         setStep(6);
