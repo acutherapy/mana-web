@@ -3,8 +3,8 @@ import FiveElementsTest from '@/components/FiveElementsTest';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default async function Home({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
-  const { lang } = await params;
+export default async function Home({ params }: { params: { lang: 'en'|'zh'|'ja'|'ko'|'es' } }) {
+  const { lang } = params;
   const dict = await getDictionary(lang);
 
   return (
