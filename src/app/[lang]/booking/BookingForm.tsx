@@ -130,7 +130,7 @@ export default function BookingForm({ dict }: { dict: any }) {
       </button>
       <div className="text-xs text-center text-gray-500 pt-4 space-y-1">
         <p>{dict.booking?.ssl}</p>
-        <p><strong>{dict.booking?.policy.split(':')[0]}:</strong> {dict.booking?.policy.split(':')[1] || dict.booking?.policy}</p>
+        <p><strong>{dict.booking?.policy.split(/[:：]/)[0]}:</strong> {dict.booking?.policy.split(/[:：]/)[1] || dict.booking?.policy}</p>
       </div>
     </form>
   );
