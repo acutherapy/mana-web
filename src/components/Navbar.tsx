@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar({ lang, dict }: { lang: string, dict: any }) {
   const [langOpen, setLangOpen] = useState(false);
@@ -9,9 +10,12 @@ export default function Navbar({ lang, dict }: { lang: string, dict: any }) {
   return (
     <nav className="fixed top-0 left-0 w-full p-6 glass-panel z-50 border-b-0 border-ocean/10">
       <div className="max-w-6xl mx-auto flex justify-between items-center">
-        <Link href={`/${lang}`} className="flex flex-col">
-          <span className="font-serif text-2xl text-ocean font-semibold leading-none">Mana Reset</span>
-          <span className="text-[0.65rem] tracking-widest text-ocean/60 uppercase mt-1">Mind Body Reset</span>
+        <Link href={`/${lang}`} className="flex items-center gap-3">
+          <Image src="/images/logo.png" alt="Mana Reset" width={36} height={36} className="object-contain" />
+          <div className="flex flex-col">
+            <span className="font-serif text-2xl text-ocean font-semibold leading-none">Mana Reset</span>
+            <span className="text-[0.65rem] tracking-widest text-ocean/60 uppercase mt-1">Mind Body Reset</span>
+          </div>
         </Link>
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href={`/${lang}#why`} className="hover:text-ocean transition">{dict.nav?.why}</Link>
