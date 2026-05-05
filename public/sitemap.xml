@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Root -->
+  <url>
+    <loc>https://manareset.com/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- English -->
+  <url><loc>https://manareset.com/en</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://manareset.com/en/approach</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/en/experience</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/en/booking</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://manareset.com/en/faq</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/en/guide</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://manareset.com/en/solo-hawaii</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Chinese -->
+  <url><loc>https://manareset.com/zh</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://manareset.com/zh/approach</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/zh/experience</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/zh/booking</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://manareset.com/zh/faq</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/zh/guide</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://manareset.com/zh/solo-hawaii</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Japanese -->
+  <url><loc>https://manareset.com/ja</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://manareset.com/ja/approach</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/ja/experience</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/ja/booking</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://manareset.com/ja/faq</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/ja/guide</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://manareset.com/ja/solo-hawaii</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Korean -->
+  <url><loc>https://manareset.com/ko</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://manareset.com/ko/approach</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/ko/experience</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/ko/booking</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://manareset.com/ko/faq</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/ko/guide</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://manareset.com/ko/solo-hawaii</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+  <!-- Spanish -->
+  <url><loc>https://manareset.com/es</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://manareset.com/es/approach</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/es/experience</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/es/booking</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://manareset.com/es/faq</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://manareset.com/es/guide</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://manareset.com/es/solo-hawaii</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
+
+</urlset>
