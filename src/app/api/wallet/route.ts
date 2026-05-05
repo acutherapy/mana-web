@@ -58,8 +58,13 @@ async function generatePass(req: Request | null) {
       const dd = String(today.getDate()).padStart(2, '0');
       passJson.storeCard.secondaryFields[2].value = `${yyyy}-${mm}-${dd}`;
 
-      // Temporarily remove QR code to increase space for bracelet
-      delete passJson.barcodes;
+      if (passJson.barcodes && passJson.barcodes.length > 0) {
+        const lang = body.lang || 'en';
+        passJson.barcodes[0].message = `https://www.manareset.com/${lang}#test`;
+        if (passJson.barcode) {
+          passJson.barcode.message = `https://www.manareset.com/${lang}#test`;
+        }
+      }
 
       if (body.thumbnail) {
         const thumbnailBuffer = Buffer.from(body.thumbnail, 'base64');

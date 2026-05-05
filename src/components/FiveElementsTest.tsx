@@ -650,7 +650,8 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
                         element: dominantElement,
                         baziData: baziResult?.birth,
                         beads: beads,
-                        thumbnail: thumbnail
+                        thumbnail: thumbnail,
+                        lang: window.location.pathname.split('/')[1] || 'en'
                       }),
                     });
                     
