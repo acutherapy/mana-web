@@ -58,8 +58,8 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
         <div className="absolute inset-y-0 right-0 w-1/2 opacity-20 hidden lg:block">
           <Image src="/images/interior.png" alt="Healing Interior" fill className="object-cover mix-blend-luminosity" />
         </div>
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-16 relative z-10">
-          <div className="flex-1 space-y-8 text-left max-w-2xl">
+        <div className="max-w-6xl mx-auto flex flex-col items-center gap-16 relative z-10">
+          <div className="w-full space-y-8 text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-serif text-sand">{dict.approach?.title}</h2>
             <h3 className="text-xl text-sand/80">{dict.approach?.subtitle}</h3>
             <div className="mt-12 space-y-4 text-white/90 text-lg leading-relaxed">
@@ -67,7 +67,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <p>{dict.approach?.p2}</p>
             </div>
           </div>
-          <div className="flex-1 w-full lg:hidden rounded-2xl overflow-hidden relative aspect-video shadow-2xl">
+          <div className="w-full max-w-2xl lg:hidden rounded-2xl overflow-hidden relative aspect-video shadow-2xl">
             <Image src="/images/interior.png" alt="Healing Interior" fill className="object-cover" />
           </div>
         </div>
