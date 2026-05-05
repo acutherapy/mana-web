@@ -1,21 +1,32 @@
 import Link from 'next/link';
 import { getDictionary } from '@/i18n/getDictionary';
 
-// 🔥 全局开关：false = 不可点击（占位） / true = 正常跳转
+// 🔥 全局开关
 const ENABLE_LINKS = false;
 
 export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' }) {
   const dict = await getDictionary(lang);
 
-  // 🔥 小组件：自动判断是否可点击
+  // 🔥 通用组件（Link / 占位自动切换）
   const NavItem = ({
     href,
     children,
+    external = false,
   }: {
     href: string;
     children: React.ReactNode;
+    external?: boolean;
   }) => {
     if (ENABLE_LINKS) {
+      // 外链用 <a>，内链用 <Link>
+      if (external) {
+        return (
+          <a href={href} className="hover:underline">
+            {children}
+          </a>
+        );
+      }
+
       return (
         <Link href={href} className="hover:underline">
           {children}
@@ -23,6 +34,7 @@ export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' 
       );
     }
 
+    // 未上线状态（占位）
     return (
       <span className="opacity-40 cursor-not-allowed">
         {children}
@@ -34,7 +46,9 @@ export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' 
     <footer className="bg-sand py-12 text-ocean/80">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center space-y-6">
-          <h2 className="font-serif text-2xl text-ocean">{dict.footer?.title}</h2>
+          <h2 className="font-serif text-2xl text-ocean">
+            {dict.footer?.title}
+          </h2>
           <p className="text-sm">{dict.footer?.subtitle}</p>
 
           <div className="flex justify-center gap-6 text-sm underline-offset-4 mb-8">
@@ -64,10 +78,10 @@ export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' 
               Terms of Service
             </NavItem>
 
-            {/* Sitemap 保持可点击（一般已经存在） */}
-            <a href="/sitemap.xml" className="hover:underline">
+            {/* 🔥 sitemap 也统一控制 */}
+            <NavItem href="/sitemap.xml" external>
               Sitemap
-            </a>
+            </NavItem>
           </div>
         </div>
       </div>
