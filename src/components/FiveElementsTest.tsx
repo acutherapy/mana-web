@@ -254,7 +254,7 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
       }
       
       const bYElement = FIVE_ELEMENTS_MAP[bY[0] as keyof typeof FIVE_ELEMENTS_MAP] || 'Wood';
-      const bDElement = FIVE_ELEMENTS_MAP[bD[1] as keyof typeof FIVE_ELEMENTS_MAP] || 'Fire';
+      const bDElement = FIVE_ELEMENTS_MAP[bD[0] as keyof typeof FIVE_ELEMENTS_MAP] || 'Fire';
       
       // Calculate Current Bazi
       const now = new Date();
@@ -265,7 +265,7 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
       const cT = currentLunar.getTimeInGanZhi() || '未知';
       
       const cYElement = FIVE_ELEMENTS_MAP[cY[0] as keyof typeof FIVE_ELEMENTS_MAP] || 'Earth';
-      const cDElement = FIVE_ELEMENTS_MAP[cD[1] as keyof typeof FIVE_ELEMENTS_MAP] || 'Water';
+      const cDElement = FIVE_ELEMENTS_MAP[cD[0] as keyof typeof FIVE_ELEMENTS_MAP] || 'Water';
       
       const innateChars = (bY + bM + bD + (bT === '未知' ? '' : bT)).split('');
       const innateBeads: Bead[] = innateChars.map(char => ({
@@ -310,17 +310,17 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
       if (step === 5) {
         setStep(6);
         setTimeout(() => {
-          // Calculate true dominant based on all 18 beads
-          const counts = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
-          newBeads.forEach(b => {
-             if (counts[b.element as keyof typeof counts] !== undefined) {
-               counts[b.element as keyof typeof counts]++;
+          // Calculate true dominant based on scores (Bazi weights + Question weights)
+          const finalScores = { ...scores };
+          newBeads.filter(b => b.type === 'subconscious').forEach(b => {
+             if (finalScores[b.element as keyof typeof finalScores] !== undefined) {
+               finalScores[b.element as keyof typeof finalScores] += 1.5; // Questions have high weight
              }
           });
           
-          let max = 0;
+          let max = -1;
           let dominant: ElementType = 'Wood';
-          for (const [key, value] of Object.entries(counts)) {
+          for (const [key, value] of Object.entries(finalScores)) {
             if (value > max) {
               max = value;
               dominant = key as ElementType;
@@ -631,15 +631,21 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
                     let thumbnail = null;
                     if (canvas) {
                       const tempCanvas = document.createElement('canvas');
-                      const MAX_WIDTH = 500;
-                      const scale = Math.min(MAX_WIDTH / canvas.width, 1);
-                      tempCanvas.width = canvas.width * scale;
-                      tempCanvas.height = canvas.height * scale;
+                      const targetHeight = 300;
+                      const targetWidth = 1146; // Apple Wallet strip aspect ratio ~3.82
+                      tempCanvas.width = targetWidth;
+                      tempCanvas.height = targetHeight;
                       const tCtx = tempCanvas.getContext('2d');
                       if (tCtx) {
-                        tCtx.drawImage(canvas, 0, 0, tempCanvas.width, tempCanvas.height);
-                        // Use JPEG to significantly reduce base64 size, or PNG if needed. We use PNG for transparency, but the background is drawn!
-                        thumbnail = tempCanvas.toDataURL('image/png').split(',')[1];
+                        tCtx.fillStyle = '#0B1120';
+                        tCtx.fillRect(0, 0, targetWidth, targetHeight);
+                        const scale = targetHeight / canvas.height;
+                        const drawWidth = canvas.width * scale;
+                        const drawHeight = targetHeight;
+                        const drawX = (targetWidth - drawWidth) / 2;
+                        tCtx.drawImage(canvas, drawX, 0, drawWidth, drawHeight);
+                        // Use JPEG to significantly reduce base64 size
+                        thumbnail = tempCanvas.toDataURL('image/jpeg', 0.9).split(',')[1];
                       }
                     }
 
