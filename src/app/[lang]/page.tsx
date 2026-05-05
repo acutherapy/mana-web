@@ -55,9 +55,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
       {/* Approach Section */}
       <section id="approach" className="py-24 px-6 bg-ocean text-white relative overflow-hidden">
-        <div className="absolute inset-y-0 right-0 w-1/2 opacity-20 hidden lg:block">
-          <Image src="/images/interior.png" alt="Healing Interior" fill className="object-cover mix-blend-luminosity" />
-        </div>
         <div className="max-w-6xl mx-auto flex flex-col items-center gap-16 relative z-10">
           <div className="w-full space-y-8 text-center max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-serif text-sand">{dict.approach?.title}</h2>
@@ -66,9 +63,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
               <p>{dict.approach?.p1}</p>
               <p>{dict.approach?.p2}</p>
             </div>
-          </div>
-          <div className="w-full max-w-2xl lg:hidden rounded-2xl overflow-hidden relative aspect-video shadow-2xl">
-            <Image src="/images/interior.png" alt="Healing Interior" fill className="object-cover" />
           </div>
         </div>
       </section>
