@@ -3,21 +3,46 @@ import FiveElementsTest from '@/components/FiveElementsTest';
 import Link from 'next/link';
 import Image from 'next/image';
 
+const testimonials = [
+  {
+    quote:
+      "I came to Hawaii running on empty. After The Balance session, I felt like I could actually breathe again — not just physically, but in every way. I didn't know I needed this until I had it.",
+    name: 'Sarah M.',
+    location: 'New York',
+  },
+  {
+    quote:
+      "As a solo traveler, I wasn't sure what to expect. But from the moment she arrived, I felt completely safe. It wasn't therapy, it wasn't a massage — it was something I didn't have a name for, and something I very clearly needed.",
+    name: 'Yuki T.',
+    location: 'Tokyo',
+  },
+  {
+    quote:
+      'I booked The Awakening on a whim. It turned out to be the most meaningful two hours of my entire trip. I left Hawaii feeling like I had actually rested — not just slept.',
+    name: 'Amelia R.',
+    location: 'London',
+  },
+  {
+    quote:
+      'The energy bracelet assessment felt surprisingly personal. The full session that followed was even more so. I came back from this trip feeling like myself again.',
+    name: 'Cecilia N.',
+    location: 'São Paulo',
+  },
+];
+
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
-  const { lang } = (await params) as { lang: 'en'|'zh'|'ja'|'ko'|'es' };
+  const { lang } = (await params) as { lang: 'en' | 'zh' | 'ja' | 'ko' | 'es' };
   const dict = await getDictionary(lang);
 
   return (
     <main className="min-h-screen font-sans">
-      
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 px-6 lg:pt-48 lg:pb-32 bg-ocean text-center overflow-hidden">
-        {/* Background Image */}
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/hero.png" 
-            alt="Hawaii Wellness Reset" 
-            fill 
+          <Image
+            src="/images/hero.png"
+            alt="Hawaii Wellness Reset"
+            fill
             className="object-cover opacity-40 mix-blend-overlay"
             priority
           />
@@ -33,7 +58,10 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             {dict.hero?.description}
           </p>
           <div className="pt-8">
-            <Link href={`/${lang}/booking`} className="bg-sand text-ocean px-8 py-4 rounded font-medium hover:bg-white transition inline-block shadow-lg">
+            <Link
+              href={`/${lang}/booking`}
+              className="bg-sand text-ocean px-8 py-4 rounded font-medium hover:bg-white transition inline-block shadow-lg"
+            >
               {dict.nav?.book}
             </Link>
           </div>
@@ -74,14 +102,12 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <p className="text-lg text-ocean/80">{dict.packages?.subtitle}</p>
         </div>
         <div className="max-w-5xl mx-auto grid gap-8 md:grid-cols-3">
-          {/* The Unwind */}
           <div className="bg-white p-8 rounded-xl shadow-sm flex flex-col items-center text-center">
             <h3 className="text-2xl font-serif text-ocean mb-2">{dict.packages?.unwind_title}</h3>
             <p className="text-sm tracking-wider text-ocean/60 uppercase mb-6">{dict.packages?.unwind_time} | $320</p>
             <p className="text-gray-600 mb-8 flex-grow">{dict.packages?.unwind_desc}</p>
             <Link href={`/${lang}/booking?package=unwind`} className="w-full py-3 border border-ocean text-ocean rounded hover:bg-ocean hover:text-white transition">{dict.packages?.unwind_btn}</Link>
           </div>
-          {/* The Balance */}
           <div className="bg-ocean p-8 rounded-xl shadow-lg flex flex-col items-center text-center transform md:-translate-y-4">
             <div className="text-xs tracking-widest text-sand uppercase mb-2">{dict.packages?.balance_badge}</div>
             <h3 className="text-2xl font-serif text-white mb-2">{dict.packages?.balance_title}</h3>
@@ -89,7 +115,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <p className="text-white/80 mb-8 flex-grow">{dict.packages?.balance_desc}</p>
             <Link href={`/${lang}/booking?package=balance`} className="w-full py-3 bg-sand text-ocean rounded hover:bg-white transition text-center">{dict.packages?.balance_btn}</Link>
           </div>
-          {/* The Awakening */}
           <div className="bg-white p-8 rounded-xl shadow-sm flex flex-col items-center text-center">
             <h3 className="text-2xl font-serif text-ocean mb-2">{dict.packages?.awakening_title}</h3>
             <p className="text-sm tracking-wider text-ocean/60 uppercase mb-6">{dict.packages?.awakening_time} | $600</p>
@@ -97,13 +122,34 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
             <Link href={`/${lang}/booking?package=awakening`} className="w-full py-3 border border-ocean text-ocean rounded hover:bg-ocean hover:text-white transition">{dict.packages?.awakening_btn}</Link>
           </div>
         </div>
-        
-        {/* Custom Service */}
         <div className="max-w-4xl mx-auto mt-12 bg-white border border-ocean/10 p-10 rounded-2xl shadow-sm text-center">
           <h3 className="text-3xl font-serif text-ocean mb-3">{dict.packages?.custom_title || 'VIP Custom Retreat'}</h3>
           <p className="text-sm font-bold tracking-widest text-ocean/60 uppercase mb-5">{dict.packages?.custom_price || 'Starts at $1500'}</p>
           <p className="text-gray-600 max-w-2xl mx-auto mb-8 text-lg">{dict.packages?.custom_desc || 'A fully bespoke half-day or full-day healing immersion designed exclusively for you.'}</p>
           <Link href={`/${lang}/booking?package=custom`} className="inline-block px-12 py-4 bg-ocean text-white rounded font-medium hover:bg-ocean-light transition shadow-md">{dict.packages?.custom_btn || 'Inquire Custom Retreat'}</Link>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 px-6 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16 space-y-4">
+            <span className="text-sm font-medium tracking-[0.2em] text-ocean/50 uppercase">
+              In Their Words
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif text-ocean">What Women Carry Home</h2>
+          </div>
+          <div className="grid gap-8 md:grid-cols-2">
+            {testimonials.map((t, index) => (
+              <div key={index} className="bg-sand/30 border border-sand rounded-2xl p-8 flex flex-col">
+                <p className="italic text-gray-700 leading-relaxed flex-grow">&ldquo;{t.quote}&rdquo;</p>
+                <div className="border-t border-sand pt-4 mt-6">
+                  <p className="font-medium text-ocean text-sm">{t.name}</p>
+                  <p className="text-xs text-ocean/60">{t.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -113,7 +159,6 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <FiveElementsTest dict={dict} />
         </div>
       </section>
-
     </main>
   );
 }
