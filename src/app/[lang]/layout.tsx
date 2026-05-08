@@ -10,6 +10,11 @@ const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfa
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://manareset.com'),
+
+  verification: {
+    google: "7HFkgefWfRS5YihDCP9gHXhjrDN3E83qH-KxXOy6hps",
+  },
+
   title: "Mana Reset | Private Reset Experience in Hawaii",
   description: "A private reset experience for women traveling alone in Hawaii. Feel grounded, relaxed, and not completely alone — without therapy, without pressure.",
   keywords: [
