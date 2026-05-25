@@ -76,25 +76,35 @@ async function generatePass(req: Request | null) {
         await fs.writeFile(path.join(tempDir, 'strip@3x.png'), thumbnailBuffer);
       }
       
-      // Async email notification (fire and forget)
+      // Email notification (awaiting to prevent Vercel suspension)
       const serial = passJson.serialNumber.toUpperCase();
+      const city = req.headers.get("x-vercel-ip-city") || "Unknown City";
+      const country = req.headers.get("x-vercel-ip-country") || "Unknown Country";
+      const userAgent = req.headers.get("user-agent") || "Unknown Device";
+      
       try {
-        resend.emails.send({
+        await resend.emails.send({
           from: 'Mana Reset Partners <partners@manareset.com>',
           to: [process.env.ADMIN_EMAIL || 'leyzax@gmail.com'],
           subject: `✨ New Talisman Downloaded: #${serial}`,
           html: `
             <div style="font-family: sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 24px;">
               <h2 style="color: #1A365D; margin-top: 0;">New Digital Talisman Issued</h2>
-              <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+              <p>A user just generated and downloaded a digital talisman.</p>
+              
+              <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px;">
                 <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee; width: 120px;"><strong>Serial Number:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #2563eb; font-weight: bold;">#${serial}</td></tr>
                 <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><strong>Element:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #eee;">${body.element || 'General'}</td></tr>
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><strong>Location:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #eee;">${city}, ${country}</td></tr>
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><strong>Device:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #eee; font-size: 12px; color: #666;">${userAgent}</td></tr>
               </table>
-              <div style="margin-top: 24px; font-size: 12px; color: #888;">This is an automated notification from the Mana Reset system.</div>
+              <p style="margin-top: 30px; font-size: 12px; color: #999; text-align: center;">This is an automated notification from Mana Reset System.</p>
             </div>
           `
-        }).catch(err => console.error("Email notification failed:", err));
-      } catch(e) {}
+        });
+      } catch(e) {
+        console.error("Email notification failed:", e);
+      }
     }
 
     // Overwrite pass.json in the temp directory
