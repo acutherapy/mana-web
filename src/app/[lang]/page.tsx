@@ -38,15 +38,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
     <main className="min-h-screen font-sans">
       {/* Hero Section */}
       <section className="relative pt-40 pb-20 px-6 lg:pt-48 lg:pb-32 bg-ocean text-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/hero.png"
-            alt="Hawaii Wellness Reset"
-            fill
-            className="object-cover opacity-40 mix-blend-overlay"
-            priority
-          />
-        </div>
+
         <div className="max-w-4xl mx-auto space-y-6 relative z-10">
           <span className="text-sm font-medium tracking-[0.2em] text-sand uppercase">
             {dict.hero?.tagline}
