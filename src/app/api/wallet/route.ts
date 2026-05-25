@@ -5,6 +5,9 @@ import { promises as fs } from "fs";
 import path from "path";
 import os from "os";
 import { PKPass } from "passkit-generator";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 let cachedCerts: {
   wwdr: Buffer;
@@ -72,6 +75,26 @@ async function generatePass(req: Request | null) {
         await fs.writeFile(path.join(tempDir, 'strip@2x.png'), thumbnailBuffer);
         await fs.writeFile(path.join(tempDir, 'strip@3x.png'), thumbnailBuffer);
       }
+      
+      // Async email notification (fire and forget)
+      const serial = passJson.serialNumber.toUpperCase();
+      try {
+        resend.emails.send({
+          from: 'Mana Reset Partners <partners@manareset.com>',
+          to: [process.env.ADMIN_EMAIL || 'leyzax@gmail.com'],
+          subject: `✨ New Talisman Downloaded: #${serial}`,
+          html: `
+            <div style="font-family: sans-serif; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #eaeaea; border-radius: 8px; padding: 24px;">
+              <h2 style="color: #1A365D; margin-top: 0;">New Digital Talisman Issued</h2>
+              <table style="width: 100%; border-collapse: collapse; margin-top: 16px;">
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee; width: 120px;"><strong>Serial Number:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #eee; color: #2563eb; font-weight: bold;">#${serial}</td></tr>
+                <tr><td style="padding: 10px 0; border-bottom: 1px solid #eee;"><strong>Element:</strong></td><td style="padding: 10px 0; border-bottom: 1px solid #eee;">${body.element || 'General'}</td></tr>
+              </table>
+              <div style="margin-top: 24px; font-size: 12px; color: #888;">This is an automated notification from the Mana Reset system.</div>
+            </div>
+          `
+        }).catch(err => console.error("Email notification failed:", err));
+      } catch(e) {}
     }
 
     // Overwrite pass.json in the temp directory

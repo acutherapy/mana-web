@@ -620,71 +620,92 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
 
               </div>
               
-              <h3 className="text-xl font-serif text-white mb-2 relative z-10">{dict?.test?.bracelet_title || "Your Digital Talisman"}</h3>
-              <p className="text-sm text-gray-400 max-w-sm mx-auto mb-6 relative z-10">{dict?.test?.bracelet_desc || "Save your elemental sequence to Apple Wallet."}</p>
-              
-              <button 
-                onClick={async () => {
-                  try {
-                    // Capture canvas image and downscale to prevent Payload Too Large
-                    const canvas = document.querySelector('canvas');
-                    let thumbnail = null;
-                    if (canvas) {
-                      const tempCanvas = document.createElement('canvas');
-                      const targetHeight = 300;
-                      const targetWidth = 1146; // Apple Wallet strip aspect ratio ~3.82
-                      tempCanvas.width = targetWidth;
-                      tempCanvas.height = targetHeight;
-                      const tCtx = tempCanvas.getContext('2d');
-                      if (tCtx) {
-                        tCtx.fillStyle = '#0B1120';
-                        tCtx.fillRect(0, 0, targetWidth, targetHeight);
-                        const scale = targetHeight / canvas.height;
-                        const drawWidth = canvas.width * scale;
-                        const drawHeight = targetHeight;
-                        const drawX = (targetWidth - drawWidth) / 2;
-                        tCtx.drawImage(canvas, drawX, 0, drawWidth, drawHeight);
-                        // Use JPEG to significantly reduce base64 size
-                        thumbnail = tempCanvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+              </div>
+            
+            <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8 relative z-10 w-full px-4">
+              <div className="bg-white rounded-xl p-5 text-center flex flex-col shadow-lg border border-gray-100">
+                <h3 className="text-lg font-serif text-ocean mb-1">Classic Edition</h3>
+                <div className="text-xs text-gray-500 mb-3">Free sequential design</div>
+                <button 
+                  onClick={async (e) => {
+                    const btn = e.currentTarget;
+                    const originalText = btn.innerText;
+                    btn.innerText = 'Generating...';
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                    try {
+                      const canvas = document.querySelector('canvas');
+                      let thumbnail = null;
+                      if (canvas) {
+                        const tempCanvas = document.createElement('canvas');
+                        tempCanvas.width = 1146; tempCanvas.height = 300;
+                        const tCtx = tempCanvas.getContext('2d');
+                        if (tCtx) {
+                          tCtx.fillStyle = '#0B1120';
+                          tCtx.fillRect(0, 0, 1146, 300);
+                          const scale = 300 / canvas.height;
+                          const drawWidth = canvas.width * scale;
+                          tCtx.drawImage(canvas, (1146 - drawWidth) / 2, 0, drawWidth, 300);
+                          thumbnail = tempCanvas.toDataURL('image/jpeg', 0.9).split(',')[1];
+                        }
                       }
+                      const res = await fetch('/api/wallet', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ element: dominantElement, thumbnail: thumbnail, lang: window.location.pathname.split('/')[1] || 'en' }),
+                      });
+                      if (!res.ok) throw new Error('Failed');
+                      const blob = await res.blob();
+                      const url = window.URL.createObjectURL(blob);
+                      const a = document.createElement('a');
+                      a.style.display = 'none';
+                      a.href = url;
+                      a.download = 'mana.pkpass';
+                      document.body.appendChild(a);
+                      a.click();
+                      window.URL.revokeObjectURL(url);
+                    } catch (err) {
+                      alert("Failed to download wallet pass.");
+                    } finally {
+                      btn.innerText = originalText;
+                      btn.disabled = false;
+                      btn.style.opacity = '1';
                     }
+                  }}
+                  className="mt-auto w-full bg-ocean text-white py-2.5 rounded-lg font-medium hover:bg-ocean-light transition text-sm disabled:opacity-50"
+                >
+                  Get Free Pass
+                </button>
+              </div>
 
-                    const res = await fetch('/api/wallet', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({
-                        element: dominantElement,
-                        baziData: baziResult?.birth,
-                        beads: beads,
-                        thumbnail: thumbnail,
-                        lang: window.location.pathname.split('/')[1] || 'en'
-                      }),
-                    });
-                    
-                    if (!res.ok) {
-                      throw new Error('Failed to generate pass');
-                    }
-                    
-                    const blob = await res.blob();
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.style.display = 'none';
-                    a.href = url;
-                    a.download = 'mana.pkpass';
-                    document.body.appendChild(a);
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                    document.body.removeChild(a);
-                    
-                  } catch (err) {
-                    console.error('Error generating pass:', err);
-                    alert("Failed to download wallet pass. Please try again.");
-                  }
-                }}
-                className="bg-ocean text-white px-6 py-2 rounded text-sm hover:bg-ocean-light transition inline-flex items-center gap-2 relative z-10"
-              >
-                <Download size={16} /> {dict?.test?.save_wallet || "Add to Apple Wallet"}
-              </button>
+              <div className="bg-white rounded-xl p-5 text-center flex flex-col shadow-xl border-2 border-ocean transform md:-translate-y-1 relative">
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-amber-400 to-amber-600 text-white text-[10px] px-2 py-0.5 font-bold rounded-bl-lg">PREMIUM</div>
+                <h3 className="text-lg font-serif text-ocean mb-1">DNA Edition</h3>
+                <div className="text-xs text-gray-500 mb-1">Deep energy intertwining</div>
+                <div className="text-lg font-bold text-ocean mb-3">$29.99</div>
+                <button 
+                  onClick={async (e) => {
+                    const btn = e.currentTarget;
+                    btn.innerText = 'Redirecting...';
+                    btn.disabled = true;
+                    btn.style.opacity = '0.7';
+                    try {
+                      const res = await fetch('/api/checkout-pass', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ lang: window.location.pathname.split('/')[1] || 'en' }),
+                      });
+                      const data = await res.json();
+                      if (data.url) {
+                        window.location.href = data.url;
+                      }
+                    } catch(e) {}
+                  }}
+                  className="mt-auto w-full bg-gradient-to-r from-ocean to-blue-900 text-white py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg transition text-sm disabled:opacity-50"
+                >
+                  Purchase DNA Edition
+                </button>
+              </div>
             </div>
 
             <button onClick={() => {
