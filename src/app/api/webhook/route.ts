@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
     // Get customer info passed from /api/checkout metadata
     const customerEmail = session.customer_email || session.customer_details?.email;
-    const { name, location, package: pkgName, notes } = session.metadata || {};
+    const { name, location, package: pkgName, notes, date, timeSlot } = session.metadata || {};
 
     if (customerEmail) {
       try {
@@ -49,6 +49,8 @@ export async function POST(req: Request) {
               <div style="background-color: #f7f9fa; padding: 15px; border-radius: 8px; margin: 20px 0;">
                 <p style="margin: 5px 0;"><strong>Package:</strong> ${pkgName}</p>
                 <p style="margin: 5px 0;"><strong>Location:</strong> ${location}</p>
+                ${date ? `<p style="margin: 5px 0;"><strong>Requested Date:</strong> ${date}</p>` : ''}
+                ${timeSlot ? `<p style="margin: 5px 0;"><strong>Requested Time:</strong> ${timeSlot}</p>` : ''}
                 ${notes ? `<p style="margin: 5px 0;"><strong>Your Notes:</strong> ${notes}</p>` : ''}
               </div>
 
