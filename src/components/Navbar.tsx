@@ -74,7 +74,6 @@ export default function Navbar({ lang, dict }: { lang: string, dict: any }) {
         </div>
       )}
 
-      </div>
     </nav>
   );
 }
