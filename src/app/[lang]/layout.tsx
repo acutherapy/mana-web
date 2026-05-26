@@ -34,6 +34,12 @@ export async function generateMetadata({
       siteName: 'Mana Reset',
       images: [
         {
+          url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}&ratio=1:1`,
+          width: 600,
+          height: 600,
+          alt: `Mana Reset | ${dict.hero?.title || "Private Reset Experience in Hawaii"}`,
+        },
+        {
           url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`,
           width: 1200,
           height: 630,
