@@ -8,28 +8,50 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   if (!dict) return {};
 
   const isEn = lang === "en";
-  let imageUrl = "/images/og-invite-en.jpg";
-  if (!isEn) {
-    const quotes: Record<string, string> = {
-      zh: "有些旅程，始于一场意想不到的相遇。",
-      ja: "いくつかの旅は、思いがけない出会いから始まります。",
-      ko: "어떤 여정은 뜻밖의 만남으로 시작됩니다.",
-      es: "Algunos viajes comienzan con un encuentro inesperado."
-    };
-    const quote = quotes[lang] || "Some journeys begin with a single unexpected encounter.";
-    imageUrl = `/api/og?lang=${lang}&title=${encodeURIComponent(quote)}`;
-  }
+  
+  // Custom evocative primary quotes
+  const quotes: Record<string, string> = {
+    en: "Some journeys begin with a single unexpected encounter.",
+    zh: "有些旅程，始于一场意想不到的相遇。",
+    ja: "いくつかの旅は、思いがけない出会いから始まります。",
+    ko: "어떤 여정은 뜻밖의 만남으로 시작됩니다.",
+    es: "Algunos viajes comienzan con un encuentro inesperado."
+  };
+  const quote = quotes[lang] || quotes.en;
+
+  // High-persuasion, highly evocative, click-worthy metadata descriptions
+  const descriptions: Record<string, string> = {
+    en: "Give the gift of true restoration. A private, in-room somatic wellness reset for solo female travelers in Hawaii. Guided breathwork, deep somatic release, and energetic recovery.",
+    zh: "送给至亲闺蜜的一份重启身心之旅。夏威夷客房内私人躯体疗愈与能量重置，专为女性独旅设计，带来极度宁静与彻底的身心恢复。",
+    ja: "大切な人へ、心からの休息を。ハワイの客室に直接届く、女性のひとり旅のためのプライベート・ソマティックウェルネス体験。深い呼吸とエネルギーの回復。",
+    ko: "소중한 사람에게 선사하는 진정한 회복. 하와이 객실에서 누리는 여성 1인 여행객을 위한 프라이빗 소마틱 웰니스 리셋. 깊은 호흡과 에너지 치유.",
+    es: "Regale una verdadera restauración. Un reinicio de bienestar somático privado en la habitación para mujeres que viajan solas en Hawái. Respiración guiada y recuperación profunda."
+  };
+  const persuasiveDesc = descriptions[lang] || descriptions.en;
+
+  // WeChat prefers 1:1 ratio square images. Standard platforms prefer 1.91:1 wide images.
+  // We provide the WeChat square 1:1 image FIRST in the openGraph array to trigger WeChat share priority.
+  const wechatSquareImageUrl = `/api/og?lang=${lang}&title=${encodeURIComponent(quote)}&ratio=1:1`;
+  const landscapeImageUrl = isEn 
+    ? "/images/og-invite-en.jpg" 
+    : `/api/og?lang=${lang}&title=${encodeURIComponent(quote)}`;
   
   return {
     title: `${dict.invite_page?.title} | Mana Reset`,
-    description: dict.invite_page?.subtitle,
+    description: persuasiveDesc,
     openGraph: {
       title: `${dict.invite_page?.title} | Mana Reset`,
-      description: dict.invite_page?.subtitle,
+      description: persuasiveDesc,
       url: `https://www.manareset.com/${lang}/invite`,
       images: [
         {
-          url: imageUrl,
+          url: wechatSquareImageUrl,
+          width: 600,
+          height: 600,
+          alt: `${dict.invite_page?.title} | Mana Reset`,
+        },
+        {
+          url: landscapeImageUrl,
           width: 1200,
           height: 630,
           alt: `${dict.invite_page?.title} | Mana Reset`,
@@ -40,8 +62,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
     twitter: {
       card: "summary_large_image",
       title: `${dict.invite_page?.title} | Mana Reset`,
-      description: dict.invite_page?.subtitle,
-      images: [imageUrl],
+      description: persuasiveDesc,
+      images: [landscapeImageUrl],
     },
   };
 }
