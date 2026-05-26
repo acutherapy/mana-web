@@ -71,16 +71,16 @@ export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' 
 
           <div className="flex gap-6 mt-4 md:mt-0">
             <NavItem href={`/${lang}/privacy-policy`}>
-              Privacy Policy
+              {dict.footer?.privacy}
             </NavItem>
 
             <NavItem href={`/${lang}/terms-of-service`}>
-              Terms of Service
+              {dict.footer?.terms}
             </NavItem>
 
             {/* 🔥 sitemap 也统一控制 */}
             <NavItem href="/sitemap.xml" external>
-              Sitemap
+              {dict.footer?.sitemap}
             </NavItem>
           </div>
         </div>
