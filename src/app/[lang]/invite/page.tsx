@@ -9,13 +9,13 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
   const isEn = lang === "en";
   
-  // Custom evocative primary quotes
+  // Custom evocative primary quotes with newline formatting for perfect typography
   const quotes: Record<string, string> = {
-    en: "Some journeys begin with a single unexpected encounter.",
-    zh: "有些旅程，始于一场意想不到的相遇。",
-    ja: "いくつかの旅は、思いがけない出会いから始まります。",
-    ko: "어떤 여정은 뜻밖의 만남으로 시작됩니다.",
-    es: "Algunos viajes comienzan con un encuentro inesperado."
+    en: "Some journeys begin\nwith a single unexpected encounter.",
+    zh: "有些旅程，\n始于一场意想不到的相遇。",
+    ja: "いくつかの旅は、\n思いがけない出会いから始まります。",
+    ko: "어떤 여정은\n뜻밖의 만남으로 시작됩니다.",
+    es: "Algunos viajes comienzan\ncon un encuentro inesperado."
   };
   const quote = quotes[lang] || quotes.en;
 

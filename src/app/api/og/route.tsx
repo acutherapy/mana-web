@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const lang = searchParams.get('lang') || 'en';
-    const title = searchParams.get('title') || 'Some journeys begin with a single unexpected encounter.';
+    const title = searchParams.get('title') || 'Some journeys begin\nwith a single unexpected encounter.';
     const ratio = searchParams.get('ratio') || '1.91:1';
     
     const isSquare = ratio === '1:1';
@@ -19,10 +19,14 @@ export async function GET(request: NextRequest) {
     let base64Image = '';
     try {
       const imageBuffer = fs.readFileSync(imagePath);
-      base64Image = `data:image/png;base64,${imageBuffer.toString('base64')}`;
+      // Since og-bg-clean.png contains JPEG data, we use image/jpeg MIME prefix for correct iOS/Satori decoding
+      base64Image = `data:image/jpeg;base64,${imageBuffer.toString('base64')}`;
     } catch (err) {
       console.error('Error reading OG background image:', err);
     }
+
+    // Split title by newline for premium balanced multi-line typography
+    const lines = title.split('\n');
 
     // Localized content mapping
     const subtitles: Record<string, string> = {
@@ -98,9 +102,17 @@ export async function GET(request: NextRequest) {
                 marginBottom: '22px',
                 textAlign: 'center',
                 textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                width: '100%',
+                wordBreak: 'break-all',
+                wordWrap: 'break-word',
               }}
             >
-              {title}
+              {lines.map((line, idx) => (
+                <span key={idx} style={{ display: 'block' }}>{line}</span>
+              ))}
             </div>
 
             {/* Separator line with leaf emblem */}
@@ -237,9 +249,17 @@ export async function GET(request: NextRequest) {
                 lineHeight: '1.4',
                 marginBottom: '28px',
                 textShadow: '0 2px 4px rgba(0,0,0,0.3)',
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+                width: '100%',
+                wordBreak: 'break-all',
+                wordWrap: 'break-word',
               }}
             >
-              {title}
+              {lines.map((line, idx) => (
+                <span key={idx} style={{ display: 'block' }}>{line}</span>
+              ))}
             </div>
 
             {/* Separator line with leaf emblem */}
