@@ -128,6 +128,7 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
         />
+        <noscript dangerouslySetInnerHTML={{ __html: dict.seo_prose }} />
         <Navbar lang={lang} dict={dict} />
         {children}
         <Footer lang={lang} />
