@@ -624,13 +624,13 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
             
             <div className="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto mb-8 relative z-10 w-full px-4">
               <div className="bg-white rounded-xl p-5 text-center flex flex-col shadow-lg border border-gray-100">
-                <h3 className="text-lg font-serif text-ocean mb-1">Classic Edition</h3>
-                <div className="text-xs text-gray-500 mb-3">Free sequential design</div>
+                <h3 className="text-lg font-serif text-ocean mb-1">{dict.test.classic_edition || "Classic Edition"}</h3>
+                <div className="text-xs text-gray-500 mb-3">{dict.test.classic_desc || "Free sequential design"}</div>
                 <button 
                   onClick={async (e) => {
                     const btn = e.currentTarget;
                     const originalText = btn.innerText;
-                    btn.innerText = 'Generating...';
+                    btn.innerText = dict.test.generating || "Generating...";
                     btn.disabled = true;
                     btn.style.opacity = '0.7';
                     try {
@@ -674,19 +674,19 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
                   }}
                   className="mt-auto w-full bg-ocean text-white py-2.5 rounded-lg font-medium hover:bg-ocean-light transition text-sm disabled:opacity-50"
                 >
-                  Get Free Pass
+                  {dict.test.get_free_pass || "Get Free Pass"}
                 </button>
               </div>
 
               <div className="bg-white rounded-xl p-5 text-center flex flex-col shadow-xl border-2 border-ocean transform md:-translate-y-1 relative">
                 <div className="absolute top-0 right-0 bg-gradient-to-r from-amber-400 to-amber-600 text-white text-[10px] px-2 py-0.5 font-bold rounded-bl-lg">PREMIUM</div>
-                <h3 className="text-lg font-serif text-ocean mb-1">DNA Edition</h3>
-                <div className="text-xs text-gray-500 mb-1">Deep energy intertwining</div>
+                <h3 className="text-lg font-serif text-ocean mb-1">{dict.test.dna_edition || "DNA Edition"}</h3>
+                <div className="text-xs text-gray-500 mb-1">{dict.test.dna_desc || "Deep energy intertwining"}</div>
                 <div className="text-lg font-bold text-ocean mb-3">$29.99</div>
                 <button 
                   onClick={async (e) => {
                     const btn = e.currentTarget;
-                    btn.innerText = 'Redirecting...';
+                    btn.innerText = dict.test.redirecting || "Redirecting...";
                     btn.disabled = true;
                     btn.style.opacity = '0.7';
                     try {
@@ -703,7 +703,7 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
                   }}
                   className="mt-auto w-full bg-gradient-to-r from-ocean to-blue-900 text-white py-2.5 rounded-lg font-medium shadow-md hover:shadow-lg transition text-sm disabled:opacity-50"
                 >
-                  Purchase DNA Edition
+                  {dict.test.purchase_dna || "Purchase DNA Edition"}
                 </button>
               </div>
             </div>

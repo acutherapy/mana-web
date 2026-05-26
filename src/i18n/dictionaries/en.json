@@ -107,7 +107,15 @@
       "Metal": "Tempered into steel; detach from the mundane dust. Cut off those chaotic bonds, and recover your inner edge in minimalism and order.",
       "Water": "The highest good is like water, flowing with the stream. No need to constantly tense up and resist; allow yourself to accumulate tremendous power in silence like water.",
       "default": "The energy of the universe is reshuffling for you."
-    }
+    },
+    "classic_edition": "Classic Edition",
+    "classic_desc": "Free sequential design",
+    "get_free_pass": "Get Free Pass",
+    "dna_edition": "DNA Edition",
+    "dna_desc": "Deep energy intertwining",
+    "purchase_dna": "Purchase DNA Edition",
+    "generating": "Generating...",
+    "redirecting": "Redirecting..."
   },
   "testimonials": {
     "subtitle": "In Their Words",

@@ -107,7 +107,15 @@
       "Metal": "百炼成钢，断舍离尘。斩断那些混乱的羁绊，在极简与秩序中找回内心的锋芒。",
       "Water": "上善若水，顺流而下。不必时刻紧绷对抗，允许自己像水一样，在静默中积蓄千钧之力。",
       "default": "宇宙的能量正在重新为您洗牌。"
-    }
+    },
+    "classic_edition": "经典版",
+    "classic_desc": "免费基础排印版",
+    "get_free_pass": "获取免费通行证",
+    "dna_edition": "DNA 专属版",
+    "dna_desc": "深度能量图腾交织",
+    "purchase_dna": "购买 DNA 版",
+    "generating": "生成中...",
+    "redirecting": "跳转中..."
   },
   "testimonials": {
     "subtitle": "来自她们的心声",

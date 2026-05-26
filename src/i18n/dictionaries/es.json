@@ -105,7 +105,17 @@
       "Metal": "Templado en acero; despégate del polvo mundano. Corta esos lazos caóticos y recupera tu filo interior en el minimalismo y el orden.",
       "Water": "El bien supremo es como el agua. No hay necesidad de tensarse y resistir constantemente; permítete acumular un tremendo poder en silencio como el agua.",
       "default": "La energía del universo se está reorganizando para ti."
-    }
+    },
+    "classic_edition": "Edición Clásica",
+    "classic_desc": "Diseño secuencial gratuito",
+    "get_free_pass": "Obtener Pase Gratis",
+    "dna_edition": "Edición DNA",
+    "dna_desc": "Entrelazamiento de energía profunda",
+    "purchase_dna": "Comprar Edición DNA",
+    "generating": "Generando...",
+    "redirecting": "Redirigiendo...",
+    "q1_opt6": "Ninguna de las anteriores",
+    "q2_opt6": "Ninguna de las anteriores"
   },
   "testimonials": {
     "subtitle": "En sus palabras",
