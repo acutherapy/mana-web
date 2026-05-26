@@ -4,7 +4,7 @@
     "serialNumber": "123456",
     "teamIdentifier": "MG4XZUV99U",
     "organizationName": "Mana Reset",
-    "description": "Digital Energy Bracelet",
+    "description": "Digital Energy Talisman",
     "logoText": "Mana Reset",
     "foregroundColor": "rgb(255,255,255)",
     "labelColor": "rgb(255,255,255)",
@@ -20,7 +20,7 @@
             {
                 "key": "type",
                 "label": "Talisman",
-                "value": "Digital Bracelet"
+                "value": "Digital Talisman"
             },
             {
                 "key": "date",

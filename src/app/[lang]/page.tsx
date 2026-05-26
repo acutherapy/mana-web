@@ -24,7 +24,7 @@ const testimonials = [
   },
   {
     quote:
-      'The energy bracelet assessment felt surprisingly personal. The full session that followed was even more so. I came back from this trip feeling like myself again.',
+      'The energy talisman assessment felt surprisingly personal. The full session that followed was even more so. I came back from this trip feeling like myself again.',
     name: 'Cecilia N.',
     location: 'São Paulo',
   },

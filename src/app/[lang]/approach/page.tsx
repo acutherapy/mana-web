@@ -182,7 +182,7 @@ export default function ApproachPage() {
             ))}
             <div className="bg-sand/10 border border-sand/20 rounded-2xl p-8 flex flex-col justify-center text-center md:col-span-2 lg:col-span-2">
               <p className="text-white/80 text-base leading-relaxed">
-                During your session, your practitioner uses the Digital Bracelet assessment and a
+                During your session, your practitioner uses the Digital Talisman assessment and a
                 brief conversation to identify which elements are most depleted. The session is then
                 oriented around restoring that balance — not forcing a predetermined sequence.
               </p>

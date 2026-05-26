@@ -613,7 +613,7 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
                 >{dict?.test?.dna_mode}</button>
               </div>
 
-              {/* Dynamic 18-Bead Bracelet Canvas */}
+              {/* Dynamic 18-Bead Talisman Canvas */}
               <div className="py-12 overflow-hidden flex flex-col justify-center items-center relative min-h-[360px] w-full">
                 
                 <BaZiCanvas beads={beads} mode={visualMode} />
