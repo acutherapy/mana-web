@@ -4,14 +4,14 @@
     "why": "Why Us",
     "approach": "Our Approach",
     "experience": "Packages",
-    "test": "Digital Bracelet",
+    "test": "Energy Talisman",
     "book": "Book Private Reset"
   },
- "hero": {
-  "tagline": "A private reset experience for women traveling alone in Hawaii.",
-  "title": "Private Reset Experience in Hawaii",
-  "description": "For women traveling solo seeking calm, clarity, and quiet support. Feel at ease, gently held, and not completely alone - without therapy, without pressure."
-},
+  "hero": {
+    "tagline": "A private reset experience for women traveling alone in Hawaii.",
+    "title": "Private Reset Experience in Hawaii",
+    "description": "For women traveling solo seeking calm, clarity, and quiet support. Feel at ease, gently held, and not completely alone - without therapy, without pressure."
+  },
   "why": {
     "title": "Why You Need Us",
     "subtitle": "The invisible weight you carry to Hawaii.",
@@ -48,7 +48,7 @@
   },
   "test": {
     "title": "Five Elements Energy Digital Delivery",
-    "subtitle": "Before we meet, take this short diagnostic to discover your elemental imbalance and receive your personalized digital energy bracelet.",
+    "subtitle": "Before we meet, take this short diagnostic to discover your elemental imbalance and receive your personalized digital energy talisman.",
     "start": "Start Assessment",
     "bazi_title": "Birth Chart Alignment",
     "bazi_desc": "To accurately calculate your elemental constitution, please provide your birth date and time.",
@@ -88,7 +88,7 @@
       "Water": "Water"
     },
     "result_title": "Your Current Dominant Energy:",
-    "bracelet_title": "Your Digital Energy Bracelet",
+    "bracelet_title": "Your Digital Energy Talisman",
     "bracelet_desc": "Wear this digital talisman as your reminder to recalibrate.",
     "birth_chart_title": "Your Birth Chart",
     "current_chart_title": "Current Honolulu",
@@ -109,13 +109,44 @@
       "default": "The energy of the universe is reshuffling for you."
     }
   },
+  "testimonials": {
+    "subtitle": "In Their Words",
+    "title": "What You Will Bring Home",
+    "list": [
+      {
+        "quote": "I came to Hawaii running on empty. After The Balance session, I felt like I could actually breathe again — not just physically, but in every way. I didn't know I needed this until I had it.",
+        "name": "Sarah M.",
+        "location": "New York"
+      },
+      {
+        "quote": "As a solo traveler, I wasn't sure what to expect. But from the moment she arrived, I felt completely safe. It wasn't therapy, it wasn't a massage — it was something I didn't have a name for, and something I very clearly needed.",
+        "name": "Yuki T.",
+        "location": "Tokyo"
+      },
+      {
+        "quote": "I booked The Awakening on a whim. It turned out to be the most meaningful two hours of my entire trip. I left Hawaii feeling like I had actually rested — not just slept.",
+        "name": "Amelia R.",
+        "location": "London"
+      },
+      {
+        "quote": "The energy talisman assessment felt surprisingly personal. The full session that followed was even more so. I came back from this trip feeling like myself again.",
+        "name": "Cecilia N.",
+        "location": "São Paulo"
+      }
+    ]
+  },
   "footer": {
     "title": "Begin Your Reset",
     "subtitle": "Secure, confidential booking for your in-hotel experience. Space is strictly limited.",
     "guide": "Solo Female Guide",
     "blog": "Burnout Recovery Blog",
     "faq": "FAQ",
-    "copyright": "© 2026 Mana Reset. Honolulu, Hawaii."
+    "copyright": "© 2026 Mana Reset. Honolulu, Hawaii.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "sitemap": "Sitemap",
+    "join_us": "Join Us",
+    "join_us_desc": "We invite certified wellness practitioners and institutions to partner with us."
   },
   "booking": {
     "title": "Begin Your Reset.",
@@ -132,6 +163,12 @@
     "notes_placeholder": "Please share your preferred dates in Honolulu, where you’ll be staying, and what kind of reset experience you’re seeking. Each session is privately customized with limited availability, and all requests are personally confirmed by email or phone.",
     "step2": "2. Select Experience",
     "choose_pkg": "Choose your package",
+    "step3": "3. Select Date & Time",
+    "date": "Preferred Date",
+    "time": "Preferred Time",
+    "time_morning": "Morning (9:00 AM - 12:00 PM)",
+    "time_afternoon": "Afternoon (2:00 PM - 5:00 PM)",
+    "time_evening": "Evening (6:00 PM - 9:00 PM)",
     "submit": "Secure Booking & Pay",
     "redirecting": "Redirecting...",
     "ssl": "🔒 SSL Secure Encrypted Payment",
@@ -144,5 +181,271 @@
     "ref": "Reference:",
     "return": "Return to Homepage",
     "loading": "Loading your confirmation..."
+  },
+  "approach_page": {
+    "hero": {
+      "tagline": "The Method",
+      "title": "Healing Without the Clutter.",
+      "desc": "No rituals for the sake of ritual. No scripts. No pressure to feel anything in particular. Just an honest, skilled presence — and a framework old enough to trust."
+    },
+    "phil": {
+      "tagline": "Philosophy",
+      "title": "Not a Spa. Not a Session. A Reset.",
+      "p1": "Traditional spa experiences are designed for comfort and consumption. You book a treatment, you arrive, you are moved through a sequence, you leave. There is nothing wrong with that. But comfort is not the same as restoration, and pleasure is not the same as reset.",
+      "p2": "Mana Reset was built from a different premise: that healing does not require a special room, a special robe, or a special facility. It requires presence, skill, and enough quiet to actually hear what the body is asking for. A hotel room, when held with the right intention, becomes exactly the right container — familiar, private, entirely yours.",
+      "p3": "We do not add to the noise of your trip. We come to you. We bring nothing heavy. We leave nothing behind except a shift in how you feel."
+    },
+    "shape": {
+      "tagline": "The Shape of a Session",
+      "title": "What Happens, Step by Step",
+      "desc": "No two sessions are identical. But every session moves through the same five thresholds.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Arrival & Grounding",
+          "description": "Your practitioner arrives quietly and without ceremony. The first few minutes are unhurried — a brief conversation, a settling of the space, and a moment to simply arrive together."
+        },
+        {
+          "number": "02",
+          "title": "Breathwork",
+          "description": "Guided breathing patterns calibrated to your current state. Not performance — just breath. This is often where the body begins to remember that it knows how to let go."
+        },
+        {
+          "number": "03",
+          "title": "Dialogue & Presence",
+          "description": "Not therapy. Not advice. Simply being witnessed — spoken to or sat with, depending on what you need. Many clients say this is the part they did not know they were missing."
+        },
+        {
+          "number": "04",
+          "title": "Energy Clearing & Acupressure",
+          "description": "Light, intentional touch informed by Five Elements theory. Specific points, specific intentions. Nothing forceful. Everything with consent."
+        },
+        {
+          "number": "05",
+          "title": "Integration",
+          "description": "The session does not end abruptly. Time is held for stillness, for reflection, for the body to absorb what has shifted. You leave at your own pace."
+        }
+      ],
+      "quote": "“The session ends. The shift does not.”"
+    },
+    "elements": {
+      "tagline": "The Framework",
+      "title": "The Five Elements",
+      "desc": "A 2,000-year-old map for understanding the body, the emotions, and the energy between them. Not mystical — practical. A diagnostic language for what is actually happening.",
+      "list": [
+        {
+          "name": "Wood",
+          "theme": "Growth & Direction",
+          "description": "Associated with the liver and the capacity to move forward. When Wood is depleted, we feel stuck, frustrated, or unable to plan. When it flows, we feel purposeful and clear."
+        },
+        {
+          "name": "Fire",
+          "theme": "Passion & Joy",
+          "description": "The element of the heart. Fire governs connection, warmth, and the ability to feel delight. When Fire dims, we feel numb or performatively happy. When it burns well, joy is natural."
+        },
+        {
+          "name": "Earth",
+          "theme": "Stability & Nourishment",
+          "description": "Earth holds us. It governs digestion — of food and of experience. When Earth is out of balance, we feel ungrounded or unworthy of care. Restoring it feels like exhaling."
+        },
+        {
+          "name": "Metal",
+          "theme": "Clarity & Precision",
+          "description": "Metal governs what we hold onto and what we release. It is the element of discernment. When Metal is clear, we know what matters. When it is blocked, we carry grief we cannot name."
+        },
+        {
+          "name": "Water",
+          "theme": "Depth & Adaptability",
+          "description": "The deepest element. Water governs fear, rest, and the reservoir from which everything else draws. Many solo travelers arrive with Water severely depleted — the session often begins here."
+        }
+      ],
+      "note": "During your session, your practitioner uses the Digital Talisman assessment and a brief conversation to identify which elements are most depleted. The session is then oriented around restoring that balance — not forcing a predetermined sequence."
+    },
+    "forWhom": {
+      "tagline": "Clarity",
+      "title": "Who This Is For",
+      "list": [
+        "You are traveling alone and craving something that is not a spa package or a group yoga class.",
+        "You feel physically present in Hawaii but mentally still at your desk, in your inbox, or in something you have not fully processed.",
+        "You are in the middle of a transition — a breakup, a career shift, a loss — and want to be held, not fixed.",
+        "You have tried rest and it has not quite reached the part of you that needs it most.",
+        "You want to return home feeling like you actually went somewhere — not just changed time zones."
+      ],
+      "btn": "Book Your Session"
+    }
+  },
+  "sitemap_page": {
+    "title": "Site Map",
+    "desc": "Navigate your way through Mana Reset.",
+    "nav": "Main Navigation",
+    "home": "Home",
+    "approach": "Our Approach",
+    "book": "Book a Reset (Packages)",
+    "faq": "FAQ",
+    "resources": "Resources & Guides",
+    "guide": "Solo Female Guide to Hawaii",
+    "blog": "Burnout Recovery Blog",
+    "legal": "Legal & Policies",
+    "xml": "XML Sitemap (For Search Engines)",
+    "lang": "Languages"
+  },
+  "privacy_page": {
+    "title": "Privacy Policy",
+    "last_updated": "Last Updated: May 2026",
+    "sections": [
+      {
+        "h2": "1. Information We Collect",
+        "p1": "When you book a session with Mana Reset, we collect only the essential information needed to provide our services. This includes: Your name, email address, contact number, and the location of your stay (hotel and room number) in Honolulu.",
+        "p2": "Any notes you provide regarding your emotional or physical state prior to the session are kept strictly confidential and are only used by your practitioner to tailor your experience."
+      },
+      {
+        "h2": "2. How We Use Your Information",
+        "p1": "We use your personal information solely for the purpose of communicating with you, fulfilling your booking, and ensuring a safe and customized wellness experience. We do not use your information for marketing purposes without your explicit consent."
+      },
+      {
+        "h2": "3. Payment Processing",
+        "p1": "All payments are processed securely through Stripe. Mana Reset does not store or have access to your full credit card information. Please refer to Stripe's Privacy Policy for more details on how they handle your payment data."
+      },
+      {
+        "h2": "4. Data Sharing and Disclosure",
+        "p1": "We respect your privacy deeply. We will never sell, rent, or trade your personal information to third parties. We will only disclose your information if required to do so by law or in the good faith belief that such action is necessary to protect the personal safety of our clients or the public."
+      },
+      {
+        "h2": "5. Contact Us",
+        "p1": "If you have any questions or concerns about this Privacy Policy or how we handle your data, please contact us directly through the email provided in your booking confirmation."
+      }
+    ]
+  },
+  "terms_page": {
+    "title": "Terms of Service",
+    "last_updated": "Last Updated: May 2026",
+    "sections": [
+      {
+        "h2": "1. Nature of the Service",
+        "p1": "Mana Reset provides private, in-room wellness and stress relief sessions designed specifically for solo female travelers. Our services include breathwork, somatic presence, energy clearing, and conversational support.",
+        "p2": "Important Medical Disclaimer: Mana Reset is not a medical facility, and our practitioners are not licensed physicians, psychologists, or therapists. Our services do not provide medical diagnosis, treatment, or clinical mental health counseling. If you are experiencing a mental health crisis, please seek immediate professional medical attention."
+      },
+      {
+        "h2": "2. Booking and Payments",
+        "p1": "All bookings must be confirmed via secure online payment or invoiced payment prior to the session. By providing your payment information, you authorize our third-party payment processor (Stripe) to charge the stated amount. Travel fees for locations outside of Waikiki will be automatically calculated or invoiced separately."
+      },
+      {
+        "h2": "3. Cancellation and Refund Policy",
+        "p1": "We respect your time and ours. Cancellations made more than 48 hours prior to your scheduled appointment will receive a full refund. Cancellations made within 48 hours of the appointment time will incur a 50% charge of the total service fee. No-shows will be charged the full amount without refund."
+      },
+      {
+        "h2": "4. Code of Conduct and Safety",
+        "p1": "Mana Reset strictly serves female clients to maintain a safe, specialized environment. We reserve the right to refuse service or terminate a session immediately if the practitioner feels unsafe, if there is a violation of boundaries, or if the client is under the influence of illicit substances. In such cases of termination due to misconduct, no refunds will be issued."
+      },
+      {
+        "h2": "5. Limitation of Liability",
+        "p1": "By participating in a Mana Reset session, you agree to assume full responsibility for your own well-being. Mana Reset and its practitioners shall not be held liable for any direct, indirect, incidental, or consequential damages, injuries, or emotional discomfort arising from the use of our services."
+      }
+    ]
+  },
+  "faq_page": {
+    "tagline": "Questions & Answers",
+    "title": "What You May Be Wondering",
+    "desc": "We have tried to answer everything honestly. If something is still unclear, the booking form is always open.",
+    "still_question": "Still have a question?",
+    "btn": "Reach Out Through the Booking Form",
+    "faqs": [
+      {
+        "question": "What does \"Mana\" mean?",
+        "answer": "In Hawaiian and Polynesian culture, Mana is a sacred concept representing spiritual energy, healing power, or the life force that permeates the universe. It is not a fixed trait; your Mana can be depleted by chronic stress and anxiety, but it can also be restored through grounding and presence. Mana Reset is named after this profound healing concept. Our goal is to help you clear away the noise, stop running on empty, and \"reset\" your inner well of energy, allowing you to return to a state of clarity, quiet strength, and deep connection with yourself."
+      },
+      {
+        "question": "Is it safe?",
+        "answer": "Yes. Your safety is the foundation of everything we do. Mana Reset is designed exclusively for solo female travelers. Your practitioner is a certified wellness professional. Sessions take place in your hotel room, which remains entirely under your control. You set the boundaries, you control the space, and you can end the session at any time — no questions asked. Many clients share that feeling genuinely safe was the most unexpected and meaningful part of the experience."
+      },
+      {
+        "question": "What exactly happens during a session?",
+        "answer": "Every session begins with a brief grounding conversation to understand where you are — physically, emotionally, and energetically. From there, the session moves through breathwork, somatic presence, light acupressure, and energy clearing depending on your package and what feels right in the moment. There is no fixed script. The session is attuned to you. Nothing is done without your consent, and you are always invited — never pushed."
+      },
+      {
+        "question": "Do I need to provide anything?",
+        "answer": "No. Your practitioner arrives with everything needed. All you need is a comfortable space in your room — a cleared area of floor or your bed — and yourself. Loose, comfortable clothing is recommended. You do not need to prepare, perform, or arrive in any particular state. Come exactly as you are."
+      },
+      {
+        "question": "Will this violate hotel policies?",
+        "answer": "No. Mana Reset operates as a personal wellness visit — the same category as having a friend visit your room. We do not use hotel spa facilities, carry commercial equipment, or require any disclosure to hotel staff. Our practitioners arrive discreetly. We have served clients across all major Honolulu and Waikiki hotels without incident."
+      },
+      {
+        "question": "What are the session lengths and prices?",
+        "answer": "We offer four experiences: The Unwind (60 minutes, $320) — a focused reset for tension and immediate relief. The Balance (90 minutes, $460) — our most popular session, combining breathwork, somatic presence, and energy clearing. The Awakening (120 minutes, $600) — a deep, unhurried immersion for those who want to arrive fully. VIP Custom Retreat (from $1,500) — a bespoke half-day or full-day experience designed exclusively around you."
+      },
+      {
+        "question": "How do I book?",
+        "answer": "Visit our booking page and select your preferred session, date, and time. You will receive a confirmation within a few hours. For the VIP Custom Retreat or any special requests, use the inquiry form and your practitioner will respond personally within 24 hours. We recommend booking at least 48 hours in advance, though same-day availability occasionally exists."
+      },
+      {
+        "question": "What is your cancellation policy?",
+        "answer": "Cancellations made more than 48 hours before your session receive a full refund. Cancellations within 48 hours incur a 50% charge. No-shows are charged in full. If you need to reschedule, please contact us as early as possible — we will always do our best to accommodate you."
+      },
+      {
+        "question": "What should I wear?",
+        "answer": "Loose, comfortable clothing works best — linen trousers, a soft t-shirt, or a hotel robe. You will not be asked to remove clothing. The session adapts to you, not the other way around."
+      },
+      {
+        "question": "What is the Five Elements approach?",
+        "answer": "The Five Elements framework comes from Traditional Chinese Medicine and maps the body, emotions, and energy through five archetypes: Wood (growth and direction), Fire (passion and joy), Earth (stability and nourishment), Metal (clarity and what we release), and Water (depth and rest). Your session is oriented around whichever elements are most depleted — not a fixed sequence, but a precise response to where you actually are."
+      },
+      {
+        "question": "How do you calculate my \"Dominant Energy\" in the Digital Talisman?",
+        "answer": "The Energy Talisman is not about fortune-telling; it is a profound reflection of your current state. We calculate it using three dimensions: your innate birth elements (your foundation), the current space-time elements of Hawaii (your environment), and your subconscious choices (your present mind). While you cannot change your birth data, our algorithm gives the highest weight to your present choices. It embodies a core Mana Reset philosophy: no matter your innate destiny, your current state of mind is the ultimate key that dictates your energy. Your destiny is shaped by your own hands, not by the stars."
+      },
+      {
+        "question": "Do I need to believe in energy work?",
+        "answer": "No. Skepticism is welcome. The breathwork and somatic elements produce measurable, felt results regardless of belief. Many clients who arrive uncertain leave with something they cannot fully explain — but can clearly feel. You only need to bring yourself."
+      },
+      {
+        "question": "Is this therapy or counseling?",
+        "answer": "No. Mana Reset is a wellness service, not a therapeutic or clinical one. Your practitioner does not provide diagnosis, treatment, or mental health support. If you are navigating a mental health crisis, we encourage you to seek a licensed professional. What we offer is presence, not prescription."
+      },
+      {
+        "question": "Who is the practitioner?",
+        "answer": "Your practitioner is a certified wellness professional. We intentionally maintain a level of anonymity prior to your session—this is a deliberate part of the Mana Reset philosophy. By doing so, the focus shifts entirely away from personalities and entirely toward pure energy, deep acceptance, and creating a safe, judgment-free container for your healing. Our practitioners hold advanced certifications in somatic experiencing, Five Elements theory, emotional regulation, and energy clearing."
+      },
+      {
+        "question": "Which hotels and areas do you serve?",
+        "answer": "We serve solo female travelers staying in hotels across Honolulu, Waikiki, Ala Moana, Kahala, and the Diamond Head corridor. If you are staying outside these areas, please reach out — we accommodate requests on a case-by-case basis."
+      },
+      {
+        "question": "What results can I expect?",
+        "answer": "Most clients describe feeling noticeably lighter, quieter, and more present by the end of a session. Common experiences include a deep release of physical tension, emotional clarity, and a feeling of being genuinely rested — distinct from simply having slept. We make no medical claims. What we can say is that very few clients leave unchanged."
+      },
+      {
+        "question": "Can I book a session for a friend?",
+        "answer": "Yes. A Mana Reset session makes a deeply personal and meaningful gift — particularly for a friend traveling alone or in need of something she would never book for herself. You can purchase a session as a gift through our booking page."
+      }
+    ]
+  },
+  "join_page": {
+    "title": "Partner with Mana Reset",
+    "subtitle": "We are looking for certified wellness practitioners, somatic therapists, and energy workers who align with our philosophy of quiet, private, and profound healing.",
+    "name": "Full Name",
+    "email": "Email Address",
+    "languages": "Languages Spoken",
+    "linkedin": "LinkedIn or Portfolio URL",
+    "experience": "Briefly describe your certifications and work experience",
+    "submit": "Submit Application",
+    "success": "Application submitted successfully. We will be in touch.",
+    "error": "Failed to submit. Please try again."
+  },
+  "invite_page": {
+    "title": "An Invitation to Reset",
+    "subtitle": "A gift of profound stillness and deep energetic recovery.",
+    "pain1_title": "Exhausted & Overwhelmed?",
+    "pain1_desc": "Clear the mental noise and heavy demands of daily life.",
+    "pain2_title": "Craving Safe Solitude?",
+    "pain2_desc": "A deeply private, in-room experience designed for solo female travelers.",
+    "pain3_title": "Healing Without Words",
+    "pain3_desc": "No therapy, no pressure. Just somatic presence and energy clearing.",
+    "talisman_title": "Your Energetic Blueprint",
+    "talisman_desc": "We map and align your unique energetic state.",
+    "share": "Share this Invitation",
+    "share_bubble": "Share",
+    "scan_qr": "Scan to view on mobile",
+    "book": "Book a Reset"
   }
 }

@@ -4,7 +4,7 @@
     "why": "Por qué nosotros",
     "approach": "El Enfoque",
     "experience": "Paquetes",
-    "test": "Pulsera Digital",
+    "test": "Talismán de Energía",
     "book": "Reserva Privada"
   },
   "hero": {
@@ -48,7 +48,7 @@
   },
   "test": {
     "title": "Entrega Digital de Energía",
-    "subtitle": "Antes de conocernos, realiza este breve diagnóstico para recibir tu pulsera de energía.",
+    "subtitle": "Antes de conocernos, realiza este breve diagnóstico para recibir tu talismán de energía.",
     "start": "Comenzar Evaluación",
     "bazi_title": "Alineación de la Carta Natal",
     "bazi_desc": "Para calcular con precisión tu constitución elemental, por favor proporciona tu fecha y hora de nacimiento.",
@@ -86,7 +86,7 @@
       "Water": "Agua"
     },
     "result_title": "Tu Energía Dominante Actual:",
-    "bracelet_title": "Tu Pulsera de Energía Digital",
+    "bracelet_title": "Tu Talismán de Energía Digital",
     "bracelet_desc": "Guarda este talismán como tu recordatorio para recalibrar.",
     "birth_chart_title": "Tu Carta Natal",
     "current_chart_title": "Honolulu Actual",
@@ -107,13 +107,44 @@
       "default": "La energía del universo se está reorganizando para ti."
     }
   },
+  "testimonials": {
+    "subtitle": "En sus palabras",
+    "title": "Lo que llevarás a casa",
+    "list": [
+      {
+        "quote": "Llegué a Hawái completamente agotada. Después de la sesión de 'El Equilibrio', sentí que realmente podía volver a respirar, no solo físicamente, sino en todos los sentidos. No sabía que necesitaba esto hasta que lo tuve.",
+        "name": "Sarah M.",
+        "location": "Nueva York"
+      },
+      {
+        "quote": "Como viajera solitaria, no estaba segura de qué esperar. Pero desde el momento en que ella llegó, me sentí completamente segura. No fue terapia, no fue un masaje, fue algo para lo que no tenía un nombre, y algo que claramente necesitaba.",
+        "name": "Yuki T.",
+        "location": "Tokio"
+      },
+      {
+        "quote": "Reservé 'El Despertar' por capricho. Resultó ser las dos horas más significativas de todo mi viaje. Me fui de Hawái sintiendo que realmente había descansado, no solo dormido.",
+        "name": "Amelia R.",
+        "location": "Londres"
+      },
+      {
+        "quote": "La evaluación de la talismán de energía se sintió sorprendentemente personal. La sesión completa que siguió lo fue aún más. Regresé de este viaje sintiéndome yo misma otra vez.",
+        "name": "Cecilia N.",
+        "location": "São Paulo"
+      }
+    ]
+  },
   "footer": {
     "title": "Comienza Tu Reseteo",
     "subtitle": "Reserva confidencial en tu hotel. Plazas limitadas.",
     "guide": "Guía para Mujeres Solas",
     "blog": "Blog de Recuperación",
     "faq": "Preguntas Frecuentes",
-    "copyright": "© 2026 Mana Reset. Honolulu, Hawái."
+    "copyright": "© 2026 Mana Reset. Honolulu, Hawái.",
+    "privacy": "Política de Privacidad",
+    "terms": "Términos de Servicio",
+    "sitemap": "Mapa del Sitio",
+    "join_us": "Únete a nosotros",
+    "join_us_desc": "Invitamos a profesionales e instituciones de bienestar certificados a asociarse con nosotros."
   },
   "booking": {
     "title": "Comienza Tu Reinicio.",
@@ -130,6 +161,12 @@
     "notes_placeholder": "Por favor comparta sus fechas preferidas en Honolulu, dónde se hospedará y qué tipo de experiencia de renovación personal está buscando. Cada sesión es personalizada de manera privada y la disponibilidad es limitada, por lo que todas las solicitudes se confirman personalmente por correo electrónico o teléfono.",
     "step2": "2. Seleccionar Experiencia",
     "choose_pkg": "Elige tu paquete",
+    "step3": "3. Seleccionar Fecha y Hora",
+    "date": "Fecha Preferida",
+    "time": "Hora Preferida",
+    "time_morning": "Mañana (9:00 AM - 12:00 PM)",
+    "time_afternoon": "Tarde (2:00 PM - 5:00 PM)",
+    "time_evening": "Noche (6:00 PM - 9:00 PM)",
     "submit": "Reserva Segura y Pago",
     "redirecting": "Redirigiendo...",
     "ssl": "🔒 Pago Cifrado y Seguro con SSL",
@@ -142,5 +179,271 @@
     "ref": "Referencia:",
     "return": "Volver a la página principal",
     "loading": "Cargando tu confirmación..."
+  },
+  "approach_page": {
+    "hero": {
+      "tagline": "El Método",
+      "title": "Sanación Sin Desorden.",
+      "desc": "Sin rituales solo por el hecho de hacerlos. Sin guiones. Sin presión para sentir algo en particular. Solo una presencia honesta y hábil, y un marco antiguo en el que confiar."
+    },
+    "phil": {
+      "tagline": "Filosofía",
+      "title": "No es un Spa. No es una Sesión. Es un Reinicio.",
+      "p1": "Las experiencias de spa tradicionales están diseñadas para la comodidad y el consumo. Reservas un tratamiento, llegas, te mueven a través de una secuencia y te vas. No hay nada malo en eso. Pero la comodidad no es lo mismo que la restauración, y el placer no es lo mismo que el reinicio.",
+      "p2": "Mana Reset se construyó a partir de una premisa diferente: que la sanación no requiere una habitación especial, una bata especial o una instalación especial. Requiere presencia, habilidad y el silencio suficiente para escuchar lo que el cuerpo está pidiendo. Una habitación de hotel, cuando se sostiene con la intención correcta, se convierte exactamente en el contenedor correcto: familiar, privado y completamente tuyo.",
+      "p3": "No agregamos ruido a tu viaje. Vamos hacia ti. No traemos nada pesado. No dejamos nada atrás excepto un cambio en cómo te sientes."
+    },
+    "shape": {
+      "tagline": "La Forma de la Sesión",
+      "title": "Qué Sucede, Paso a Paso",
+      "desc": "No hay dos sesiones idénticas. Pero cada sesión se mueve a través de los mismos cinco umbrales.",
+      "steps": [
+        {
+          "number": "01",
+          "title": "Llegada y Enraizamiento",
+          "description": "Tu practicante llega discretamente y sin ceremonia. Los primeros minutos son sin prisas: una breve conversación, un acomodo del espacio y un momento para simplemente llegar juntos."
+        },
+        {
+          "number": "02",
+          "title": "Respiración",
+          "description": "Patrones de respiración guiados y calibrados a tu estado actual. No es actuación, solo respiración. Aquí es a menudo donde el cuerpo comienza a recordar que sabe cómo soltar."
+        },
+        {
+          "number": "03",
+          "title": "Diálogo y Presencia",
+          "description": "No es terapia. No hay consejos. Simplemente ser presenciada: que te hablen o se sienten contigo, según lo que necesites. Muchas clientas dicen que esta es la parte que no sabían que les faltaba."
+        },
+        {
+          "number": "04",
+          "title": "Limpieza Energética y Acupresión",
+          "description": "Toque ligero e intencional guiado por la teoría de los Cinco Elementos. Puntos específicos, intenciones específicas. Nada forzado. Todo con tu consentimiento."
+        },
+        {
+          "number": "05",
+          "title": "Integración",
+          "description": "La sesión no termina abruptamente. Se mantiene el tiempo para la quietud, la reflexión y para que el cuerpo absorba lo que ha cambiado. Regresas a tu propio ritmo."
+        }
+      ],
+      "quote": "“La sesión termina. La transformación no.”"
+    },
+    "elements": {
+      "tagline": "El Marco de Referencia",
+      "title": "Los Cinco Elementos",
+      "desc": "Un mapa de 2000 años de antigüedad para comprender el cuerpo, las emociones y la energía entre ellos. No es místico, es práctico. Un lenguaje de diagnóstico para lo que realmente está sucediendo.",
+      "list": [
+        {
+          "name": "Madera (Wood)",
+          "theme": "Crecimiento y Dirección",
+          "description": "Asociado con el hígado y la capacidad de avanzar. Cuando la Madera se agota, nos sentimos atascados, frustrados o incapaces de planificar. Cuando fluye, nos sentimos con propósito y claridad."
+        },
+        {
+          "name": "Fuego (Fire)",
+          "theme": "Pasión y Alegría",
+          "description": "El elemento del corazón. El Fuego rige la conexión, la calidez y la capacidad de sentir deleite. Cuando el Fuego se atenúa, nos sentimos entumecidos o performativamente felices. Cuando arde bien, la alegría es natural."
+        },
+        {
+          "name": "Tierra (Earth)",
+          "theme": "Estabilidad y Nutrición",
+          "description": "La Tierra nos sostiene. Rige la digestión, de los alimentos y de las experiencias. Cuando la Tierra está desequilibrada, nos sentimos sin base o indignos de cuidado. Restaurarlo se siente como exhalar."
+        },
+        {
+          "name": "Metal (Metal)",
+          "theme": "Claridad y Precisión",
+          "description": "El Metal rige a qué nos aferramos y qué soltamos. Es el elemento del discernimiento. Cuando el Metal está claro, sabemos qué importa. Cuando está bloqueado, llevamos un dolor que no podemos nombrar."
+        },
+        {
+          "name": "Agua (Water)",
+          "theme": "Profundidad y Adaptabilidad",
+          "description": "El elemento más profundo. El Agua rige el miedo, el descanso y el depósito del que se extrae todo lo demás. Muchas viajeras solas llegan con el Agua severamente agotada; la sesión a menudo comienza aquí."
+        }
+      ],
+      "note": "Durante tu sesión, tu practicante utiliza la evaluación del Talismán de Energía y una breve conversación para identificar qué elementos están más agotados. Luego, la sesión se orienta en torno a restaurar ese equilibrio, no a forzar una secuencia predeterminada."
+    },
+    "forWhom": {
+      "tagline": "Claridad",
+      "title": "¿Para Quién es Esto?",
+      "list": [
+        "Estás viajando sola y anhelas algo que no sea un paquete de spa típico o una clase grupal de yoga.",
+        "Te sientes físicamente presente en Hawái, pero mentalmente todavía estás en tu escritorio, en tu bandeja de entrada o en algo que aún no has procesado por completo.",
+        "Estás en medio de una transición (una ruptura, un cambio de carrera, una pérdida) y quieres ser apoyada, no arreglada.",
+        "Has intentado descansar, pero ese descanso no ha llegado a la parte de ti que más lo necesita.",
+        "Quieres volver a casa sintiendo que realmente fuiste a alguna parte, no solo que cambiaste de zona horaria."
+      ],
+      "btn": "Reserva Tu Sesión"
+    }
+  },
+  "sitemap_page": {
+    "title": "Mapa del Sitio",
+    "desc": "Navega por la página web de Mana Reset.",
+    "nav": "Navegación Principal",
+    "home": "Inicio",
+    "approach": "Nuestro Enfoque",
+    "book": "Reservar (Paquetes)",
+    "faq": "Preguntas Frecuentes",
+    "resources": "Recursos y Guías",
+    "guide": "Guía para Mujeres Viajeras",
+    "blog": "Blog de Recuperación",
+    "legal": "Legal y Políticas",
+    "xml": "Mapa del Sitio XML (Para Motores de Búsqueda)",
+    "lang": "Idiomas"
+  },
+  "privacy_page": {
+    "title": "Política de Privacidad",
+    "last_updated": "Última Actualización: Mayo 2026",
+    "sections": [
+      {
+        "h2": "1. Información Que Recopilamos",
+        "p1": "Cuando reservas una sesión con Mana Reset, solo recopilamos la información esencial necesaria para brindar nuestros servicios. Esto incluye: Tu nombre, dirección de correo electrónico, número de contacto y la ubicación de tu estadía (hotel y número de habitación) en Honolulu.",
+        "p2": "Cualquier nota que proporciones sobre tu estado emocional o físico antes de la sesión se mantiene estrictamente confidencial y solo es utilizada por tu practicante para adaptar tu experiencia."
+      },
+      {
+        "h2": "2. Cómo Usamos Tu Información",
+        "p1": "Utilizamos tu información personal únicamente con el fin de comunicarnos contigo, cumplir con tu reserva y garantizar una experiencia de bienestar segura y personalizada. No utilizamos tu información con fines de marketing sin tu consentimiento explícito."
+      },
+      {
+        "h2": "3. Procesamiento de Pagos",
+        "p1": "Todos los pagos se procesan de forma segura a través de Stripe. Mana Reset no almacena ni tiene acceso a la información completa de tu tarjeta de crédito. Consulta la Política de Privacidad de Stripe para obtener más detalles sobre cómo manejan tus datos de pago."
+      },
+      {
+        "h2": "4. Intercambio y Divulgación de Datos",
+        "p1": "Respetamos profundamente tu privacidad. Nunca venderemos, alquilaremos ni intercambiaremos tu información personal a terceros. Solo divulgaremos tu información si la ley lo exige o si creemos de buena fe que dicha acción es necesaria para proteger la seguridad personal de nuestros clientes o del público."
+      },
+      {
+        "h2": "5. Contáctanos",
+        "p1": "Si tienes alguna pregunta o inquietud sobre esta Política de Privacidad o cómo manejamos tus datos, comunícate con nosotros directamente a través del correo electrónico proporcionado en la confirmación de tu reserva."
+      }
+    ]
+  },
+  "terms_page": {
+    "title": "Términos de Servicio",
+    "last_updated": "Última Actualización: Mayo 2026",
+    "sections": [
+      {
+        "h2": "1. Naturaleza del Servicio",
+        "p1": "Mana Reset ofrece sesiones privadas de bienestar y alivio del estrés en la habitación diseñadas específicamente para mujeres que viajan solas. Nuestros servicios incluyen trabajo de respiración, presencia somática, limpieza energética y apoyo conversacional.",
+        "p2": "Aviso Médico Importante: Mana Reset no es un centro médico y nuestras practicantes no son médicas, psicólogas ni terapeutas autorizadas. Nuestros servicios no brindan diagnóstico médico, tratamiento ni asesoramiento de salud mental clínico. Si estás experimentando una crisis de salud mental, busca atención médica profesional de inmediato."
+      },
+      {
+        "h2": "2. Reservas y Pagos",
+        "p1": "Todas las reservas deben confirmarse mediante un pago seguro en línea o pago facturado antes de la sesión. Al proporcionar tu información de pago, autorizas a nuestro procesador de pagos de terceros (Stripe) a cobrar la cantidad indicada. Las tarifas de viaje para ubicaciones fuera de Waikiki se calcularán automáticamente o se facturarán por separado."
+      },
+      {
+        "h2": "3. Política de Cancelación y Reembolso",
+        "p1": "Respetamos tu tiempo y el nuestro. Las cancelaciones realizadas con más de 48 horas de anticipación a tu cita programada recibirán un reembolso completo. Las cancelaciones realizadas dentro de las 48 horas de la cita incurrirán en un cargo del 50% de la tarifa total del servicio. Las ausencias (No-shows) se cobrarán en su totalidad sin reembolso."
+      },
+      {
+        "h2": "4. Código de Conducta y Seguridad",
+        "p1": "Mana Reset atiende estrictamente a clientas mujeres para mantener un entorno seguro y especializado. Nos reservamos el derecho de rechazar el servicio o cancelar una sesión de inmediato si la practicante se siente insegura, si hay una violación de los límites o si la clienta está bajo la influencia de sustancias ilícitas. En tales casos de terminación por mala conducta, no se emitirán reembolsos."
+      },
+      {
+        "h2": "5. Limitación de Responsabilidad",
+        "p1": "Al participar en una sesión de Mana Reset, aceptas asumir toda la responsabilidad por tu propio bienestar. Mana Reset y sus practicantes no serán responsables de ningún daño directo, indirecto, incidental o consecuente, lesiones o molestias emocionales que surjan del uso de nuestros servicios."
+      }
+    ]
+  },
+  "faq_page": {
+    "tagline": "Preguntas y Respuestas",
+    "title": "Lo que Te Puedes Estar Preguntando",
+    "desc": "Hemos tratado de responder a todo honestamente. Si algo aún no está claro, el formulario de reserva siempre está abierto para consultas.",
+    "still_question": "¿Aún tienes alguna pregunta?",
+    "btn": "Contáctanos a través del Formulario",
+    "faqs": [
+      {
+        "question": "¿Qué significa \"Mana\"?",
+        "answer": "En la cultura hawaiana y polinesia, Mana es un concepto sagrado que representa la energía espiritual, el poder curativo o la fuerza vital que impregna el universo. No es un rasgo fijo; tu Mana puede agotarse por el estrés crónico y la ansiedad, pero también puede restaurarse a través de la presencia y la conexión con la tierra. Mana Reset lleva el nombre de este profundo concepto de curación. Nuestro objetivo es ayudarte a despejar el ruido, dejar de funcionar sin energía y \"reiniciar\" tu pozo de energía interior, permitiéndote regresar a un estado de claridad, fuerza tranquila y conexión profunda contigo misma."
+      },
+      {
+        "question": "¿Es seguro?",
+        "answer": "Sí. Tu seguridad es la base de todo lo que hacemos. Mana Reset está diseñado exclusivamente para mujeres que viajan solas. Tu practicante es una profesional certificada. Las sesiones se llevan a cabo en tu habitación de hotel, que permanece completamente bajo tu control. Muchas clientas comparten que sentirse genuinamente seguras fue la parte más inesperada y significativa de la experiencia."
+      },
+      {
+        "question": "¿Qué sucede exactamente durante una sesión?",
+        "answer": "Cada sesión comienza con una breve conversación para comprender dónde te encuentras: física, emocional y energéticamente. A partir de ahí, la sesión avanza a través del trabajo de respiración, la presencia somática, la acupresión ligera y la limpieza energética. No hay un guion fijo. La sesión está en sintonía contigo. No se hace nada sin tu consentimiento."
+      },
+      {
+        "question": "¿Necesito proporcionar algo?",
+        "answer": "No. Tu practicante llega con todo lo necesario. Todo lo que necesitas es un espacio cómodo en tu habitación (un área despejada en el piso o tu cama) y a ti misma. Se recomienda ropa holgada y cómoda. No necesitas prepararte ni llegar en ningún estado en particular."
+      },
+      {
+        "question": "¿Viola esto las políticas del hotel?",
+        "answer": "No. Mana Reset opera como una visita de bienestar personal, la misma categoría que tener un amigo visitando tu habitación. No utilizamos las instalaciones del spa del hotel, ni llevamos equipos comerciales. Nuestras practicantes llegan discretamente. Hemos atendido a clientas en los principales hoteles de Honolulu y Waikiki sin incidentes."
+      },
+      {
+        "question": "¿Cuáles son las duraciones y los precios?",
+        "answer": "Ofrecemos cuatro experiencias: The Unwind (60 minutos, $320) — un reinicio enfocado en la tensión. The Balance (90 minutos, $460) — nuestra sesión más popular. The Awakening (120 minutos, $600) — una inmersión profunda sin prisas. VIP Custom Retreat (desde $1,500) — una experiencia a medida de medio día o día completo."
+      },
+      {
+        "question": "¿Cómo reservo?",
+        "answer": "Visita nuestra página de reservas y selecciona tu sesión, fecha y hora preferidas. Recibirás una confirmación en unas horas. Para el Retiro VIP o solicitudes especiales, usa el formulario y tu practicante responderá en 24 horas. Recomendamos reservar con 48 horas de anticipación."
+      },
+      {
+        "question": "¿Cuál es su política de cancelación?",
+        "answer": "Las cancelaciones con más de 48 horas de anticipación reciben un reembolso completo. Las cancelaciones dentro de las 48 horas incurren en un cargo del 50%. Las ausencias (No-shows) se cobran en su totalidad. Si necesitas reprogramar, contáctanos lo antes posible."
+      },
+      {
+        "question": "¿Qué debo usar?",
+        "answer": "Ropa holgada y cómoda funciona mejor: pantalones de lino, una camiseta suave o una bata de hotel. No se te pedirá que te quites la ropa. La sesión se adapta a ti, no al revés."
+      },
+      {
+        "question": "¿Qué es el enfoque de los Cinco Elementos?",
+        "answer": "El marco de los Cinco Elementos proviene de la medicina tradicional oriental y mapea el cuerpo, las emociones y la energía a través de cinco arquetipos: Madera, Fuego, Tierra, Metal y Agua. Tu sesión se orienta en torno a los elementos que están más agotados, no es una secuencia fija."
+      },
+      {
+        "question": "¿Cómo calculan mi \"Energía Dominante\" en el Talismán Digital?",
+        "answer": "El Talismán Energético no se trata de adivinar el futuro; es un reflejo profundo de tu estado actual. Lo calculamos utilizando tres dimensiones: tus elementos innatos de nacimiento (tu base), los elementos actuales del espacio-tiempo de Hawái (tu entorno) y tus elecciones subconscientes (tu mente presente). Aunque no puedes cambiar tus datos de nacimiento, nuestro algoritmo otorga el mayor peso a tus elecciones presentes. Esto encarna una filosofía central de Mana Reset: sin importar tu destino innato, tu estado mental actual es la clave que dicta tu energía. Tu destino está en tus propias manos, no decidido por el cielo."
+      },
+      {
+        "question": "¿Necesito creer en el trabajo energético?",
+        "answer": "No. El escepticismo es bienvenido. El trabajo de respiración y los elementos somáticos producen resultados medibles y sentidos independientemente de tus creencias. Muchas clientas se van con algo que no pueden explicar completamente, pero que sienten claramente."
+      },
+      {
+        "question": "¿Es esto terapia o asesoramiento?",
+        "answer": "No. Mana Reset es un servicio de bienestar, no uno clínico. Tu practicante no proporciona diagnóstico, tratamiento ni apoyo de salud mental. Si estás pasando por una crisis de salud mental, busca a un profesional con licencia. Lo que ofrecemos es presencia, no recetas médicas."
+      },
+      {
+        "question": "¿Quién es el practicante?",
+        "answer": "Tu practicante es un profesional de bienestar certificado. Mantenemos intencionalmente un nivel de anonimato antes de tu sesión; esto es una parte deliberada de la filosofía de Mana Reset. Al hacerlo, el enfoque se aleja de las personalidades y se centra completamente en la energía pura, la aceptación profunda y la creación de un espacio seguro y libre de juicios para tu sanación. Nuestros practicantes cuentan con certificaciones avanzadas en presencia somática, teoría de los Cinco Elementos, regulación emocional y limpieza energética."
+      },
+      {
+        "question": "¿En qué hoteles y áreas sirven?",
+        "answer": "Atendemos a mujeres que viajan solas y se hospedan en hoteles en Honolulu, Waikiki, Ala Moana, Kahala y el corredor de Diamond Head. Si te hospedas fuera de estas áreas, comunícate con nosotros."
+      },
+      {
+        "question": "¿Qué resultados puedo esperar?",
+        "answer": "La mayoría de las clientas describen sentirse notablemente más ligeras, más tranquilas y más presentes. Las experiencias comunes incluyen una liberación profunda de la tensión física, claridad emocional y la sensación de haber descansado genuinamente. Muy pocas clientas se van sin haber cambiado."
+      },
+      {
+        "question": "¿Puedo reservar una sesión para una amiga?",
+        "answer": "Sí. Una sesión de Mana Reset es un regalo profundamente personal y significativo, particularmente para una amiga que viaja sola. Puedes comprar una sesión como regalo a través de nuestra página de reservas."
+      }
+    ]
+  },
+  "join_page": {
+    "title": "Asóciate con Mana Reset",
+    "subtitle": "Buscamos profesionales de bienestar certificados, terapeutas somáticos y trabajadores de la energía que se alineen con nuestra filosofía de curación profunda, privada y tranquila.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "languages": "Idiomas que hablas",
+    "linkedin": "Enlace de LinkedIn o portafolio",
+    "experience": "Describe brevemente tus certificaciones y experiencia laboral",
+    "submit": "Enviar solicitud",
+    "success": "Solicitud enviada con éxito. Nos pondremos en contacto.",
+    "error": "No se pudo enviar. Inténtalo de nuevo."
+  },
+  "invite_page": {
+    "title": "Una Invitación para Reiniciar",
+    "subtitle": "Un regalo de profunda quietud y recuperación energética.",
+    "pain1_title": "¿Agotada y Abrumada?",
+    "pain1_desc": "Despeja el ruido mental y las pesadas exigencias de la vida diaria.",
+    "pain2_title": "¿Anhelas Soledad Segura?",
+    "pain2_desc": "Una experiencia profundamente privada en la habitación diseñada para viajeras solitarias.",
+    "pain3_title": "Sanación Sin Palabras",
+    "pain3_desc": "Sin terapia, sin presión. Solo presencia somática y limpieza energética.",
+    "talisman_title": "Tu Planto Energético",
+    "talisman_desc": "Mapeamos y alineamos tu estado energético único.",
+    "share": "Compartir esta Invitación",
+    "share_bubble": "Compartir",
+    "scan_qr": "Escanear para compartir",
+    "book": "Reservar ahora"
   }
 }
