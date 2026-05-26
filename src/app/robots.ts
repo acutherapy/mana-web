@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://manareset.com/sitemap.xml',
+    sitemap: 'https://www.manareset.com/sitemap.xml',
   }
 }

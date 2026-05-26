@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://manareset.com'
+  const baseUrl = 'https://www.manareset.com'
   const locales = ['en', 'zh', 'ja', 'ko', 'es']
   const routes = [
     '', 
