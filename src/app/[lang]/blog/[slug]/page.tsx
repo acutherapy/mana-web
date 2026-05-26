@@ -1,7 +1,8 @@
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ lang: string, slug: string }> }) {
+  const { lang, slug } = await params;
   const article = articles[slug];
   if (!article) return {};
   
@@ -81,8 +82,8 @@ const articles: Record<string, { title: string, meta: string, h1: string, conten
   }
 };
 
-export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function BlogPostPage({ params }: { params: Promise<{ lang: string, slug: string }> }) {
+  const { lang, slug } = await params;
   const article = articles[slug];
   
   if (!article) {
@@ -98,9 +99,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
         <div className="mt-16 p-8 bg-sand/30 rounded-xl border border-sand text-center">
           <h3 className="text-2xl font-serif text-ocean mb-4">Ready to stop surviving and start breathing again?</h3>
-          <a href="/en/booking" className="inline-block bg-ocean text-white px-8 py-3 rounded font-medium hover:bg-ocean-light transition">
+          <Link href={`/${lang}/booking`} className="inline-block bg-ocean text-white px-8 py-3 rounded font-medium hover:bg-ocean-light transition">
             Explore Our Private In-Room Reset Packages
-          </a>
+          </Link>
         </div>
       </article>
     </main>

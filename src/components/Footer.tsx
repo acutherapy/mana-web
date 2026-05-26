@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { getDictionary } from '@/i18n/getDictionary';
 
 // 🔥 全局开关
-const ENABLE_LINKS = false;
+const ENABLE_LINKS = true;
 
 export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' }) {
   const dict = await getDictionary(lang);
