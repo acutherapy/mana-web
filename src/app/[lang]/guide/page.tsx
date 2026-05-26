@@ -30,9 +30,14 @@ const credentials = [
   },
 ];
 
-export default function GuidePage() {
+import { getDictionary } from '@/i18n/getDictionary';
+
+export default async function GuidePage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
   return (
     <main className="min-h-screen font-sans">
+      <noscript dangerouslySetInnerHTML={{ __html: dict.seo_prose_guide }} />
       {/* Hero */}
       <section className="pt-40 pb-24 px-6 bg-ocean text-center">
         <div className="max-w-3xl mx-auto space-y-6">

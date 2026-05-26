@@ -3,9 +3,14 @@ export const metadata = {
   description: 'Transform your solo trip into a profound self-care vacation in Hawaii. Explore our in-room stress relief retreat packages, focusing on deep emotional balance.',
 };
 
-export default function ExperiencePage() {
+import { getDictionary } from '@/i18n/getDictionary';
+
+export default async function ExperiencePage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
   return (
     <main className="min-h-screen">
+      <noscript dangerouslySetInnerHTML={{ __html: dict.seo_prose_experience }} />
       <section className="py-24 px-6 bg-sand text-center">
         <h1 className="text-4xl md:text-5xl font-serif text-ocean mb-6">The Mana Reset Experiences</h1>
         <p className="text-lg text-ocean/80 max-w-2xl mx-auto">Tailored emotional and physical recalibration, delivered directly to your Honolulu hotel suite.</p>
