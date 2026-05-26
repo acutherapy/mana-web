@@ -62,10 +62,12 @@ export default function Navbar({ lang, dict }: { lang: string, dict: any }) {
           <Link href={`/${lang}#experience`} onClick={() => setMobileMenuOpen(false)}>{dict.nav?.experience}</Link>
           <Link href={`/${lang}#test`} onClick={() => setMobileMenuOpen(false)}>{dict.nav?.test}</Link>
           
-          <div className="flex justify-center gap-4 mt-2">
+          <div className="flex justify-center gap-3 mt-2 text-sm">
             <Link href="/en" onClick={() => setMobileMenuOpen(false)} className={lang === 'en' ? 'font-bold' : 'text-gray-400'}>EN</Link>
             <Link href="/zh" onClick={() => setMobileMenuOpen(false)} className={lang === 'zh' ? 'font-bold' : 'text-gray-400'}>中</Link>
             <Link href="/ja" onClick={() => setMobileMenuOpen(false)} className={lang === 'ja' ? 'font-bold' : 'text-gray-400'}>JP</Link>
+            <Link href="/ko" onClick={() => setMobileMenuOpen(false)} className={lang === 'ko' ? 'font-bold' : 'text-gray-400'}>KR</Link>
+            <Link href="/es" onClick={() => setMobileMenuOpen(false)} className={lang === 'es' ? 'font-bold' : 'text-gray-400'}>ES</Link>
           </div>
 
           <Link href={`/${lang}/booking`} onClick={() => setMobileMenuOpen(false)} className="mt-4 px-5 py-3 bg-ocean text-white rounded">

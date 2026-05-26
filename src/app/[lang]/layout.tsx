@@ -8,64 +8,58 @@ import { getDictionary } from '@/i18n/getDictionary';
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://manareset.com'),
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ lang: string }>;
+}): Promise<Metadata> {
+  const { lang } = (await params) as { lang: 'en' | 'zh' | 'ja' | 'ko' | 'es' };
+  const dict = await getDictionary(lang);
 
-  verification: {
-    google: "7HFkgefWfRS5YihDCP9gHXhjrDN3E83qH-KxXOy6hps",
-  },
+  return {
+    metadataBase: new URL('https://www.manareset.com'),
 
-  title: "Mana Reset | Private Reset Experience in Hawaii",
-  description: "A private reset experience for women traveling alone in Hawaii. Feel grounded, relaxed, and not completely alone — without therapy, without pressure.",
-  keywords: [
-    "hawaii reset trip", "self care vacation hawaii", "women's wellness retreat hawaii", "stress relief retreat hawaii",
-    "solo female hawaii safe", "things to do alone in hawaii", "hawaii burnout recovery getaway", "mind body retreat hawaii",
-    "private wellness experience hawaii", "personal reset session hawaii", "hawaii relaxation experience", "mental reset vacation hawaii",
-    "self care experience honolulu", "quiet retreat hawaii", "inner balance retreat hawaii", "hawaii wellness experience for women",
-    "mindful travel hawaii", "healing vacation hawaii", "wellness escape hawaii", "emotional reset experience hawaii",
-    "guided relaxation session hawaii", "personal wellness guide hawaii", "feeling overwhelmed on vacation", "how to relax on vacation",
-    "solo travel anxiety tips", "how to reset your mind", "burnout recovery travel ideas", "need a break from everything",
-    "feeling lost while traveling", "how to slow down life", "personal reset experience", "private reset session",
-    "mind body reset experience", "solo reset journey", "guided reset experience", "women's solo self-discovery",
-    "finding inner joy on vacation", "empowering solo female travel", "wellness escape for women", "mindful solo retreat",
-    "rebalancing solo journey", "female inner harmony", "finding purpose in solitude", "solo spiritual balance",
-    "female travelers' peace of mind", "women's self-care vacation", "self-love solo escape", "healing getaway for women",
-    "inner renewal travel", "female energy rebalance", "self-exploration retreat", "women's holistic journey",
-    "solo empowerment getaway", "mind-body restoration for women", "female wellness transformation", "solo emotional reset",
-    "female rejuvenation retreat"
-  ],
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en': '/en',
-      'zh': '/zh',
-      'ja': '/ja',
-      'ko': '/ko',
-      'es': '/es',
+    verification: {
+      google: "7HFkgefWfRS5YihDCP9gHXhjrDN3E83qH-KxXOy6hps",
     },
-  },
-  openGraph: {
-    title: 'Mana Reset | Private Reset Experience in Hawaii',
-    description: 'A private reset experience for women traveling alone in Hawaii. Feel grounded, relaxed, and not completely alone — without therapy, without pressure.',
-    url: 'https://manareset.com',
-    siteName: 'Mana Reset',
-    images: [
-      {
-        url: '/images/hero.png',
-        width: 1200,
-        height: 630,
-        alt: 'Mana Reset — Private Wellness in Hawaii',
+
+    title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
+    description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
+    keywords: ["hawaii reset trip", "self care vacation", "women's wellness retreat", "private wellness experience hawaii"],
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        'en': 'https://www.manareset.com/en',
+        'zh-CN': 'https://www.manareset.com/zh',
+        'ja': 'https://www.manareset.com/ja',
+        'ko': 'https://www.manareset.com/ko',
+        'es': 'https://www.manareset.com/es',
+        'x-default': 'https://www.manareset.com/en',
       },
-    ],
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Mana Reset | Private Reset Experience in Hawaii',
-    description: 'A private reset experience for women traveling alone in Hawaii. Feel grounded, relaxed, and not completely alone.',
-    images: ['/images/hero.png'],
-  },
-};
+    },
+    openGraph: {
+      title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
+      description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
+      url: `https://www.manareset.com/${lang}`,
+      siteName: 'Mana Reset',
+      images: [
+        {
+          url: '/images/hero.png',
+          width: 1200,
+          height: 630,
+          alt: 'Mana Reset — Private Wellness in Hawaii',
+        },
+      ],
+      type: 'website',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
+      description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
+      images: ['/images/hero.png'],
+    },
+  };
+}
 
 const localBusinessJsonLd = {
   '@context': 'https://schema.org',
