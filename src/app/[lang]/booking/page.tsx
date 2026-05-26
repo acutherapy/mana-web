@@ -37,7 +37,7 @@ export default async function BookingPage({ params }: { params: Promise<{ lang: 
         </div>
 
         <Suspense fallback={<div className="text-center p-8 text-ocean">Loading secure form...</div>}>
-          <BookingForm dict={dict} />
+          <BookingForm dict={dict} lang={lang} />
         </Suspense>
       </div>
     </main>

@@ -19,18 +19,27 @@ const PRICES = {
 
 export async function POST(req: Request) {
   try {
-    const { package: pkgName, email, name, location, notes } = await req.json();
+    const { package: pkgName, email, name, location, customLocation, roomNumber, notes, date, timeSlot, lang } = await req.json();
+
+    const [hotelSelection, feeStr] = (location || '').split('|');
+    const travelFee = parseInt(feeStr || '0', 10);
+    
+    let finalLocationStr = hotelSelection || '';
+    if (hotelSelection?.startsWith('Other_')) {
+      finalLocationStr = `${customLocation || 'Other'} (${hotelSelection.split('_')[1]})`;
+    }
+    if (roomNumber) {
+      finalLocationStr += `, Room: ${roomNumber}`;
+    }
 
     const selectedPkg = PRICES[pkgName as keyof typeof PRICES];
     if (!selectedPkg) {
       return NextResponse.json({ error: 'Invalid package' }, { status: 400 });
     }
 
-    // Here you would typically insert a "pending" booking record into your Supabase/Postgres DB
-    // e.g., const booking = await db.insert(bookingData)
-
-    // Create a Stripe Checkout Session
+    // Create a Stripe Checkout Session preserving active language
     const origin = req.headers.get('origin') || process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+    const activeLang = lang || 'en';
     
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -41,22 +50,32 @@ export async function POST(req: Request) {
             product_data: {
               name: selectedPkg.name,
               description: `Mana Reset in-room private booking for ${name || 'client'}`,
-              images: ['https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'], // A nice massage/healing image
+              images: ['https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'],
             },
             unit_amount: selectedPkg.amount,
           },
           quantity: 1,
         },
+        ...(travelFee > 0 ? [{
+          price_data: {
+            currency: 'usd',
+            product_data: { name: 'Travel / Location Fee' },
+            unit_amount: travelFee * 100,
+          },
+          quantity: 1,
+        }] : [])
       ],
       mode: 'payment',
-      success_url: `${origin}/en/booking/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/en/booking`,
+      success_url: `${origin}/${activeLang}/booking/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/${activeLang}/booking`,
       customer_email: email || undefined,
       metadata: {
         name,
-        location,
-        notes,
-        package: pkgName
+        location: finalLocationStr.substring(0, 200),
+        notes: notes ? notes.substring(0, 200) : '',
+        package: pkgName,
+        date: date || '',
+        timeSlot: timeSlot || ''
       }
     });
 
