@@ -34,10 +34,10 @@ export async function generateMetadata({
       siteName: 'Mana Reset',
       images: [
         {
-          url: '/images/hero.png',
+          url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`,
           width: 1200,
           height: 630,
-          alt: 'Mana Reset — Private Wellness in Hawaii',
+          alt: `Mana Reset | ${dict.hero?.title || "Private Reset Experience in Hawaii"}`,
         },
       ],
       type: 'website',
@@ -46,7 +46,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
       description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
-      images: ['/images/hero.png'],
+      images: [`/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`],
     },
   };
 }
