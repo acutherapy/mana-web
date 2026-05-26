@@ -49,14 +49,12 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: 'e
       <section className="pt-40 pb-24 px-6 bg-ocean text-center">
         <div className="max-w-3xl mx-auto space-y-6">
           <span className="text-sm font-medium tracking-[0.2em] text-sand/70 uppercase">
-            The Practitioner
+            {dict.guide_page.hero_label}
           </span>
-          <h1 className="text-5xl lg:text-6xl font-serif text-sand leading-tight">
-            Present With You.<br />Not In Front of You.
-          </h1>
+          <h1 className="text-5xl lg:text-6xl font-serif text-sand leading-tight" dangerouslySetInnerHTML={{ __html: dict.guide_page.hero_title }}></h1>
           <p className="text-sand/30 text-2xl">✦</p>
           <p className="text-lg lg:text-xl text-white/75 leading-relaxed max-w-2xl mx-auto italic font-serif">
-            &ldquo;Present with you, not in front of you.&rdquo;
+            {dict.guide_page.hero_quote}
           </p>
         </div>
       </section>
@@ -66,28 +64,14 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: 'e
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="text-center space-y-3 mb-12">
             <span className="text-sm font-medium tracking-[0.2em] text-ocean/50 uppercase">
-              The Person
+              {dict.guide_page.bio_label}
             </span>
-            <h2 className="text-4xl font-serif text-ocean">Who She Is</h2>
+            <h2 className="text-4xl font-serif text-ocean">{dict.guide_page.bio_title}</h2>
           </div>
           <div className="space-y-6 text-gray-700 text-lg leading-relaxed">
-            <p>
-              She has spent years in the room with people who are exhausted in ways sleep does not
-              touch. Women in transition. Women who have held it together so long they have forgotten
-              what it feels like not to. Women who came to Hawaii for rest and found themselves lying
-              awake at midnight wondering why they still feel like themselves from before — not from
-              here, not from now.
-            </p>
-            <p>
-              Her training spans somatic experiencing, Five Elements theory, emotional regulation, and
-              energy clearing. But her real qualification is presence — the capacity to arrive without
-              agenda, to sit with what is actually happening, and to work with the body rather than
-              around it.
-            </p>
-            <p>
-              She is not a therapist. She is not a coach. She is a practitioner — which means her job
-              is to be with you in the room, not to interpret you from a distance.
-            </p>
+            <p>{dict.guide_page.bio_p1}</p>
+            <p>{dict.guide_page.bio_p2}</p>
+            <p>{dict.guide_page.bio_p3}</p>
           </div>
         </div>
       </section>
@@ -97,18 +81,18 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: 'e
         <div className="max-w-5xl mx-auto">
           <div className="text-center space-y-3 mb-16">
             <span className="text-sm font-medium tracking-[0.2em] text-ocean/50 uppercase">
-              Training
+              {dict.guide_page.train_label}
             </span>
-            <h2 className="text-4xl font-serif text-ocean">Certifications & Approach</h2>
+            <h2 className="text-4xl font-serif text-ocean">{dict.guide_page.train_title}</h2>
             <p className="text-ocean/70 text-lg max-w-xl mx-auto">
-              The skills she brings to every session — and what each one actually means in practice.
+              {dict.guide_page.train_desc}
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2">
-            {credentials.map((c) => (
+            {dict.guide_page.creds.map((c: any) => (
               <div key={c.title} className="bg-white rounded-2xl p-8 shadow-sm border border-sand/60">
                 <h3 className="text-xl font-serif text-ocean mb-3">{c.title}</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">{c.description}</p>
+                <p className="text-gray-600 leading-relaxed text-sm">{c.desc}</p>
               </div>
             ))}
           </div>
@@ -120,34 +104,22 @@ export default async function GuidePage({ params }: { params: Promise<{ lang: 'e
         <div className="max-w-3xl mx-auto space-y-8">
           <div className="text-center space-y-3 mb-12">
             <span className="text-sm font-medium tracking-[0.2em] text-sand/70 uppercase">
-              A Note
+              {dict.guide_page.anon_label}
             </span>
-            <h2 className="text-4xl font-serif text-sand">On Anonymity</h2>
+            <h2 className="text-4xl font-serif text-sand">{dict.guide_page.anon_title}</h2>
           </div>
           <div className="space-y-6 text-white/80 text-lg leading-relaxed">
-            <p>
-              She does not share her name publicly. This is intentional — and it matters.
-            </p>
-            <p>
-              When a practitioner leads with credentials and a personal brand, the session becomes
-              about her. When she arrives without a name, without a face that&apos;s been studied
-              online beforehand, the session stays where it belongs: with you.
-            </p>
-            <p>
-              Many clients have said this was the thing they did not expect to appreciate. The absence
-              of biography created space. The session was not about meeting someone. It was about
-              arriving somewhere.
-            </p>
-            <p>
-              Her anonymity is a form of presence. It keeps the attention where it should be.
-            </p>
+            <p>{dict.guide_page.anon_p1}</p>
+            <p>{dict.guide_page.anon_p2}</p>
+            <p>{dict.guide_page.anon_p3}</p>
+            <p>{dict.guide_page.anon_p4}</p>
           </div>
           <div className="mt-12 text-center">
             <Link
-              href="/en/booking"
+              href={`/${lang}/booking`}
               className="inline-block bg-sand text-ocean px-10 py-4 rounded font-medium hover:bg-white transition shadow-sm"
             >
-              Book Your Session
+              {dict.guide_page.btn}
             </Link>
           </div>
         </div>

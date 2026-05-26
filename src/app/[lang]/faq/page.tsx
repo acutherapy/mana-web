@@ -84,16 +84,20 @@ const faqs = [
   },
 ];
 
-export default function FAQPage() {
+import { getDictionary } from '@/i18n/getDictionary';
+
+export default async function FAQPage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: faqs.map((faq) => ({
+    mainEntity: dict.faq_page.items.map((faq) => ({
       '@type': 'Question',
-      name: faq.question,
+      name: faq.q,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: faq.answer,
+        text: faq.a,
       },
     })),
   };
@@ -108,29 +112,28 @@ export default function FAQPage() {
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-16 space-y-4">
             <span className="text-sm font-medium tracking-[0.2em] text-ocean/60 uppercase">
-              Questions &amp; Answers
+              {dict.faq_page.label}
             </span>
-            <h1 className="text-5xl font-serif text-ocean">What You May Be Wondering</h1>
+            <h1 className="text-5xl font-serif text-ocean">{dict.faq_page.title}</h1>
             <p className="text-lg text-ocean/70 leading-relaxed max-w-xl mx-auto">
-              We have tried to answer everything honestly. If something is still unclear, the
-              booking form is always open.
+              {dict.faq_page.desc}
             </p>
           </div>
           <div className="space-y-6">
-            {faqs.map((faq, index) => (
+            {dict.faq_page.items.map((faq: any, index: number) => (
               <div key={index} className="bg-white rounded-2xl p-8 shadow-sm border border-sand">
-                <h2 className="font-serif text-ocean text-xl mb-4 leading-snug">{faq.question}</h2>
-                <p className="text-gray-600 leading-relaxed text-base">{faq.answer}</p>
+                <h2 className="font-serif text-ocean text-xl mb-4 leading-snug">{faq.q}</h2>
+                <p className="text-gray-600 leading-relaxed text-base">{faq.a}</p>
               </div>
             ))}
           </div>
           <div className="mt-16 text-center space-y-4">
-            <p className="text-ocean/70 text-base">Still have a question?</p>
+            <p className="text-ocean/70 text-base">{dict.faq_page.still_have_question}</p>
             <a
-              href="/en/booking"
+              href={`/${lang}/booking`}
               className="inline-block bg-ocean text-white px-8 py-4 rounded font-medium hover:bg-ocean/90 transition shadow-sm"
             >
-              Reach Out Through the Booking Form
+              {dict.faq_page.btn}
             </a>
           </div>
         </div>
