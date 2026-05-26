@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import JsonLd from "@/components/JsonLd";
 import { getDictionary } from '@/i18n/getDictionary';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -26,17 +27,6 @@ export async function generateMetadata({
     title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
     description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
     keywords: ["hawaii reset trip", "self care vacation", "women's wellness retreat", "private wellness experience hawaii"],
-    alternates: {
-      canonical: `/${lang}`,
-      languages: {
-        'en': 'https://www.manareset.com/en',
-        'zh-CN': 'https://www.manareset.com/zh',
-        'ja': 'https://www.manareset.com/ja',
-        'ko': 'https://www.manareset.com/ko',
-        'es': 'https://www.manareset.com/es',
-        'x-default': 'https://www.manareset.com/en',
-      },
-    },
     openGraph: {
       title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
       description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
@@ -124,10 +114,7 @@ export default async function RootLayout({
   return (
     <html lang={lang}>
       <body className={`${inter.variable} ${playfair.variable} antialiased bg-[#FDFDFD] text-[#333333] pt-24`}>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
-        />
+        <JsonLd lang={lang} dict={dict} />
         <Navbar lang={lang} dict={dict} />
         {children}
         <Footer lang={lang} />

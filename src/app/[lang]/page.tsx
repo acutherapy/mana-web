@@ -36,6 +36,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
   const dict = await getDictionary(lang);
   return {
     keywords: dict.seo_keywords_home
+  ,
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        'en': `https://www.manareset.com/en`,
+        'zh-CN': `https://www.manareset.com/zh`,
+        'ja': `https://www.manareset.com/ja`,
+        'ko': `https://www.manareset.com/ko`,
+        'es': `https://www.manareset.com/es`,
+        'x-default': `https://www.manareset.com/en`,
+      },
+    }
   };
 }
 

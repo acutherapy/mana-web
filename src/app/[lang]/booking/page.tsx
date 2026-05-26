@@ -8,6 +8,18 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
   const dict = await getDictionary(lang);
   return {
     keywords: dict.seo_keywords_booking
+  ,
+    alternates: {
+      canonical: `/${lang}/booking`,
+      languages: {
+        'en': `https://www.manareset.com/en/booking`,
+        'zh-CN': `https://www.manareset.com/zh/booking`,
+        'ja': `https://www.manareset.com/ja/booking`,
+        'ko': `https://www.manareset.com/ko/booking`,
+        'es': `https://www.manareset.com/es/booking`,
+        'x-default': `https://www.manareset.com/en/booking`,
+      },
+    }
   };
 }
 
