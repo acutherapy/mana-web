@@ -61,56 +61,6 @@ export async function generateMetadata({
   };
 }
 
-const localBusinessJsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  name: 'Mana Reset',
-  description: 'Private in-room wellness reset experiences for solo female travelers in Hawaii, using somatic experiencing, breathwork, and Five Elements theory.',
-  url: 'https://manareset.com',
-  image: 'https://manareset.com/images/hero.png',
-  areaServed: [
-    { '@type': 'City', name: 'Honolulu' },
-    { '@type': 'City', name: 'Waikiki' },
-    { '@type': 'City', name: 'Ala Moana' },
-    { '@type': 'City', name: 'Kahala' },
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Honolulu',
-    addressRegion: 'HI',
-    addressCountry: 'US',
-  },
-  priceRange: '$$$',
-  openingHours: 'Mo-Su 08:00-20:00',
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Mana Reset Sessions',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        name: 'The Unwind',
-        description: '60-minute focused reset for tension and immediate relief',
-        price: '320',
-        priceCurrency: 'USD',
-      },
-      {
-        '@type': 'Offer',
-        name: 'The Balance',
-        description: '90-minute session combining breathwork, somatic presence, and energy clearing',
-        price: '460',
-        priceCurrency: 'USD',
-      },
-      {
-        '@type': 'Offer',
-        name: 'The Awakening',
-        description: '120-minute deep immersion for those who want to arrive fully',
-        price: '600',
-        priceCurrency: 'USD',
-      },
-    ],
-  },
-};
-
 export default async function RootLayout({
   children,
   params,
@@ -120,6 +70,56 @@ export default async function RootLayout({
 }>) {
   const { lang } = (await params) as { lang: 'en'|'zh'|'ja'|'ko'|'es' };
   const dict = await getDictionary(lang);
+
+  const localBusinessJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Mana Reset',
+    description: dict.hero?.description || 'Private in-room wellness reset experiences for solo female travelers in Hawaii.',
+    url: `https://www.manareset.com/${lang}`,
+    image: 'https://www.manareset.com/images/hero.png',
+    areaServed: [
+      { '@type': 'City', name: 'Honolulu' },
+      { '@type': 'City', name: 'Waikiki' },
+      { '@type': 'City', name: 'Ala Moana' },
+      { '@type': 'City', name: 'Kahala' },
+    ],
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Honolulu',
+      addressRegion: 'HI',
+      addressCountry: 'US',
+    },
+    priceRange: '$$$',
+    openingHours: 'Mo-Su 08:00-20:00',
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: dict.packages?.title || 'Mana Reset Sessions',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          name: dict.packages?.unwind_title || 'The Unwind',
+          description: dict.packages?.unwind_desc || '60-minute focused reset',
+          price: '320',
+          priceCurrency: 'USD',
+        },
+        {
+          '@type': 'Offer',
+          name: dict.packages?.balance_title || 'The Balance',
+          description: dict.packages?.balance_desc || '90-minute session',
+          price: '460',
+          priceCurrency: 'USD',
+        },
+        {
+          '@type': 'Offer',
+          name: dict.packages?.awakening_title || 'The Awakening',
+          description: dict.packages?.awakening_desc || '120-minute deep immersion',
+          price: '600',
+          priceCurrency: 'USD',
+        },
+      ],
+    },
+  };
 
   return (
     <html lang={lang}>
@@ -134,4 +134,4 @@ export default async function RootLayout({
       </body>
     </html>
   );
-}
+}\n
