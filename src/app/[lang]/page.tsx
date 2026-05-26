@@ -133,15 +133,15 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
 
       {/* Testimonials Section */}
       <section className="py-24 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <div className="text-center space-y-3">
             <span className="text-sm font-medium tracking-[0.2em] text-ocean/50 uppercase">
-              In Their Words
+              {dict.home_testimonials.label}
             </span>
-            <h2 className="text-4xl md:text-5xl font-serif text-ocean">What Women Carry Home</h2>
+            <h2 className="text-4xl md:text-5xl font-serif text-ocean">{dict.home_testimonials.title}</h2>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
-            {testimonials.map((t, index) => (
+            {dict.home_testimonials.items.map((t: any, index: number) => (
               <div key={index} className="bg-sand/30 border border-sand rounded-2xl p-8 flex flex-col">
                 <p className="italic text-gray-700 leading-relaxed flex-grow">&ldquo;{t.quote}&rdquo;</p>
                 <div className="border-t border-sand pt-4 mt-6">

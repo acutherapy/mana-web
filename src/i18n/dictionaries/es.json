@@ -566,5 +566,31 @@
     "p3": "Viajar sola te permite explorar a tu propio ritmo. El Museo Bishop ofrece una mirada profunda y silenciosa a la historia de Hawái y al concepto de Mana.",
     "h3": "3. La Máxima Indulgencia: El Reinicio en la Habitación",
     "p4": "Después de un día de exploración, lo más lujoso que puedes hacer sola en Hawái es pedir una sesión de sanación privada en tu habitación. Servicios como Mana Reset se centran en las necesidades emocionales únicas de la mujer que viaja sola."
+  },
+  "home_testimonials": {
+    "label": "En Sus Propias Palabras",
+    "title": "Lo Que Las Mujeres Se Llevan a Casa",
+    "items": [
+      {
+        "quote": "Llegué a Hawái completamente exhausta. Después de la sesión 'The Balance', sentí que realmente podía respirar de nuevo, no solo físicamente, sino en todos los sentidos. No sabía que necesitaba esto hasta que lo tuve.",
+        "name": "Sarah M.",
+        "location": "Nueva York"
+      },
+      {
+        "quote": "Como viajera solitaria, no estaba segura de qué esperar. Pero desde el momento en que ella llegó, me sentí completamente segura. No era terapia, no era un masaje; era algo para lo que no tenía nombre, y algo que muy claramente necesitaba.",
+        "name": "Yuki T.",
+        "location": "Tokio"
+      },
+      {
+        "quote": "Reservé 'The Awakening' por capricho. Resultó ser las dos horas más significativas de todo mi viaje. Me fui de Hawái sintiendo que realmente había descansado, no solo dormido.",
+        "name": "Amelia R.",
+        "location": "Londres"
+      },
+      {
+        "quote": "La evaluación del Talismán Digital (Digital Talisman) se sintió sorprendentemente personal. La sesión completa que siguió lo fue aún más. Regresé de este viaje sintiéndome como yo misma de nuevo.",
+        "name": "Cecilia N.",
+        "location": "São Paulo"
+      }
+    ]
   }
 }
