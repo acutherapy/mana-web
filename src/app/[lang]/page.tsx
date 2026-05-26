@@ -30,6 +30,15 @@ const testimonials = [
   },
 ];
 
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    keywords: dict.seo_keywords_home
+  };
+}
+
 export default async function Home({ params }: { params: Promise<{ lang: string }> }) {
   const { lang } = (await params) as { lang: 'en' | 'zh' | 'ja' | 'ko' | 'es' };
   const dict = await getDictionary(lang);

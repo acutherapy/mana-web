@@ -457,5 +457,60 @@
     "book": "Book a Reset",
     "get_talisman": "Claim Your Talisman"
   },
-  "seo_prose": "Mana Reset is a sanctuary in the heart of Honolulu, specifically designed for solo female travelers visiting Hawaii. Whether you are staying in Waikiki or exploring Oahu, our in-room private wellness experiences offer a profound alternative to traditional hotel spas. Through somatic experiencing, deep breathwork, and the alignment of your personal Digital Energy Talisman, we help you clear emotional exhaustion and deeply recalibrate. This is not therapy, but a sacred, quiet space for women to safely ground themselves, restore their vitality, and embrace the true essence of Hawaiian healing without leaving the privacy of their suite."
+  "seo_prose_home": "Mana Reset is a sanctuary in the heart of Honolulu, specifically designed for solo female travelers visiting Hawaii. Whether you are staying in Waikiki or exploring Oahu, our in-room private wellness experiences offer a profound alternative to traditional hotel spas. Through somatic experiencing, deep breathwork, and the alignment of your personal Digital Energy Talisman, we help you clear emotional exhaustion and deeply recalibrate without leaving the privacy of your suite.",
+  "seo_prose_booking": "Reserve your private in-room wellness session in Honolulu. Mana Reset offers secure, confidential booking for solo female travelers in Waikiki and Oahu. Select your preferred date for a personalized somatic reset experience brought directly to your hotel suite.",
+  "seo_prose_approach": "Discover the Mana Reset methodology. We blend somatic experiencing, focused breathwork, and ancient Five Elements energy balancing to create a unique healing modality for women. Our approach goes beyond traditional massage, focusing on emotional release and grounding.",
+  "seo_prose_experience": "Explore our curated wellness packages: The Unwind (60 mins), The Balance (90 mins), and The Awakening (120 mins). Each private Hawaii hotel session is tailored to your emotional state, integrating deep rest, somatic presence, and energy clearing.",
+  "seo_prose_guide": "How to prepare for your in-room wellness retreat in Hawaii. The Mana Reset pre-session guide explains what to expect before our practitioner arrives at your Waikiki suite, ensuring a safe, quiet, and deeply restorative environment for solo female travelers.",
+  "seo_keywords_home": [
+    "Honolulu solo female travel",
+    "Waikiki private wellness",
+    "Oahu women's retreat",
+    "Hawaii emotional reset",
+    "somatic healing Hawaii",
+    "in-room wellness Honolulu",
+    "women's self-care vacation",
+    "Hawaii energy healing",
+    "private spa alternative Waikiki",
+    "Digital Energy Talisman"
+  ],
+  "seo_keywords_booking": [
+    "book Honolulu wellness",
+    "Waikiki in-room massage alternative",
+    "reserve somatic healing Hawaii",
+    "private retreat booking Oahu",
+    "solo female travel activities Hawaii",
+    "secure wellness booking Honolulu",
+    "women only healing Hawaii",
+    "Hawaii hotel wellness service"
+  ],
+  "seo_keywords_approach": [
+    "somatic experiencing Honolulu",
+    "Five Elements healing Hawaii",
+    "breathwork for women Oahu",
+    "emotional release therapy alternative",
+    "Waikiki nervous system regulation",
+    "energy clearing Hawaii",
+    "body-mind reset Honolulu",
+    "Hawaii somatic practitioner"
+  ],
+  "seo_keywords_experience": [
+    "Honolulu wellness packages",
+    "Waikiki 60 minute reset",
+    "Hawaii 120 minute deep healing",
+    "private energy clearing cost",
+    "in-room somatic session price",
+    "The Unwind package Hawaii",
+    "The Balance session Honolulu",
+    "The Awakening wellness retreat"
+  ],
+  "seo_keywords_guide": [
+    "Hawaii wellness retreat preparation",
+    "what to expect somatic healing",
+    "Waikiki in-room session guide",
+    "solo female travel safety Hawaii",
+    "Honolulu hotel wellness prep",
+    "pre-session grounding Hawaii",
+    "maximize healing Hawaii trip"
+  ]
 }

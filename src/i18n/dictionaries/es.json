@@ -457,5 +457,60 @@
     "book": "Reservar ahora",
     "get_talisman": "Reclamar mi Talismán"
   },
-  "seo_prose": "Mana Reset es un santuario en el corazón de Honolulu, diseñado específicamente para mujeres que viajan solas a Hawái. Ya sea que te alojes en Waikiki o explores Oahu, nuestras experiencias privadas de bienestar en la habitación ofrecen una alternativa profunda a los spas de hoteles tradicionales. A través de experiencias somáticas, trabajo de respiración profundo y la alineación de tu Talismán de Energía Digital personal, te ayudamos a liberar el agotamiento emocional y a recalibrarte profundamente. Esto no es terapia, sino un espacio sagrado y tranquilo para que las mujeres se conecten a tierra de manera segura, restauren su vitalidad y abracen la verdadera esencia de la curación hawaiana sin salir de la privacidad de su suite."
+  "seo_prose_home": "Mana Reset es un santuario en el corazón de Honolulu, diseñado para mujeres que viajan solas a Hawái. Ya sea en Waikiki u Oahu, ofrecemos experiencias privadas de bienestar en la habitación con Talismanes de Energía Digital para liberar el agotamiento emocional y recalibrar profundamente.",
+  "seo_prose_booking": "Reserva tu sesión privada de bienestar en la habitación en Honolulu. Mana Reset ofrece reservas seguras y confidenciales para mujeres que viajan solas en Waikiki y Oahu. Selecciona tu fecha para una experiencia de reinicio somático directamente en tu suite de hotel.",
+  "seo_prose_approach": "Descubre la metodología de Mana Reset. Combinamos la experiencia somática, el trabajo de respiración enfocado y el antiguo equilibrio energético de los Cinco Elementos para crear una modalidad de curación única para las mujeres, centrada en la liberación emocional.",
+  "seo_prose_experience": "Explora nuestros paquetes de bienestar curados: The Unwind (60 min), The Balance (90 min) y The Awakening (120 min). Cada sesión privada en el hotel de Hawái se adapta a tu estado emocional, integrando descanso profundo, presencia somática y limpieza energética.",
+  "seo_prose_guide": "Cómo prepararse para su retiro de bienestar en la habitación en Hawái. La guía previa a la sesión de Mana Reset explica qué esperar antes de que nuestro profesional llegue a tu suite en Waikiki, asegurando un entorno seguro, tranquilo y profundamente restaurador.",
+  "seo_keywords_home": [
+    "viaje sola mujer Honolulu",
+    "bienestar privado Waikiki",
+    "retiro mujeres Oahu",
+    "reinicio emocional Hawái",
+    "sanación somática Hawái",
+    "bienestar en la habitación Honolulu",
+    "vacaciones autocuidado mujeres",
+    "sanación energética Hawái",
+    "alternativa spa privado Waikiki",
+    "Talismán de Energía Digital"
+  ],
+  "seo_keywords_booking": [
+    "reservar bienestar Honolulu",
+    "alternativa masaje en la habitación Waikiki",
+    "reservar sanación somática Hawái",
+    "reserva retiro privado Oahu",
+    "actividades viaje sola mujer Hawái",
+    "reserva segura bienestar Honolulu",
+    "sanación solo mujeres Hawái",
+    "servicio bienestar hotel Hawái"
+  ],
+  "seo_keywords_approach": [
+    "experiencia somática Honolulu",
+    "sanación Cinco Elementos Hawái",
+    "respiración para mujeres Oahu",
+    "alternativa terapia liberación emocional",
+    "regulación sistema nervioso Waikiki",
+    "limpieza energética Hawái",
+    "reinicio cuerpo-mente Honolulu",
+    "practicante somático Hawái"
+  ],
+  "seo_keywords_experience": [
+    "paquetes bienestar Honolulu",
+    "reinicio 60 minutos Waikiki",
+    "sanación profunda 120 minutos Hawái",
+    "costo limpieza energética privada",
+    "precio sesión somática en la habitación",
+    "paquete The Unwind Hawái",
+    "sesión The Balance Honolulu",
+    "retiro bienestar The Awakening"
+  ],
+  "seo_keywords_guide": [
+    "preparación retiro bienestar Hawái",
+    "qué esperar sanación somática",
+    "guía sesión en la habitación Waikiki",
+    "seguridad viaje sola mujer Hawái",
+    "preparación bienestar hotel Honolulu",
+    "conexión a tierra pre-sesión Hawái",
+    "maximizar viaje sanación Hawái"
+  ]
 }

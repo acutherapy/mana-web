@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Your Guide | Mana Reset — Private Wellness for Solo Female Travelers in Hawaii',
-  description:
-    'The practitioner behind Mana Reset: certified in somatic experiencing, Five Elements theory, emotional regulation, and energy clearing. Anonymous by design. Present by choice.',
-};
+
 
 const credentials = [
   {
@@ -31,6 +27,17 @@ const credentials = [
 ];
 
 import { getDictionary } from '@/i18n/getDictionary';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: 'Your Guide | Mana Reset — Private Wellness for Solo Female Travelers in Hawaii',
+    description: 'The practitioner behind Mana Reset: certified in somatic experiencing, Five Elements theory, emotional regulation, and energy clearing. Anonymous by design. Present by choice.',
+    keywords: dict.seo_keywords_guide
+  };
+}
 
 export default async function GuidePage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;

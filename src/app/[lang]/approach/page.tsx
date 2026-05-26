@@ -1,11 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Our Approach | Mana Reset — Five Elements Wellness in Hawaii',
-  description:
-    'Learn how Mana Reset uses somatic experiencing, breathwork, and the Five Elements framework to create private in-room reset experiences for solo female travelers in Hawaii.',
-};
+
 
 const steps = [
   {
@@ -82,6 +78,17 @@ const forWhom = [
 ];
 
 import { getDictionary } from '@/i18n/getDictionary';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: 'Our Approach | Mana Reset — Five Elements Wellness in Hawaii',
+    description: 'Learn how Mana Reset uses somatic experiencing, breathwork, and the Five Elements framework to create private in-room reset experiences for solo female travelers in Hawaii.',
+    keywords: dict.seo_keywords_approach
+  };
+}
 
 export default async function ApproachPage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;

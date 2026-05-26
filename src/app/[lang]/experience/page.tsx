@@ -1,9 +1,17 @@
-export const metadata = {
-  title: 'Mind Body Retreat Hawaii | In-Room Self Care Vacation Packages',
-  description: 'Transform your solo trip into a profound self-care vacation in Hawaii. Explore our in-room stress relief retreat packages, focusing on deep emotional balance.',
-};
+
 
 import { getDictionary } from '@/i18n/getDictionary';
+
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  return {
+    title: 'Mind Body Retreat Hawaii | In-Room Self Care Vacation Packages',
+    description: 'Transform your solo trip into a profound self-care vacation in Hawaii. Explore our in-room stress relief retreat packages, focusing on deep emotional balance.',
+    keywords: dict.seo_keywords_experience
+  };
+}
 
 export default async function ExperiencePage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;
