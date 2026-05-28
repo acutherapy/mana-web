@@ -17,6 +17,14 @@ export async function generateMetadata({
   const { lang } = (await params) as { lang: 'en' | 'zh' | 'ja' | 'ko' | 'es' };
   const dict = await getDictionary(lang);
 
+  const isEn = lang === "en";
+  const defaultTitle = isEn 
+    ? "Manner reset | private wellness reset for solo female travelers" 
+    : `Mana Reset | ${dict.hero?.title || "Private Reset Experience in Hawaii"}`;
+  const defaultDesc = isEn 
+    ? "Join a female traveler in Honolulu. You can feel your energy quietly fading. Mana Reset helps you reconnect with your innate mana, your life force and natural connection to the energy around you. A deep energetic reset designed for women traveling alone. Gentle in-room emotional support and reset experience designed for women traveling solo in Hawaii. Feel safe, held, and recharged — without therapy or pressure."
+    : dict.hero?.description || "A private reset experience for women traveling alone in Hawaii.";
+
   return {
     metadataBase: new URL('https://www.manareset.com'),
 
@@ -24,12 +32,12 @@ export async function generateMetadata({
       google: "7HFkgefWfRS5YihDCP9gHXhjrDN3E83qH-KxXOy6hps",
     },
 
-    title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
-    description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
+    title: defaultTitle,
+    description: defaultDesc,
     keywords: ["hawaii reset trip", "self care vacation", "women's wellness retreat", "private wellness experience hawaii"],
     openGraph: {
-      title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
-      description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
+      title: defaultTitle,
+      description: defaultDesc,
       url: `https://www.manareset.com/${lang}`,
       siteName: 'Mana Reset',
       images: [
@@ -50,8 +58,8 @@ export async function generateMetadata({
     },
     twitter: {
       card: 'summary_large_image',
-      title: `Mana Reset | ${dict.hero?.title || 'Private Reset Experience in Hawaii'}`,
-      description: dict.hero?.description || 'A private reset experience for women traveling alone in Hawaii.',
+      title: defaultTitle,
+      description: defaultDesc,
       images: [`/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`],
     },
   };

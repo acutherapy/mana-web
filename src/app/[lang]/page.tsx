@@ -34,9 +34,19 @@ const testimonials = [
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+  
+  const isEn = lang === "en";
+  const pageTitle = isEn 
+    ? "Private Reset Experience for Solo Women Traveling Alone in Hawaii | Mana Reset"
+    : `${dict.hero?.title} | Mana Reset`;
+  const pageDesc = isEn 
+    ? "Join a female traveler in Honolulu. You can feel your energy quietly fading. Mana Reset helps you reconnect with your innate mana, your life force and natural connection to the energy around you. A deep energetic reset designed for women traveling alone. Gentle in-room emotional support and reset experience designed for women traveling solo in Hawaii. Feel safe, held, and recharged — without therapy or pressure."
+    : dict.hero?.description;
+
   return {
-    keywords: dict.seo_keywords_home
-  ,
+    title: pageTitle,
+    description: pageDesc,
+    keywords: dict.seo_keywords_home,
     alternates: {
       canonical: `/${lang}`,
       languages: {
@@ -47,6 +57,25 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
         'es': `https://www.manareset.com/es`,
         'x-default': `https://www.manareset.com/en`,
       },
+    },
+    openGraph: {
+      title: pageTitle,
+      description: pageDesc,
+      url: `https://www.manareset.com/${lang}`,
+      images: [
+        {
+          url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}&ratio=1:1`,
+          width: 600,
+          height: 600,
+          alt: pageTitle,
+        },
+        {
+          url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`,
+          width: 1200,
+          height: 630,
+          alt: pageTitle,
+        }
+      ]
     }
   };
 }
