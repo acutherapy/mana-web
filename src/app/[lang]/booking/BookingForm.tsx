@@ -142,6 +142,16 @@ export default function BookingForm({ dict, lang }: { dict: any; lang: string })
     }
   };
 
+  const getRoomNumberPlaceholder = () => {
+    switch (lang) {
+      case 'zh': return '例如：402房';
+      case 'ja': return '例：402号室';
+      case 'ko': return '예: 402호';
+      case 'es': return 'Ej: Habitación 402';
+      default: return 'e.g. Room 402';
+    }
+  };
+
   const travelFeeNotice = getTravelFeeNotice();
 
   return (
@@ -217,7 +227,7 @@ export default function BookingForm({ dict, lang }: { dict: any; lang: string })
             <input 
               type="text" 
               className="w-full p-3 rounded bg-white border border-gray-200 outline-none focus:border-ocean text-black" 
-              placeholder="e.g. Room 402"
+              placeholder={getRoomNumberPlaceholder()}
               value={formData.roomNumber} onChange={e => setFormData({...formData, roomNumber: e.target.value})} 
             />
           </div>
