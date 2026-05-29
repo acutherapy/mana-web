@@ -203,7 +203,7 @@ const BaZiCanvas = ({ beads, mode }: { beads: Bead[], mode: 'ring' | 'dna' }) =>
   return <canvas ref={canvasRef} className="absolute inset-0 z-0 pointer-events-none" />;
 };
 
-export default function FiveElementsTest({ dict }: { dict: any }) {
+export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lang?: string }) {
   // 0: start, 1: bazi input, 2: bazi loading, 3: bazi display, 4: q1, 5: q2, 6: final loading, 7: result
   const [step, setStep] = useState(0); 
   const [scores, setScores] = useState({ Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 });
@@ -460,18 +460,18 @@ export default function FiveElementsTest({ dict }: { dict: any }) {
                     <option value="afternoon">{dict.test.time_afternoon || "Afternoon"}</option>
                     <option value="evening">{dict.test.time_evening || "Evening"}</option>
                     <optgroup label={dict.test.time_specific_group || "Specific Hour"}>
-                      <option value="00:00">子 23:00-00:59</option>
-                      <option value="02:00">丑 01:00-02:59</option>
-                      <option value="04:00">寅 03:00-04:59</option>
-                      <option value="06:00">卯 05:00-06:59</option>
-                      <option value="08:00">辰 07:00-08:59</option>
-                      <option value="10:00">巳 09:00-10:59</option>
-                      <option value="12:00">午 11:00-12:59</option>
-                      <option value="14:00">未 13:00-14:59</option>
-                      <option value="16:00">申 15:00-16:59</option>
-                      <option value="18:00">酉 17:00-18:59</option>
-                      <option value="20:00">戌 19:00-20:59</option>
-                      <option value="22:00">亥 21:00-22:59</option>
+                      <option value="00:00">{lang === "zh" ? "子 " : ""}23:00-00:59</option>
+                      <option value="02:00">{lang === "zh" ? "丑 " : ""}01:00-02:59</option>
+                      <option value="04:00">{lang === "zh" ? "寅 " : ""}03:00-04:59</option>
+                      <option value="06:00">{lang === "zh" ? "卯 " : ""}05:00-06:59</option>
+                      <option value="08:00">{lang === "zh" ? "辰 " : ""}07:00-08:59</option>
+                      <option value="10:00">{lang === "zh" ? "巳 " : ""}09:00-10:59</option>
+                      <option value="12:00">{lang === "zh" ? "午 " : ""}11:00-12:59</option>
+                      <option value="14:00">{lang === "zh" ? "未 " : ""}13:00-14:59</option>
+                      <option value="16:00">{lang === "zh" ? "申 " : ""}15:00-16:59</option>
+                      <option value="18:00">{lang === "zh" ? "酉 " : ""}17:00-18:59</option>
+                      <option value="20:00">{lang === "zh" ? "戌 " : ""}19:00-20:59</option>
+                      <option value="22:00">{lang === "zh" ? "亥 " : ""}21:00-22:59</option>
                     </optgroup>
                   </select>
                   <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-ocean">▼</div>

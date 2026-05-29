@@ -198,7 +198,7 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
       {/* Digital Delivery Section */}
       <section id="test" className="py-24 px-6 bg-white relative">
         <div className="max-w-6xl mx-auto">
-          <FiveElementsTest dict={dict} />
+          <FiveElementsTest dict={dict} lang={lang} />
         </div>
       </section>
     </main>
