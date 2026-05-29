@@ -16,15 +16,28 @@ export async function GET(request: NextRequest) {
     const width = isSquare ? 600 : 1200;
     const height = isSquare ? 600 : 630;
 
-    // Read the clean background image from public directory
-    const imagePath = path.join(process.cwd(), 'public', 'images', 'og-bg-clean.png');
-    let base64Image = '';
+    // Read the clean background image securely via absolute URL fetch or local fallback
+    let base64Image = "";
     try {
-      const imageBuffer = fs.readFileSync(imagePath);
-      // Since og-bg-clean.png contains JPEG data, we use image/jpeg MIME prefix for correct iOS/Satori decoding
-      base64Image = `data:image/jpeg;base64,${imageBuffer.toString('base64')}`;
-    } catch (err) {
-      console.error('Error reading OG background image:', err);
+      const origin = request.nextUrl.origin || "https://www.manareset.com";
+      const bgUrl = new URL("/images/og-bg-clean.png", origin).toString();
+      const res = await fetch(bgUrl);
+      if (res.ok) {
+        const arrayBuffer = await res.arrayBuffer();
+        base64Image = `data:image/jpeg;base64,${Buffer.from(arrayBuffer).toString("base64")}`;
+      }
+    } catch (fetchErr) {
+      console.error("Failed to fetch dynamic OG background via URL, attempting filesystem fallback:", fetchErr);
+    }
+
+    if (!base64Image) {
+      try {
+        const imagePath = path.join(process.cwd(), "public", "images", "og-bg-clean.png");
+        const imageBuffer = fs.readFileSync(imagePath);
+        base64Image = `data:image/jpeg;base64,${imageBuffer.toString("base64")}`;
+      } catch (fsErr) {
+        console.error("FS fallback failed:", fsErr);
+      }
     }
 
     // Split title by newline for premium balanced multi-line typography

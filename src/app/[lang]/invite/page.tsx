@@ -31,10 +31,10 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
 
   // WeChat prefers 1:1 ratio square images. Standard platforms prefer 1.91:1 wide images.
   // We provide the WeChat square 1:1 image FIRST in the openGraph array to trigger WeChat share priority.
-  const wechatSquareImageUrl = `/api/og?lang=${lang}&title=${encodeURIComponent(quote)}&ratio=1:1`;
+  const wechatSquareImageUrl = `https://www.manareset.com/api/og?lang=${lang}&title=${encodeURIComponent(quote)}&ratio=1:1`;
   const landscapeImageUrl = isEn 
-    ? "/images/og-invite-en.jpg" 
-    : `/api/og?lang=${lang}&title=${encodeURIComponent(quote)}`;
+    ? "https://www.manareset.com/images/og-invite-en.jpg" 
+    : `https://www.manareset.com/api/og?lang=${lang}&title=${encodeURIComponent(quote)}`;
   
   return {
     title: `${dict.invite_page?.title} | Mana Reset`,

@@ -42,13 +42,13 @@ export async function generateMetadata({
       siteName: 'Mana Reset',
       images: [
         {
-          url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}&ratio=1:1`,
+          url: `https://www.manareset.com/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}&ratio=1:1`,
           width: 600,
           height: 600,
           alt: `Mana Reset | ${dict.hero?.title || "Private Reset Experience in Hawaii"}`,
         },
         {
-          url: `/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`,
+          url: `https://www.manareset.com/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`,
           width: 1200,
           height: 630,
           alt: `Mana Reset | ${dict.hero?.title || "Private Reset Experience in Hawaii"}`,
@@ -60,7 +60,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: defaultTitle,
       description: defaultDesc,
-      images: [`/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`],
+      images: [`https://www.manareset.com/api/og?lang=${lang}&title=${encodeURIComponent(dict.hero?.title || "Private Reset Experience in Hawaii")}`],
     },
   };
 }
