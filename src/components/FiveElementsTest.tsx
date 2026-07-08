@@ -586,6 +586,13 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
         {/* Step 8: Email Gate */}
         {step === 8 && dominantElement && (
           <div className="text-center space-y-6 animate-in fade-in zoom-in-95 duration-500 max-w-md mx-auto">
+            {/* Hidden canvas container to pre-render the custom energy talisman diagram so we can capture it */}
+            <div style={{ display: 'none' }}>
+              <div className="w-[300px] h-[300px] relative">
+                <BaZiCanvas beads={beads} mode={visualMode} />
+              </div>
+            </div>
+
             <div className="w-12 h-12 bg-sand flex items-center justify-center rounded-full mx-auto text-ocean mb-4">
               <Sparkles size={24} />
             </div>
@@ -616,11 +623,28 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                   btn.textContent = dict?.test?.email_sending || "Delivering...";
                 }
 
+                // Capture the custom-drawn canvas image data
+                let talismanImage = null;
+                try {
+                  const canvas = document.querySelector('canvas');
+                  if (canvas) {
+                    talismanImage = canvas.toDataURL('image/png');
+                  }
+                } catch(canvasErr) {
+                  console.error("Failed to capture canvas image:", canvasErr);
+                }
+
                 try {
                   await fetch('/api/subscribe', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, element: dominantElement, lang }),
+                    body: JSON.stringify({ 
+                      name, 
+                      email, 
+                      element: dominantElement, 
+                      lang,
+                      talismanImage
+                    }),
                   });
                 } catch(err) {
                   console.error("Subscription failed:", err);

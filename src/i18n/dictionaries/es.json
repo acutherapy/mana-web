@@ -125,11 +125,11 @@
     "email_sending": "Enviando...",
     "download_wallpaper": "Descargar Fondo de Pantalla",
     "teasers": {
-      "Wood": "Se detecta energía de Madera bloqueada. Es posible que te sientas estancada, frustrada o con tensión física en el cuello y los hombros.",
-      "Fire": "Se detecta energía de Fuego hiperactiva y seca. Incluso en Hawái, te cuesta apagar tu mente de abrir 20 pestañas a la vez.",
-      "Earth": "Se detecta energía de Tierra agotada. Constantemente das de más y te preocupas por los demás, sin dejar suelo firme para ti.",
-      "Metal": "Se detecta energía de Metal rígida. Llevar estructuras externas pesadas y demandas caóticas te ha dejado sintiéndote restringida.",
-      "Water": "Se detecta energía de Agua agotada. Se ha asentado una profunda fatiga, y las reservas de tu fuerza vital necesitan un suave reabastecimiento."
+      "Wood": "Tu energía dominante es la Madera. Representando el crecimiento, cuando se desequilibra puede bloquearse, provocando frustración o tensión en los hombros.",
+      "Fire": "Tu energía dominante es el Fuego. Representando la calidez, bajo mucho estrés puede secarse, dejando tu mente acelerada y sin poder apagarse.",
+      "Earth": "Tu energía dominante es la Tierra. Representando la estabilidad, cuando se desequilibra puede manifestarse como pensar demasiado y cargar con las preocupaciones de los demás.",
+      "Metal": "Tu energía dominante es el Metal. Representando el orden, bajo tensión puede volverse rígido, haciéndote sentir limitada por estructuras externas.",
+      "Water": "Tu energía dominante es el Agua. Representando la quietud y el flujo, cuando estás exhausta puede estancarse, dejándote en un estado de profunda fatiga."
     }
   },
   "testimonials": {

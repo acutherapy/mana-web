@@ -3,6 +3,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+const BOOKING_BASE_URL = "https://www.manareset.com";
+
 // Element recommendations mapping
 const ELEMENT_RECOMMENDATIONS = {
   Wood: {
@@ -25,7 +27,7 @@ const ELEMENT_RECOMMENDATIONS = {
     },
     zh: {
       name: "平衡 (The Balance - 90分钟) 或 放松 (The Unwind - 60分钟)",
-      desc: "专注于冷却过度活跃의 신경시스템、深层镇静呼吸和情绪着陆。",
+      desc: "专注于冷却过度活跃的神经系统、深层镇静呼吸和情绪着陆。",
       anchor: "balance"
     }
   },
@@ -61,7 +63,7 @@ const ELEMENT_RECOMMENDATIONS = {
     },
     zh: {
       name: "觉醒 (The Awakening - 120分钟)",
-      desc: "全方位的身心沉浸，提供绝对的安全感，以重建消耗殆尽的能量储备。",
+      desc: "全方位的身心沉浸，提供绝对的安全感，以重建消耗殆尽 of 能量储备。",
       anchor: "awakening"
     }
   }
@@ -92,17 +94,15 @@ const ELEMENT_ADVICE = {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, element, lang = "en" } = await req.json();
+    const { name, email, element, lang = "en", talismanImage } = await req.json();
 
     if (!email || !element) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Determine host dynamically for local dev vs production
     const host = req.headers.get("host") || "www.manareset.com";
     const protocol = host.includes("localhost") ? "http" : "https";
     const BASE_URL = `${protocol}://${host}`;
-    const WALLPAPER_BASE_URL = `${BASE_URL}/images/talisman_wallpapers`;
 
     const isZh = lang === "zh";
     const userElement = (element || "Fire") as "Wood" | "Fire" | "Earth" | "Metal" | "Water";
@@ -115,8 +115,18 @@ export async function POST(req: Request) {
       ? `✨ 您的专属能量护身符与身心诊断报告 - Mana Reset`
       : `✨ Your Personalized Energy Talisman & Diagnostic - Mana Reset`;
 
-    const wallpaperUrl = `${WALLPAPER_BASE_URL}/${userElement.toLowerCase()}.png`;
     const bookingUrl = `${BASE_URL}/${lang}/booking`;
+
+    // Process attachment if provided
+    const attachments = [];
+    if (talismanImage && talismanImage.includes("base64,")) {
+      const base64Data = talismanImage.split("base64,")[1];
+      attachments.push({
+        filename: `mana-talisman-${userElement.toLowerCase()}.png`,
+        content: Buffer.from(base64Data, 'base64'),
+        contentType: 'image/png'
+      });
+    }
 
     // Email HTML Template
     const htmlContent = `
@@ -144,14 +154,14 @@ export async function POST(req: Request) {
 
           <p>
             ${isZh
-              ? `为了帮您凝聚心神，并在接下来的旅程中调和这种失衡，我们为您特别定制了<strong>五行能量护身符（数字壁纸）</strong>。建议您将其下载并设置为手机的锁屏壁纸。在夏威夷的每一天，每次点亮屏幕，它都会温柔地提醒您——拉回呼吸，回到当下。`
-              : `To help anchor your presence and harmonize this imbalance, we have crafted your custom <strong>Digital Energy Talisman (Wallpaper)</strong>. We recommend downloading and setting it as your smartphone lock screen. Every time you wake your phone, let it serve as a gentle reminder to return to your breath and ground yourself.`}
+              ? `为了帮您凝聚心神，并在接下来的旅程中调和这种失衡，<strong>我们已将您在网页上实时推算生成的专属“五行能量护身符”图片作为附件随信发送给您</strong>。建议您在邮件附件中直接保存此图片，并将其设置为手机的锁屏壁纸。在夏威夷的每一天，每次点亮屏幕，它都会温柔地提醒您——拉回呼吸，回到当下。`
+              : `To help anchor your presence and harmonize this imbalance, <strong>we have attached your personalized "Digital Energy Talisman" image file directly to this email</strong>. We recommend saving the attachment to your phone and setting it as your lock screen wallpaper. Every time you wake your phone, let it serve as a gentle reminder to return to your breath and ground yourself.`}
           </p>
 
-          <!-- Wallpaper CTA Button -->
+          <!-- Explore More Button -->
           <div style="text-align: center; margin: 32px 0;">
-            <a href="${wallpaperUrl}" target="_blank" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
-              ${isZh ? `下载我的专属能量壁纸` : `Download My Talisman Wallpaper`}
+            <a href="${BASE_URL}/${lang}" target="_blank" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+              ${isZh ? `探索 Mana Reset 首页` : `Explore Mana Reset Homepage`}
             </a>
           </div>
 
@@ -189,7 +199,8 @@ export async function POST(req: Request) {
       from: "Mana Reset Partners <partners@manareset.com>",
       to: [email],
       subject: subject,
-      html: htmlContent
+      html: htmlContent,
+      attachments: attachments
     });
 
     if (res.error) {

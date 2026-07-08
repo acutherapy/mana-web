@@ -125,11 +125,11 @@
     "email_sending": "Delivering...",
     "download_wallpaper": "Download Lockscreen Wallpaper",
     "teasers": {
-      "Wood": "Blocked Wood energy detected. You might feel stagnant, frustrated, or physically tense in your neck and shoulders.",
-      "Fire": "Hyperactive dry Fire energy detected. Even in Hawaii, you struggle to shut down your mind from opening 20 tabs at once.",
-      "Earth": "Depleted Earth energy detected. You are constantly over-giving, worrying for everyone else, leaving no solid soil of your own.",
-      "Metal": "Rigid Metal energy detected. Carrying heavy external structures and chaotic demands has left you feeling restricted.",
-      "Water": "Depleted Water energy detected. Deep fatigue has set in, and your inner baseline reserves need gentle replenishment."
+      "Wood": "Your dominant energy is Wood. Representing growth, when out of balance it can become blocked, leading to frustration or physical shoulder tension.",
+      "Fire": "Your dominant energy is Fire. Representing warmth, when under high stress it can run dry, leaving your mind racing and unable to shut down.",
+      "Earth": "Your dominant energy is Earth. Representing stability, when out of balance it can manifest as over-thinking and carrying everyone else's burdens.",
+      "Metal": "Your dominant energy is Metal. Representing order, when under tension it can become rigid, leaving you feeling restricted by external structures.",
+      "Water": "Your dominant energy is Water. Representing depth and flow, when exhausted it can stagnate, leaving you in a state of deep fatigue."
     }
   },
   "testimonials": {
