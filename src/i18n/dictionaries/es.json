@@ -621,6 +621,18 @@
     "recommendation_pre": "Basado en tu constitución elemental, te recomendamos reservar",
     "scarcity_info": "Para preservar la pureza de nuestro espacio energético, nuestra terapeuta solo acepta <strong>5 sesiones privadas</strong> por semana para mujeres que viajan solas en Waikiki. Si deseas asegurar un espacio para una verdadera restauración durante tu estadía, te invitamos a reservar con anticipación.",
     "button_booking": "Reservar mi Sesión de Reset",
-    "signature": "Con presencia,<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>El Equipo de Mana Reset</strong>"
+    "signature": "Con presencia,<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>El Equipo de Mana Reset</strong>",
+    "email2": {
+      "subject": "Un espacio seguro en Waikiki 🌊",
+      "body_part1": "Ayer, tu diagnóstico de energía calculó un desequilibrio dominante de {element}. Esto significa que tu sistema nervioso probablemente está cargando con una sobrecarga silenciosa, incluso mientras contemplas el hermoso paisaje de Honolulu.",
+      "body_part2": "Para muchas mujeres que viajan solas a Hawái, la parte más difícil de reservar un reset privado de cuerpo y mente no es el precio. Es la simple vulnerabilidad de abrir la puerta de tu hotel.<br/><br/><strong>\"¿Es seguro?\"</strong><br/><strong>\"¿Será incómodo?\"</strong><br/><strong>\"¿Tengo que ordenar mi habitación o conversar?\"</strong><br/><br/>Permítenos compartir lo que sucede realmente cuando nuestra terapeuta llega a tu suite:<br/><br/>1. <strong>Absoluta Discreción</strong>: Ella llega vestida con ropa sencilla y silenciosa. No hay logotipos llamativos, ni camillas pesadas de masaje, ni desorden. Parece la visita de una amiga a tu habitación.<br/>2. <strong>Cero Juicios</strong>: No necesitas prepararte. Puedes usar tu ropa de descanso más cómoda. El espacio es Tuyo, tal y como está.<br/>3. <strong>Consentimiento Seguro</strong>: Cada toque y secuencia de respiración se guía con total comunicación. Tú tienes el control absoluto del ritmo.",
+      "body_part3": "Esto es lo que Sarah M. de Nueva York compartió después de su estancia en el Halekulani:<br/><br/><em>\"Como viajera solitaria, tenía dudas sobre reservar una sesión en la habitación. Pero en el momento en que ella entró, una ola de seguridad me envolvió. No fue un tratamiento de spa rígido. Fue un espacio empático y profundamente respetuoso donde finalmente pude soltar el peso invisible que había estado cargando\"</em>.<br/><br/>Si estás lista para soltar la presión, nos encantaría sostener el espacio para ti en Honolulu."
+    },
+    "email3": {
+      "subject": "Una invitación para tu energía de {element}, {name} 🌟",
+      "body_part1": "Para mantener la energía de nuestra terapeuta pura y completamente presente, ella limita sus sesiones a solo <strong>5 resets privados por semana</strong> en Honolulu.<br/><br/>Debido a que tu prueba indicó un desequilibrio de {element}, te recomendamos:",
+      "body_part2": "Esta sesión está calibrada específicamente para abordar tu estado actual y ayudarte a restaurar el flujo natural de tu energía antes de abordar tu vuelo de regreso a casa.<br/><br/>Actualmente solo nos quedan <strong>2 espacios disponibles</strong> para esta semana.<br/><br/>Si te encuentras en Waikiki o vas a llegar pronto, te invitamos a asegurar tu lugar:",
+      "button_booking": "Reservar mi Sesión de Reset"
+    }
   }
 }

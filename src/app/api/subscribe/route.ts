@@ -182,6 +182,60 @@ export async function POST(req: Request) {
       console.error("Admin notification failed:", e);
     }
 
+    // Queue Email 2 and Email 3 in Supabase email_queue for drip automation
+    if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      try {
+        const now = new Date();
+        const sendAt2 = new Date(now.getTime() + 24 * 60 * 60 * 1000).toISOString();
+        const sendAt3 = new Date(now.getTime() + 48 * 60 * 60 * 1000).toISOString();
+
+        // Enqueue Email 2 (24 Hours Later)
+        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+            "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+          },
+          body: JSON.stringify({
+            email,
+            name,
+            element: userElement,
+            deficient: deficientElement,
+            lang,
+            email_type: 2,
+            send_at: sendAt2,
+            status: "pending"
+          })
+        });
+
+        // Enqueue Email 3 (48 Hours Later)
+        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
+            "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+          },
+          body: JSON.stringify({
+            email,
+            name,
+            element: userElement,
+            deficient: deficientElement,
+            lang,
+            email_type: 3,
+            send_at: sendAt3,
+            status: "pending"
+          })
+        });
+        console.log("Successfully queued Email 2 and Email 3 in Supabase for:", email);
+      } catch (dbErr) {
+        console.error("Failed to queue drip emails in Supabase:", dbErr);
+      }
+    } else {
+      console.warn("Supabase credentials not configured, skipping email queue insertion.");
+    }
+
     return NextResponse.json({ success: true, message: "Subscription success", id: emailId });
   } catch (err: any) {
     console.error("Subscription endpoint error:", err);

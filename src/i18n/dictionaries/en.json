@@ -621,6 +621,18 @@
     "recommendation_pre": "Based on your elemental constitution, we highly recommend booking",
     "scarcity_info": "To preserve the purity of our energetic space, our practitioner only accepts <strong>5 private resets</strong> each week for solo female travelers in Waikiki. If you wish to secure a space for true restoration during your stay, we invite you to reserve your spot early.",
     "button_booking": "Reserve My Reset Session",
-    "signature": "With presence,<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>The Mana Reset Team</strong>"
+    "signature": "With presence,<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>The Mana Reset Team</strong>",
+    "email2": {
+      "subject": "A safe container in Waikiki 🌊",
+      "body_part1": "Yesterday, your energy diagnostic calculated a dominant {element} imbalance. That means your nervous system is likely carrying a quiet, heavy overload—even as you look out at the beautiful Honolulu skyline.",
+      "body_part2": "For many solo women traveling to Hawaii, the hardest part of booking a private mind-body reset isn't the price. It's the simple vulnerability of opening your hotel door.<br/><br/><strong>\"Is it safe?\"</strong><br/><strong>\"Will it feel awkward?\"</strong><br/><strong>\"Do I have to clean my room or chat?\"</strong><br/><br/>Let us share what actually happens when our practitioner arrives at your suite:<br/><br/>1. <strong>Absolute Discretion</strong>: She arrives wearing simple, quiet clothing. There are no loud logos, no heavy massage tables, and no clutter. It looks like a friend visiting your room.<br/>2. <strong>Zero Judgment</strong>: You do not need to prepare. You can wear your most comfortable loungewear. The space is Yours—exactly as it is.<br/>3. <strong>Safe Consent</strong>: Every touch, every breath sequence is guided with complete communication. You are in total control of the pace.",
+      "body_part3": "Here is what Sarah M. from New York shared after her stay at the Halekulani:<br/><br/><em>\"As a solo traveler, I was hesitant about booking an in-room session. But the moment she stepped inside, a wave of safety washed over me. It wasn't a rigid spa treatment. It was an empathetic, deeply respectful space where I could finally lay down the invisible weight I had been carrying.\"</em><br/><br/>If you are ready to let go of the pressure, we would love to hold space for you."
+    },
+    "email3": {
+      "subject": "An invitation for your {element} energy, {name} 🌟",
+      "body_part1": "To keep our practitioner's personal energy pure and fully present, she limits her sessions to just <strong>5 private resets per week</strong> in Honolulu.<br/><br/>Because your test indicated a dominant {element} imbalance, we recommend:",
+      "body_part2": "This session is specifically calibrated to address your current state and help restore your natural baseline flow before you board your flight back home.<br/><br/>We currently have only <strong>2 private reset openings</strong> remaining for this week.<br/><br/>If you are currently in Waikiki or arriving soon, we invite you to secure your space:",
+      "button_booking": "Reserve My Reset Spot"
+    }
   }
 }
