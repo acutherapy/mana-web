@@ -10,7 +10,8 @@
   "hero": {
     "tagline": "A private reset experience for women traveling alone in Hawaii.",
     "title": "Private Reset Experience for Solo Women in Hawaii",
-    "description": "You arrive in Hawaii on your own, moving at your own rhythm. On the surface, everything looks fine, but deep down, you can feel it—the clear, powerful energy that once flowed so strongly within you is quietly fading. You sense it, even if you can't quite explain it."
+    "description": "You arrive in Hawaii on your own, moving at your own rhythm. On the surface, everything looks fine, but deep down, you can feel it—the clear, powerful energy that once flowed so strongly within you is quietly fading. You sense it, even if you can't quite explain it.",
+    "secondary_cta": "Discover Your Energy Alignment (1-Min Quiz)"
   },
   "why": {
     "title": "Why You Need Us",
@@ -115,7 +116,21 @@
     "dna_desc": "Deep energy intertwining",
     "purchase_dna": "Purchase DNA Edition",
     "generating": "Generating...",
-    "redirecting": "Redirecting..."
+    "redirecting": "Redirecting...",
+    "gate_title": "Your Talisman is Ready",
+    "gate_desc": "Enter your name and email to unlock your full diagnostic report and receive your digital talisman smartphone wallpaper.",
+    "placeholder_name": "Your Name",
+    "placeholder_email": "Your Email Address",
+    "button_reveal": "Reveal My Energy Talisman & Report",
+    "email_sending": "Delivering...",
+    "download_wallpaper": "Download Lockscreen Wallpaper",
+    "teasers": {
+      "Wood": "Blocked Wood energy detected. You might feel stagnant, frustrated, or physically tense in your neck and shoulders.",
+      "Fire": "Hyperactive dry Fire energy detected. Even in Hawaii, you struggle to shut down your mind from opening 20 tabs at once.",
+      "Earth": "Depleted Earth energy detected. You are constantly over-giving, worrying for everyone else, leaving no solid soil of your own.",
+      "Metal": "Rigid Metal energy detected. Carrying heavy external structures and chaotic demands has left you feeling restricted.",
+      "Water": "Depleted Water energy detected. Deep fatigue has set in, and your inner baseline reserves need gentle replenishment."
+    }
   },
   "testimonials": {
     "subtitle": "In Their Words",
@@ -439,7 +454,7 @@
     "book": "Book a Reset",
     "get_talisman": "Claim Your Talisman"
   },
-  "seo_prose_home": "Mana Reset is a sanctuary in the heart of Honolulu, specifically designed for solo female travelers visiting Hawaii. Whether you are staying in Waikiki or exploring Oahu, our in-room private wellness experiences offer a profound alternative to traditional hotel spas. Through somatic experiencing, deep breathwork, and the alignment of your personal Digital Energy Talisman, we help you clear emotional exhaustion and deeply recalibrate without leaving the privacy of your suite.",
+  "seo_prose_home": "Mana Reset offers private in-room somatic wellness reset experiences for solo female travelers in Honolulu, Hawaii. Feel safe, held, and deeply recharged.",
   "seo_prose_booking": "Reserve your private in-room wellness session in Honolulu. Mana Reset offers secure, confidential booking for solo female travelers in Waikiki and Oahu. Select your preferred date for a personalized somatic reset experience brought directly to your hotel suite.",
   "seo_prose_approach": "Discover the Mana Reset methodology. We blend somatic experiencing, focused breathwork, and ancient Five Elements energy balancing to create a unique healing modality for women. Our approach goes beyond traditional massage, focusing on emotional release and grounding.",
   "seo_prose_experience": "Explore our curated wellness packages: The Unwind (60 mins), The Balance (90 mins), and The Awakening (120 mins). Each private Hawaii hotel session is tailored to your emotional state, integrating deep rest, somatic presence, and energy clearing.",

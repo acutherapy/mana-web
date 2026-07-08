@@ -10,7 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/booking', 
     '/faq', 
     '/guide', 
-    '/solo-hawaii'
+    '/solo-hawaii',
+    '/invite',
+    '/blog/hawaii-reset-trip-burnout-recovery',
+    '/blog/solo-female-hawaii-safe-self-care-vacation',
+    '/blog/things-to-do-alone-hawaii-mind-body',
+    '/blog/womens-wellness-retreat-hawaii-honolulu',
+    '/blog/stress-relief-retreat-hawaii-emotional-release'
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []

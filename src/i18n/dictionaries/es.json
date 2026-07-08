@@ -10,7 +10,8 @@
   "hero": {
     "tagline": "Experiencia de reseteo privado para mujeres que viajan solas en Hawái",
     "title": "Experiencia de Reseteo Privado para Mujeres Solas en Hawái",
-    "description": "Llegas a Hawái por tu cuenta, moviéndote a tu propio ritmo. En la superficie, todo parece estar bien, pero en el fondo puedes sentirlo: esa energía clara y poderosa que alguna vez fluyó con tanta fuerza dentro de ti se está desvaneciendo silenciosamente. Lo sientes, aunque no puedas explicarlo del todo. Mana Reset existe exactamente para eso. Aquí te ayudo a reconectar y alinear tu mana innato, tu fuerza vital y conexión natural con la energía que te rodea. Un reseteo profundo, un verdadero retorno de energía que te regalas en tu viaje."
+    "description": "Llegas a Hawái por tu cuenta, moviéndote a tu propio ritmo. En la superficie, todo parece estar bien, pero en el fondo puedes sentirlo: esa energía clara y poderosa que alguna vez fluyó con tanta fuerza dentro de ti se está desvaneciendo silenciosamente. Lo sientes, aunque no puedas explicarlo del todo. Mana Reset existe exactamente para eso. Aquí te ayudo a reconectar y alinear tu mana innato, tu fuerza vital y conexión natural con la energía que te rodea. Un reseteo profundo, un verdadero retorno de energía que te regalas en tu viaje.",
+    "secondary_cta": "Realizar diagnóstico de energía (1 Min)"
   },
   "why": {
     "title": "Por Qué Nos Necesitas",
@@ -115,7 +116,21 @@
     "generating": "Generando...",
     "redirecting": "Redirigiendo...",
     "q1_opt6": "Ninguna de las anteriores",
-    "q2_opt6": "Ninguna de las anteriores"
+    "q2_opt6": "Ninguna de las anteriores",
+    "gate_title": "Tu Talismán está Listo",
+    "gate_desc": "Ingresa tu nombre y correo electrónico para desbloquear tu informe de diagnóstico completo y recibir el fondo de pantalla digital de tu talismán.",
+    "placeholder_name": "Tu Nombre",
+    "placeholder_email": "Tu Correo Electrónico",
+    "button_reveal": "Revelar mi Talismán y Reporte",
+    "email_sending": "Enviando...",
+    "download_wallpaper": "Descargar Fondo de Pantalla",
+    "teasers": {
+      "Wood": "Se detecta energía de Madera bloqueada. Es posible que te sientas estancada, frustrada o con tensión física en el cuello y los hombros.",
+      "Fire": "Se detecta energía de Fuego hiperactiva y seca. Incluso en Hawái, te cuesta apagar tu mente de abrir 20 pestañas a la vez.",
+      "Earth": "Se detecta energía de Tierra agotada. Constantemente das de más y te preocupas por los demás, sin dejar suelo firme para ti.",
+      "Metal": "Se detecta energía de Metal rígida. Llevar estructuras externas pesadas y demandas caóticas te ha dejado sintiéndote restringida.",
+      "Water": "Se detecta energía de Agua agotada. Se ha asentado una profunda fatiga, y las reservas de tu fuerza vital necesitan un suave reabastecimiento."
+    }
   },
   "testimonials": {
     "subtitle": "En sus palabras",
@@ -439,7 +454,7 @@
     "book": "Reservar ahora",
     "get_talisman": "Reclamar mi Talismán"
   },
-  "seo_prose_home": "Mana Reset es un santuario en el corazón de Honolulu, diseñado para mujeres que viajan solas a Hawái. Ya sea en Waikiki u Oahu, ofrecemos experiencias privadas de bienestar en la habitación con Talismanes de Energía Digital para liberar el agotamiento emocional y recalibrar profundamente.",
+  "seo_prose_home": "Mana Reset ofrece experiencias privadas de bienestar somático en la habitación para mujeres que viajan solas en Honolulu, Hawái. Siéntete segura y renovada.",
   "seo_prose_booking": "Reserva tu sesión privada de bienestar en la habitación en Honolulu. Mana Reset ofrece reservas seguras y confidenciales para mujeres que viajan solas en Waikiki y Oahu. Selecciona tu fecha para una experiencia de reinicio somático directamente en tu suite de hotel.",
   "seo_prose_approach": "Descubre la metodología de Mana Reset. Combinamos la experiencia somática, el trabajo de respiración enfocado y el antiguo equilibrio energético de los Cinco Elementos para crear una modalidad de curación única para las mujeres, centrada en la liberación emocional.",
   "seo_prose_experience": "Explora nuestros paquetes de bienestar curados: The Unwind (60 min), The Balance (90 min) y The Awakening (120 min). Cada sesión privada en el hotel de Hawái se adapta a tu estado emocional, integrando descanso profundo, presencia somática y limpieza energética.",

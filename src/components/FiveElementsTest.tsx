@@ -327,7 +327,7 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
             }
           }
           setDominantElement(dominant);
-          setStep(7);
+          setStep(8);
         }, 3000);
       } else {
         setStep(step + 1);
@@ -582,6 +582,81 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
           </div>
         )}
 
+        {/* Step 8: Email Gate */}
+        {step === 8 && dominantElement && (
+          <div className="text-center space-y-6 animate-in fade-in zoom-in-95 duration-500 max-w-md mx-auto">
+            <div className="w-12 h-12 bg-sand flex items-center justify-center rounded-full mx-auto text-ocean mb-4">
+              <Sparkles size={24} />
+            </div>
+            <h3 className="text-2xl font-serif text-ocean mb-2">
+              {dict?.test?.gate_title || "Your Talisman is Ready"}
+            </h3>
+            
+            {/* Emotion Teaser */}
+            <div className="bg-sand/30 border border-sand rounded-xl p-5 text-left text-sm text-ocean/90 leading-relaxed font-sans italic my-4">
+              {dict?.test?.teasers?.[dominantElement] || "Analyzing your energy imbalance..."}
+            </div>
+
+            <p className="text-sm text-gray-500 mb-6">
+              {dict?.test?.gate_desc || "Enter your name and email to unlock your full diagnostic report and receive your digital talisman smartphone wallpaper."}
+            </p>
+
+            <form 
+              onSubmit={async (e) => {
+                e.preventDefault();
+                const form = e.currentTarget;
+                const formData = new FormData(form);
+                const name = formData.get('name') as string;
+                const email = formData.get('email') as string;
+                
+                const btn = form.querySelector('button[type="submit"]');
+                if (btn) {
+                  (btn as HTMLButtonElement).disabled = true;
+                  btn.textContent = dict?.test?.email_sending || "Delivering...";
+                }
+
+                try {
+                  await fetch('/api/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, element: dominantElement, lang }),
+                  });
+                } catch(err) {
+                  console.error("Subscription failed:", err);
+                } finally {
+                  setStep(7);
+                }
+              }}
+              className="space-y-4 text-left"
+            >
+              <div>
+                <input 
+                  type="text" 
+                  name="name"
+                  required 
+                  placeholder={dict?.test?.placeholder_name || "Your Name"}
+                  className="w-full p-3 rounded-lg border border-gray-200 outline-none focus:border-ocean bg-white/80 backdrop-blur-sm text-sm"
+                />
+              </div>
+              <div>
+                <input 
+                  type="email" 
+                  name="email"
+                  required 
+                  placeholder={dict?.test?.placeholder_email || "Your Email Address"}
+                  className="w-full p-3 rounded-lg border border-gray-200 outline-none focus:border-ocean bg-white/80 backdrop-blur-sm text-sm"
+                />
+              </div>
+              <button 
+                type="submit"
+                className="w-full bg-ocean text-white py-3 rounded-lg font-medium hover:bg-ocean-light transition text-sm shadow-md cursor-pointer"
+              >
+                {dict?.test?.button_reveal || "Reveal My Energy Talisman & Report"}
+              </button>
+            </form>
+          </div>
+        )}
+
         {/* Step 7: Result */}
         {step === 7 && (
           <div className="text-center space-y-8 animate-in fade-in zoom-in-95 duration-700">
@@ -676,6 +751,13 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                 >
                   {dict.test.get_free_pass || "Get Free Pass"}
                 </button>
+                <a 
+                  href={`/images/talisman_wallpapers/${dominantElement ? dominantElement.toLowerCase() : 'fire'}.png`}
+                  download={`mana-talisman-${dominantElement ? dominantElement.toLowerCase() : 'fire'}.png`}
+                  className="mt-3 text-xs text-ocean hover:underline font-medium inline-flex items-center justify-center gap-1"
+                >
+                  <Download size={12} /> {dict?.test?.download_wallpaper || "Download Lockscreen Wallpaper"}
+                </a>
               </div>
 
               <div className="bg-white rounded-xl p-5 text-center flex flex-col shadow-xl border-2 border-ocean transform md:-translate-y-1 relative">

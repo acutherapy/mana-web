@@ -32,18 +32,70 @@ import { getDictionary } from '@/i18n/getDictionary';
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+
+  const titles = {
+    en: 'Your Guide | Mana Reset — Private Wellness for Solo Female Travelers in Hawaii',
+    zh: '您的理疗师与行前指南 | Mana Reset',
+    ja: 'プラクティショナーと事前ガイド | Mana Reset',
+    ko: '프랙티셔너 및 사전 가이드 | Mana Reset',
+    es: 'Tu Guía y Terapeuta de Bienestar | Mana Reset'
+  };
+
+  const descriptions = {
+    en: 'The practitioner behind Mana Reset: certified in somatic experiencing, Five Elements theory, emotional regulation, and energy clearing. Anonymous by design. Present by choice.',
+    zh: '了解 Mana Reset 理疗师的专业资质与背景。获得躯体体验、五行能量、情绪调节等领域的专业支持。隐于名，隐于心。',
+    ja: 'ソマティック・エクスペリエンス、五行思想、感情調節、エネルギー・クリアリングの専門知識を持つプラクティショナーをご紹介します。',
+    ko: '소마틱 익스피리언스, 음양오행, 감정 조절 및 에너지 클리어링 자격을 갖춘 프랙티셔너를 만나보세요. 온전한 회복의 여정으로 안내합니다。',
+    es: 'La especialista detrás de Mana Reset: certificada en experiencia somática, teoría de los Cinco Elementos y regulación emocional. Diseñado para tu paz mental.'
+  };
+
   return {
-    title: 'Your Guide | Mana Reset — Private Wellness for Solo Female Travelers in Hawaii',
-    description: 'The practitioner behind Mana Reset: certified in somatic experiencing, Five Elements theory, emotional regulation, and energy clearing. Anonymous by design. Present by choice.',
-    keywords: dict.seo_keywords_guide
+    title: titles[lang] || titles.en,
+    description: descriptions[lang] || descriptions.en,
+    keywords: dict.seo_keywords_guide,
+    alternates: {
+      canonical: `https://www.manareset.com/${lang}/guide`,
+      languages: {
+        'en': `https://www.manareset.com/en/guide`,
+        'zh': `https://www.manareset.com/zh/guide`,
+        'ja': `https://www.manareset.com/ja/guide`,
+        'ko': `https://www.manareset.com/ko/guide`,
+        'es': `https://www.manareset.com/es/guide`,
+        'x-default': `https://www.manareset.com/en/guide`,
+      },
+    }
   };
 }
 
 export default async function GuidePage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: dict.guide_page?.hero_title?.replace(/<br\s*\/?>/gi, ' ') || 'The Practitioner',
+    image: ['https://www.manareset.com/images/hero.png'],
+    author: {
+      '@type': 'Organization',
+      name: 'Mana Reset',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mana Reset',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.manareset.com/images/logo.png',
+      },
+    },
+  };
+
   return (
     <main className="min-h-screen font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <noscript dangerouslySetInnerHTML={{ __html: dict.seo_prose_guide }} />
       {/* Hero */}
       <section className="pt-40 pb-24 px-6 bg-ocean text-center">

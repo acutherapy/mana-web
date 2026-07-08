@@ -1,10 +1,38 @@
-import type { Metadata } from 'next';
+export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
+  const { lang } = await params;
 
-export const metadata: Metadata = {
-  title: 'FAQ | Mana Reset — Private Wellness for Solo Travelers in Hawaii',
-  description:
-    'Answers to your most common questions about Mana Reset — session lengths, pricing, safety, cancellation policy, and what to expect from your private in-room reset experience in Hawaii.',
-};
+  const titles = {
+    en: 'FAQ | Mana Reset — Private Wellness for Solo Travelers in Hawaii',
+    zh: '常见问题解答 (FAQ) | Mana Reset',
+    ja: 'よくあるご質問 (FAQ) | Mana Reset',
+    ko: '자주 묻는 질문 (FAQ) | Mana Reset',
+    es: 'Preguntas Frecuentes (FAQ) | Mana Reset'
+  };
+
+  const descriptions = {
+    en: 'Answers to your most common questions about Mana Reset — session lengths, pricing, safety, cancellation policy, and what to expect from your private in-room reset experience in Hawaii.',
+    zh: '为您解答关于 Mana Reset 的常见疑问：服务收费、安全保障、隐私保护、理疗师背景以及客房服务政策等。',
+    ja: 'セッション内容、料金、安全性、キャンセルポリシー、ホテルの客室での体験について、よくあるご質問にお答えします。',
+    ko: '세션 시간, 요금, 안전, 환불 규정 및 호텔 객실 서비스 진행 방식 등 자주 묻는 질문에 대한 답변을 확인하세요。',
+    es: 'Respuestas a tus preguntas sobre Mana Reset: duración de las sesiones, precios, seguridad, políticas de cancelación y qué esperar.'
+  };
+
+  return {
+    title: titles[lang] || titles.en,
+    description: descriptions[lang] || descriptions.en,
+    alternates: {
+      canonical: `https://www.manareset.com/${lang}/faq`,
+      languages: {
+        'en': `https://www.manareset.com/en/faq`,
+        'zh': `https://www.manareset.com/zh/faq`,
+        'ja': `https://www.manareset.com/ja/faq`,
+        'ko': `https://www.manareset.com/ko/faq`,
+        'es': `https://www.manareset.com/es/faq`,
+        'x-default': `https://www.manareset.com/en/faq`,
+      },
+    }
+  };
+}
 
 const faqs = [
   {

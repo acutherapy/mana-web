@@ -3,7 +3,6 @@ import { Inter, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import JsonLd from "@/components/JsonLd";
 import { getDictionary } from '@/i18n/getDictionary';
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -19,11 +18,9 @@ export async function generateMetadata({
 
   const isEn = lang === "en";
   const defaultTitle = isEn 
-    ? "Manner reset | private wellness reset for solo female travelers" 
+    ? "Mana Reset | Private wellness reset for solo female travelers" 
     : `Mana Reset | ${dict.hero?.title || "Private Reset Experience in Hawaii"}`;
-  const defaultDesc = isEn 
-    ? "Join a female traveler in Honolulu. You can feel your energy quietly fading. Mana Reset helps you reconnect with your innate mana, your life force and natural connection to the energy around you. A deep energetic reset designed for women traveling alone. Gentle in-room emotional support and reset experience designed for women traveling solo in Hawaii. Feel safe, held, and recharged — without therapy or pressure."
-    : dict.hero?.description || "A private reset experience for women traveling alone in Hawaii.";
+  const defaultDesc = dict.seo_prose_home || dict.hero?.description || "A private reset experience for women traveling alone in Hawaii.";
 
   return {
     metadataBase: new URL('https://www.manareset.com'),
@@ -79,7 +76,7 @@ export default async function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Mana Reset',
-    description: dict.hero?.description || 'Private in-room wellness reset experiences for solo female travelers in Hawaii.',
+    description: dict.seo_prose_home || dict.hero?.description || 'Private in-room wellness reset experiences for solo female travelers in Hawaii.',
     url: `https://www.manareset.com/${lang}`,
     image: 'https://www.manareset.com/images/hero.png',
     areaServed: [
@@ -123,12 +120,23 @@ export default async function RootLayout({
         },
       ],
     },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5.0',
+      reviewCount: '18',
+    },
   };
 
   return (
     <html lang={lang}>
+      <head>
+        <script
+          type="application/ld+json"
+          id="schema-jsonld"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} ${playfair.variable} antialiased bg-[#FDFDFD] text-[#333333] pt-24`}>
-        <JsonLd lang={lang} dict={dict} />
         <Navbar lang={lang} dict={dict} />
         {children}
         <Footer lang={lang} />

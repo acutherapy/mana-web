@@ -39,19 +39,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: 'en
   const pageTitle = isEn 
     ? "Private Reset Experience for Solo Women Traveling Alone in Hawaii | Mana Reset"
     : `${dict.hero?.title} | Mana Reset`;
-  const pageDesc = isEn 
-    ? "Join a female traveler in Honolulu. You can feel your energy quietly fading. Mana Reset helps you reconnect with your innate mana, your life force and natural connection to the energy around you. A deep energetic reset designed for women traveling alone. Gentle in-room emotional support and reset experience designed for women traveling solo in Hawaii. Feel safe, held, and recharged — without therapy or pressure."
-    : dict.hero?.description;
+  const pageDesc = dict.seo_prose_home || dict.hero?.description || "Private Reset Experience for Solo Women Traveling Alone in Hawaii | Mana Reset";
 
   return {
     title: pageTitle,
     description: pageDesc,
     keywords: dict.seo_keywords_home,
     alternates: {
-      canonical: `/${lang}`,
+      canonical: `https://www.manareset.com/${lang}`,
       languages: {
         'en': `https://www.manareset.com/en`,
-        'zh-CN': `https://www.manareset.com/zh`,
+        'zh': `https://www.manareset.com/zh`,
         'ja': `https://www.manareset.com/ja`,
         'ko': `https://www.manareset.com/ko`,
         'es': `https://www.manareset.com/es`,
@@ -99,13 +97,19 @@ export default async function Home({ params }: { params: Promise<{ lang: string 
           <p className="text-lg lg:text-xl text-white/80 max-w-2xl mx-auto leading-relaxed">
             {dict.hero?.description}
           </p>
-          <div className="pt-8">
+          <div className="pt-8 flex flex-col sm:flex-row justify-center gap-4 items-center">
             <Link
               href={`/${lang}/booking`}
-              className="bg-sand text-ocean px-8 py-4 rounded font-medium hover:bg-white transition inline-block shadow-lg"
+              className="bg-sand text-ocean px-8 py-4 rounded font-medium hover:bg-white transition inline-block shadow-lg w-full sm:w-auto"
             >
               {dict.nav?.book}
             </Link>
+            <a
+              href="#test"
+              className="bg-transparent text-white border border-white/40 hover:border-white hover:bg-white/10 px-8 py-4 rounded font-medium transition inline-block shadow-lg w-full sm:w-auto"
+            >
+              {dict.hero?.secondary_cta || "Take Energy Diagnostic (1-Min)"}
+            </a>
           </div>
         </div>
       </section>

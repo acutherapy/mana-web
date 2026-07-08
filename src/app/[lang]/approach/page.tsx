@@ -83,18 +83,70 @@ import { getDictionary } from '@/i18n/getDictionary';
 export async function generateMetadata({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+
+  const titles = {
+    en: 'Our Approach | Mana Reset — Five Elements Wellness in Hawaii',
+    zh: '我们的疗愈方法论：躯体觉知与五行能量 | Mana Reset',
+    ja: '私たちのヒーリングアプローチ：ソマティックと五行エネルギー | Mana Reset',
+    ko: '우리의 힐링 어프로치: 소마틱 및 오행 에너지 | Mana Reset',
+    es: 'Nuestro Enfoque: Bienestar Somático y Cinco Elementos | Mana Reset'
+  };
+
+  const descriptions = {
+    en: 'Learn how Mana Reset uses somatic experiencing, breathwork, and the Five Elements framework to create private in-room reset experiences for solo female travelers in Hawaii.',
+    zh: '探索我们将躯体倾听、呼吸法与中医五行能量相结合的独特疗愈方法，助您在夏威夷独旅中实现深层的神经系统恢复与情绪释放。',
+    ja: '身体の声に耳を傾けるソマティック体験、呼吸法、そして東洋の五行説を組み合わせた、ハワイでのディープな自己治癒アプローチ。',
+    ko: '소마틱 경험, 호흡법, 동양의 오행 사상을 결합한 독창적인 힐링 어프로치를 소개합니다. 하와이 여정에서 깊은 내면의 평화를 느껴보세요。',
+    es: 'Descubre cómo Mana Reset utiliza la experiencia somática, el trabajo de respiración y los Cinco Elementos para crear un reinicio profundo en Hawái.'
+  };
+
   return {
-    title: 'Our Approach | Mana Reset — Five Elements Wellness in Hawaii',
-    description: 'Learn how Mana Reset uses somatic experiencing, breathwork, and the Five Elements framework to create private in-room reset experiences for solo female travelers in Hawaii.',
-    keywords: dict.seo_keywords_approach
+    title: titles[lang] || titles.en,
+    description: descriptions[lang] || descriptions.en,
+    keywords: dict.seo_keywords_approach,
+    alternates: {
+      canonical: `https://www.manareset.com/${lang}/approach`,
+      languages: {
+        'en': `https://www.manareset.com/en/approach`,
+        'zh': `https://www.manareset.com/zh/approach`,
+        'ja': `https://www.manareset.com/ja/approach`,
+        'ko': `https://www.manareset.com/ko/approach`,
+        'es': `https://www.manareset.com/es/approach`,
+        'x-default': `https://www.manareset.com/en/approach`,
+      },
+    }
   };
 }
 
 export default async function ApproachPage({ params }: { params: Promise<{ lang: 'en'|'zh'|'ja'|'ko'|'es' }> }) {
   const { lang } = await params;
   const dict = await getDictionary(lang);
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: dict.approach_page?.hero_title || 'Our Approach',
+    image: ['https://www.manareset.com/images/hero.png'],
+    author: {
+      '@type': 'Organization',
+      name: 'Mana Reset',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Mana Reset',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://www.manareset.com/images/logo.png',
+      },
+    },
+  };
+
   return (
     <main className="min-h-screen font-sans">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <noscript dangerouslySetInnerHTML={{ __html: dict.seo_prose_approach }} />
       {/* Hero */}
       <section className="pt-40 pb-24 px-6 bg-ocean text-center">

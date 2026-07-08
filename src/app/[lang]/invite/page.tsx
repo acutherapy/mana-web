@@ -39,6 +39,17 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title: `${dict.invite_page?.title} | Mana Reset`,
     description: persuasiveDesc,
+    alternates: {
+      canonical: `https://www.manareset.com/${lang}/invite`,
+      languages: {
+        'en': `https://www.manareset.com/en/invite`,
+        'zh': `https://www.manareset.com/zh/invite`,
+        'ja': `https://www.manareset.com/ja/invite`,
+        'ko': `https://www.manareset.com/ko/invite`,
+        'es': `https://www.manareset.com/es/invite`,
+        'x-default': `https://www.manareset.com/en/invite`,
+      },
+    },
     openGraph: {
       title: `${dict.invite_page?.title} | Mana Reset`,
       description: persuasiveDesc,
