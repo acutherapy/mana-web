@@ -130,6 +130,23 @@
       "Earth": "Tu energía dominante es la Tierra. Representando la estabilidad, cuando se desequilibra puede manifestarse como pensar demasiado y cargar con las preocupaciones de los demás.",
       "Metal": "Tu energía dominante es el Metal. Representando el orden, bajo tensión puede volverse rígido, haciéndote sentir limitada por estructuras externas.",
       "Water": "Tu energía dominante es el Agua. Representando la quietud y el flujo, cuando estás exhausta puede estancarse, dejándote en un estado de profunda fatiga."
+    },
+    "q3": "Cuando finalmente te sientas en el vuelo a Hawái, mirando las nubes fuera de la ventana, ¿cuál es el verdadero estado de tu mente?",
+    "q3_opt1": "Mi cuerpo está agotado, pero mi cerebro siente como si tuviera 20 pestañas del navegador abiertas a la vez, incapaz de apagarse.",
+    "q3_opt2": "Siento una gran sensación de vacío y confusión, sin saber para qué he estado trabajando tan duro.",
+    "q3_opt3": "Siento que finalmente estoy a salvo; solo quiero desaparecer por completo durante unos días, sin que nadie me contacte.",
+    "q4": "Después de aterrizar en Honolulu, caminando por la playa, ¿cómo te sientes respecto a tu relación con el ambiente animado a tu alrededor?",
+    "q4_opt1": "Al ver a grupos de personas, aunque disfruto estar sola, siento una sutil sensación de aislamiento, como una 'extraña'.",
+    "q4_opt2": "Es difícil integrarse y relajarse de verdad. Mi cuerpo sigue tenso, y me encuentro revisando inconscientemente correos del trabajo.",
+    "q4_opt3": "Me siento profundamente agotada, deseando solo cerrar los ojos en la arena y dejar que el sonido de las olas me cubra.",
+    "dominant_title": "Arquetipo Dominante",
+    "deficient_title": "Energía Deficiente",
+    "deficient_teasers": {
+      "Wood": "Tu energía deficiente es la Madera, lo que significa una falta de crecimiento, vitalidad y visión. Puedes sentirte desmotivada o sin dirección.",
+      "Fire": "Tu energía deficiente es el Fuego, lo que indica falta de calidez, alegría y expansión emocional. Puedes sentirte emocionalmente plana o desconectada.",
+      "Earth": "Tu energía deficiente es la Tierra, representando una falta de enraizamiento, estabilidad y nutrición. Puedes sentirte ansiosa o inestable.",
+      "Metal": "Tu energía deficiente es el Metal, apuntando a una falta de límites, claridad y capacidad para soltar. Puedes sentirte abrumada por el caos.",
+      "Water": "Tu energía deficiente es el Agua, indicando una falta de descanso, reservas profundas y quietud interior. Sientes que estás operando al límite."
     }
   },
   "testimonials": {

@@ -92,9 +92,32 @@ const ELEMENT_ADVICE = {
   }
 };
 
+const DEFICIENT_ELEMENT_ADVICE = {
+  Wood: {
+    en: "Your weakest energy is Wood, meaning you are currently lacking the power of vision, vitality, and natural growth. You might feel unmotivated, directionless, or struggling to plan for the future.",
+    zh: "您的不足能量为木元素。这代表您目前缺乏生长、活力与远见，可能感到缺乏动力、方向模糊，或是难以规划未来。"
+  },
+  Fire: {
+    en: "Your weakest energy is Fire, indicating a lack of warmth, joy, and emotional expansion. You may feel emotionally flat, cold, or disconnected from the spark of inspiration.",
+    zh: "您的不足能量为火元素。这代表您目前缺乏温热、喜悦与情绪的舒展，可能感到情绪平淡、内心寒冷，或失去了灵感的火花。"
+  },
+  Earth: {
+    en: "Your weakest energy is Earth, representing a lack of grounding, stability, and self-nourishment. You may feel anxious, ungrounded, or constantly floating without a safe soil to land on.",
+    zh: "您的不足能量为土元素。这代表您目前缺乏根基、稳定与自我滋养，可能感到焦虑、漂浮不定，没有一个能够让您安心落脚的安全土壤。"
+  },
+  Metal: {
+    en: "Your weakest energy is Metal, pointing to a lack of boundaries, clarity, and the ability to let go. You may feel overwhelmed by chaotic demands, holding onto old emotional clutter.",
+    zh: "您的不足能量为金元素。这代表您目前缺乏界限感、清晰度与断舍离的能力，容易被混乱所包围，或抓着旧有的情绪垃圾不放。"
+  },
+  Water: {
+    en: "Your weakest energy is Water, indicating a lack of rest, deep reserve, and inner quiet. You are running on empty, unable to access your deep baseline wisdom.",
+    zh: "您的不足能量为水元素。这代表您目前缺乏休息、深层储备与内心的宁静，正处于透支状态，难以链接内心的深层智慧。"
+  }
+};
+
 export async function POST(req: Request) {
   try {
-    const { name, email, element, lang = "en", talismanImage } = await req.json();
+    const { name, email, element, deficient, lang = "en", talismanImage } = await req.json();
 
     if (!email || !element) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -106,6 +129,9 @@ export async function POST(req: Request) {
 
     const isZh = lang === "zh";
     const userElement = (element || "Fire") as "Wood" | "Fire" | "Earth" | "Metal" | "Water";
+    const deficientElement = (deficient || "Water") as "Wood" | "Fire" | "Earth" | "Metal" | "Water";
+    
+    const deficientAdvice = DEFICIENT_ELEMENT_ADVICE[deficientElement]?.[isZh ? "zh" : "en"] || DEFICIENT_ELEMENT_ADVICE.Water[isZh ? "zh" : "en"];
     
     // Choose translations
     const advice = ELEMENT_ADVICE[userElement]?.[isZh ? "zh" : "en"] || ELEMENT_ADVICE.Fire[isZh ? "zh" : "en"];
@@ -148,8 +174,9 @@ export async function POST(req: Request) {
           </p>
 
           <p style="background-color: #F5EFEB; border-left: 3px solid #C5A880; padding: 16px 20px; font-style: italic; margin: 24px 0; border-radius: 0 8px 8px 0;">
-            <strong>${isZh ? `您的能量状态分析：` : `Your Diagnostic:`}</strong><br/>
-            ${advice}
+            <strong>${isZh ? `您的能量状态分析：` : `Your Diagnostic:`}</strong><br/><br/>
+            <strong>${isZh ? `主导能量（过盛/滞涩）：` : `Dominant Energy (Overactive/Stagnant):`}</strong> ${advice}<br/><br/>
+            <strong>${isZh ? `不足能量（亟待补给）：` : `Deficient Energy (Needs Replenishment):`}</strong> ${deficientAdvice}
           </p>
 
           <p>

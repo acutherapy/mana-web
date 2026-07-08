@@ -207,7 +207,8 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
   // 0: start, 1: bazi input, 2: bazi loading, 3: bazi display, 4: q1, 5: q2, 6: final loading, 7: result
   const [step, setStep] = useState(0); 
   const [scores, setScores] = useState({ Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 });
-  const [dominantElement, setDominantElement] = useState<ElementType>(null);
+  const [dominantElement, setDominantElement] = useState<ElementType | null>(null);
+  const [deficientElement, setDeficientElement] = useState<ElementType | null>(null);
   const [baziData, setBaziData] = useState({ date: '1990-01-01', time: '12:00' });
   const [baziResult, setBaziResult] = useState<{
     birth: { year: string, month: string, day: string, time: string }, 
@@ -303,14 +304,133 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
     }, 2500);
   };
 
+  // Deep link useEffect to parse parameters on mount
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const dob = params.get('dob');
+      const tob = params.get('tob');
+      const q1 = params.get('q1');
+      const q2 = params.get('q2');
+      const q3 = params.get('q3');
+      const q4 = params.get('q4');
+      if (dob && tob && q1 && q2 && q3 && q4) {
+        const dateParts = dob.split('-');
+        let timeStr = tob;
+        let isGeneric = false;
+        if (timeStr === 'unknown' || timeStr === 'morning' || timeStr === 'afternoon' || timeStr === 'evening') {
+          isGeneric = true;
+          if (timeStr === 'unknown') timeStr = '12:00';
+          if (timeStr === 'morning') timeStr = '09:00';
+          if (timeStr === 'afternoon') timeStr = '15:00';
+          if (timeStr === 'evening') timeStr = '20:00';
+        }
+        const timeParts = timeStr.split(':');
+        const birthDate = new Date(parseInt(dateParts[0]), parseInt(dateParts[1]) - 1, parseInt(dateParts[2]), parseInt(timeParts[0]), parseInt(timeParts[1]));
+        const lunar = Lunar.fromDate(birthDate);
+        const bY = lunar.getYearInGanZhi();
+        const bM = lunar.getMonthInGanZhi();
+        const bD = lunar.getDayInGanZhi();
+        let bT = '未知';
+        if (!isGeneric) bT = lunar.getTimeInGanZhi() || '未知';
+        const now = new Date();
+        const lunarNow = Lunar.fromDate(now);
+        const cY = lunarNow.getYearInGanZhi();
+        const cM = lunarNow.getMonthInGanZhi();
+        const cD = lunarNow.getDayInGanZhi();
+        const cT = lunarNow.getTimeInGanZhi() || '未知';
+        const getGanZhiElement = (ganzhi: string) => {
+          if (!ganzhi || ganzhi === '未知') return 'Neutral';
+          const stem = ganzhi[0];
+          const branch = ganzhi[1];
+          return FIVE_ELEMENTS_MAP[stem as keyof typeof FIVE_ELEMENTS_MAP] || 'Neutral';
+        };
+        const bYElement = getGanZhiElement(bY);
+        const bDElement = getGanZhiElement(bD);
+        const cYElement = getGanZhiElement(cY);
+        const cDElement = getGanZhiElement(cD);
+        const innateBeads = [
+          { element: getGanZhiElement(bY) as any, type: 'innate' as const, char: bY[0] || '年' },
+          { element: getGanZhiElement(bY.length > 1 ? bY[1] : '') as any, type: 'innate' as const, char: bY[1] || '年' },
+          { element: getGanZhiElement(bM) as any, type: 'innate' as const, char: bM[0] || '月' },
+          { element: getGanZhiElement(bM.length > 1 ? bM[1] : '') as any, type: 'innate' as const, char: bM[1] || '月' },
+          { element: getGanZhiElement(bD) as any, type: 'innate' as const, char: bD[0] || '日' },
+          { element: getGanZhiElement(bD.length > 1 ? bD[1] : '') as any, type: 'innate' as const, char: bD[1] || '日' },
+          { element: getGanZhiElement(bT) as any, type: 'innate' as const, char: bT[0] || '时' },
+          { element: getGanZhiElement(bT.length > 1 ? bT[1] : '') as any, type: 'innate' as const, char: bT[1] || '时' },
+        ];
+        const acquiredBeads = [
+          { element: getGanZhiElement(cY) as any, type: 'acquired' as const, char: cY[0] || '年' },
+          { element: getGanZhiElement(cY.length > 1 ? cY[1] : '') as any, type: 'acquired' as const, char: cY[1] || '年' },
+          { element: getGanZhiElement(cM) as any, type: 'acquired' as const, char: cM[0] || '月' },
+          { element: getGanZhiElement(cM.length > 1 ? cM[1] : '') as any, type: 'acquired' as const, char: cM[1] || '月' },
+          { element: getGanZhiElement(cD) as any, type: 'acquired' as const, char: cD[0] || '日' },
+          { element: getGanZhiElement(cD.length > 1 ? cD[1] : '') as any, type: 'acquired' as const, char: cD[1] || '日' },
+          { element: getGanZhiElement(cT) as any, type: 'acquired' as const, char: cT[0] || '时' },
+          { element: getGanZhiElement(cT.length > 1 ? cT[1] : '') as any, type: 'acquired' as const, char: cT[1] || '时' },
+        ];
+        const subBeads = [
+          { element: q1 as any, type: 'subconscious' as const, char: '念' },
+          { element: q2 as any, type: 'subconscious' as const, char: '心' },
+          { element: q3 as any, type: 'subconscious' as const, char: '意' },
+          { element: q4 as any, type: 'subconscious' as const, char: '神' }
+        ];
+        const allBeads = [...innateBeads, ...acquiredBeads, ...subBeads];
+        setBeads(allBeads);
+        setBaziResult({
+          birth: { year: bY, month: bM, day: bD, time: bT },
+          birthElements: [bYElement, bDElement],
+          current: { year: cY, month: cM, day: cD, time: cT },
+          currentElements: [cYElement, cDElement]
+        });
+        
+        const finalScores = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
+        allBeads.forEach(b => {
+           const weight = b.type === 'subconscious' ? 1.5 : 1.0;
+           if (finalScores[b.element as keyof typeof finalScores] !== undefined) {
+             finalScores[b.element as keyof typeof finalScores] += weight;
+           }
+        });
+        
+        let max = -1;
+        let dominant: ElementType = 'Wood';
+        for (const [key, value] of Object.entries(finalScores)) {
+          if (value > max) {
+            max = value;
+            dominant = key as ElementType;
+          }
+        }
+        
+        let min = 999;
+        let deficient: ElementType = 'Water';
+        for (const [key, value] of Object.entries(finalScores)) {
+          if (value < min) {
+            min = value;
+            deficient = key as ElementType;
+          }
+        }
+        
+        setDominantElement(dominant);
+        setDeficientElement(deficient);
+        setStep(10); // Jump straight to results
+      }
+    }
+  }, [dict]);
+
   const handleAnswer = (element: string) => {
     setBeads(prev => {
-      const newBeads = [...prev, { element: element as any, type: 'subconscious' as const, char: step === 4 ? '念' : '心' }];
+      let charStr = '念';
+      if (step === 4) charStr = '念';
+      if (step === 5) charStr = '心';
+      if (step === 6) charStr = '意';
+      if (step === 7) charStr = '神';
       
-      if (step === 5) {
-        setStep(6);
+      const newBeads = [...prev, { element: element as any, type: 'subconscious' as const, char: charStr }];
+      
+      if (step === 7) {
+        setStep(8); // transition to loading screen
         setTimeout(() => {
-          // Calculate true dominant by summing elements from the actual visual beads in the ring
+          // Calculate true dominant & deficient by summing visual beads in the ring
           const finalScores = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
           newBeads.forEach(b => {
              const weight = b.type === 'subconscious' ? 1.5 : 1.0;
@@ -327,8 +447,19 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
               dominant = key as ElementType;
             }
           }
+          
+          let min = 999;
+          let deficient: ElementType = 'Water';
+          for (const [key, value] of Object.entries(finalScores)) {
+            if (value < min) {
+              min = value;
+              deficient = key as ElementType;
+            }
+          }
+          
           setDominantElement(dominant);
-          setStep(8);
+          setDeficientElement(deficient);
+          setStep(9); // transition to Email Gate
         }, 3000);
       } else {
         setStep(step + 1);
@@ -399,6 +530,22 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
         { text: dict.test.q2_opt4, element: 'Metal' },
         { text: dict.test.q2_opt5, element: 'Water' },
         { text: dict.test.q2_opt6 || "None of the above", element: 'Neutral' },
+      ]
+    },
+    {
+      q: dict.test.q3,
+      options: [
+        { text: dict.test.q3_opt1, element: 'Fire' },
+        { text: dict.test.q3_opt2, element: 'Wood' },
+        { text: dict.test.q3_opt3, element: 'Water' }
+      ]
+    },
+    {
+      q: dict.test.q4,
+      options: [
+        { text: dict.test.q4_opt1, element: 'Earth' },
+        { text: dict.test.q4_opt2, element: 'Metal' },
+        { text: dict.test.q4_opt3, element: 'Water' }
       ]
     }
   ];
@@ -545,14 +692,16 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
           </div>
         )}
 
-        {/* Step 4 & 5: Questions */}
-        {(step === 4 || step === 5) && (
+        {/* Step 4-7: Questions */}
+        {(step === 4 || step === 5 || step === 6 || step === 7) && (
           <div className="space-y-8 animate-in fade-in slide-in-from-right-4 duration-500">
             <div className="flex items-center justify-between text-sm text-ocean/60 font-medium mb-4">
-              <span>{dict?.test?.question_step?.replace('{x}', (step - 3).toString()) || `Question ${step - 3} of 2`}</span>
+              <span>{dict?.test?.question_step?.replace('{x}', (step - 3).toString()).replace('{total}', '4') || `Question ${step - 3} of 4`}</span>
               <div className="flex gap-1">
-                <div className={`w-8 h-1.5 rounded-full ${step >= 4 ? 'bg-ocean' : 'bg-gray-200'}`} />
-                <div className={`w-8 h-1.5 rounded-full ${step >= 5 ? 'bg-ocean' : 'bg-gray-200'}`} />
+                <div className={`w-6 h-1.5 rounded-full ${step >= 4 ? 'bg-ocean' : 'bg-gray-200'}`} />
+                <div className={`w-6 h-1.5 rounded-full ${step >= 5 ? 'bg-ocean' : 'bg-gray-200'}`} />
+                <div className={`w-6 h-1.5 rounded-full ${step >= 6 ? 'bg-ocean' : 'bg-gray-200'}`} />
+                <div className={`w-6 h-1.5 rounded-full ${step >= 7 ? 'bg-ocean' : 'bg-gray-200'}`} />
               </div>
             </div>
             
@@ -574,8 +723,8 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
           </div>
         )}
 
-        {/* Step 6: Final Loading */}
-        {step === 6 && (
+        {/* Step 8: Final Loading */}
+        {step === 8 && (
           <div className="text-center py-16 space-y-6 animate-in fade-in duration-500">
             <Loader2 className="w-12 h-12 text-ocean mx-auto animate-spin" />
             <h3 className="text-xl font-serif text-ocean animate-pulse">{dict?.test?.analyzing || "Computing final resonance..."}</h3>
@@ -583,8 +732,8 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
           </div>
         )}
 
-        {/* Step 8: Email Gate */}
-        {step === 8 && dominantElement && (
+        {/* Step 9: Email Gate */}
+        {step === 9 && dominantElement && deficientElement && (
           <div className="text-center space-y-6 animate-in fade-in zoom-in-95 duration-500 max-w-md mx-auto">
             {/* Hidden canvas container to pre-render the custom energy talisman diagram so we can capture it */}
             <div style={{ display: 'none' }}>
@@ -600,9 +749,14 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
               {dict?.test?.gate_title || "Your Talisman is Ready"}
             </h3>
             
-            {/* Emotion Teaser */}
-            <div className="bg-sand/30 border border-sand rounded-xl p-5 text-left text-sm text-ocean/90 leading-relaxed font-sans italic my-4">
-              {dict?.test?.teasers?.[dominantElement] || "Analyzing your energy imbalance..."}
+            {/* Dual Teasers (Dominant & Deficient) */}
+            <div className="bg-sand/30 border border-sand rounded-xl p-5 text-left text-sm text-ocean/90 leading-relaxed font-sans space-y-3 my-4">
+              <p className="italic">
+                <strong>{dict?.test?.dominant_title || "Dominant"}:</strong> {dict?.test?.teasers?.[dominantElement]}
+              </p>
+              <p className="italic">
+                <strong>{dict?.test?.deficient_title || "Deficient"}:</strong> {dict?.test?.deficient_teasers?.[deficientElement]}
+              </p>
             </div>
 
             <p className="text-sm text-gray-500 mb-6">
@@ -642,6 +796,7 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                       name, 
                       email, 
                       element: dominantElement, 
+                      deficient: deficientElement,
                       lang,
                       talismanImage
                     }),
@@ -649,7 +804,7 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                 } catch(err) {
                   console.error("Subscription failed:", err);
                 } finally {
-                  setStep(7);
+                  setStep(10);
                 }
               }}
               className="space-y-4 text-left"
@@ -682,20 +837,45 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
           </div>
         )}
 
-        {/* Step 7: Result */}
-        {step === 7 && (
+        {/* Step 10: Result */}
+        {step === 10 && (
           <div className="text-center space-y-8 animate-in fade-in zoom-in-95 duration-700">
             <div className="space-y-4">
               <p className="text-sm uppercase tracking-widest text-ocean/60 font-semibold">{dict.test.result_title}</p>
-              <h2 className={`text-4xl font-serif inline-block px-6 py-2 rounded-2xl border-2 ${getElementColor(dominantElement)}`}>
-                {dict?.test?.elements?.[dominantElement as keyof typeof dict.test.elements] || dominantElement}
-              </h2>
+              
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-6">
+                <div className="text-center">
+                  <p className="text-xs uppercase tracking-widest text-ocean/60 font-semibold mb-1">
+                    {dict.test.dominant_title || "Dominant Archetype"}
+                  </p>
+                  <h2 className={`text-3xl font-serif inline-block px-6 py-2 rounded-2xl border-2 ${getElementColor(dominantElement)}`}>
+                    {dict?.test?.elements?.[dominantElement as keyof typeof dict.test.elements] || dominantElement}
+                  </h2>
+                </div>
+                {deficientElement && (
+                  <div className="text-center">
+                    <p className="text-xs uppercase tracking-widest text-ocean/60 font-semibold mb-1">
+                      {dict.test.deficient_title || "Deficient Energy"}
+                    </p>
+                    <h2 className={`text-3xl font-serif inline-block px-6 py-2 rounded-2xl border-2 ${getElementColor(deficientElement)}`}>
+                      {dict?.test?.elements?.[deficientElement as keyof typeof dict.test.elements] || deficientElement}
+                    </h2>
+                  </div>
+                )}
+              </div>
+
               <div className="max-w-md mx-auto mt-6 px-6 py-4 bg-white/50 backdrop-blur-sm rounded-xl border border-ocean/10 shadow-sm relative">
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 text-2xl text-ocean/20 font-serif">❝</div>
                 <p className="text-ocean/90 font-serif text-lg leading-relaxed italic relative z-10">
                   {getGoldenQuote(dominantElement)}
                 </p>
               </div>
+
+              {deficientElement && (
+                <div className="max-w-md mx-auto text-sm text-ocean/80 leading-relaxed font-sans bg-sand/20 border border-sand/40 rounded-xl p-4 italic">
+                  {dict?.test?.deficient_teasers?.[deficientElement]}
+                </div>
+              )}
             </div>
             
             <div className="bg-[#0B1120] p-6 rounded-2xl border border-gray-800 shadow-2xl relative group overflow-hidden">

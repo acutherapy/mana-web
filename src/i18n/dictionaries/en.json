@@ -130,6 +130,23 @@
       "Earth": "Your dominant energy is Earth. Representing stability, when out of balance it can manifest as over-thinking and carrying everyone else's burdens.",
       "Metal": "Your dominant energy is Metal. Representing order, when under tension it can become rigid, leaving you feeling restricted by external structures.",
       "Water": "Your dominant energy is Water. Representing depth and flow, when exhausted it can stagnate, leaving you in a state of deep fatigue."
+    },
+    "q3": "When you finally sit on the flight to Hawaii, looking at the clouds outside the window, what is the true state of your mind?",
+    "q3_opt1": "My body is exhausted, but my brain feels like it has 20 browser tabs open at once, unable to shut down.",
+    "q3_opt2": "I feel a huge sense of emptiness and confusion, not knowing what I've been working so hard for.",
+    "q3_opt3": "I feel like I'm finally safe; I just want to completely disappear for a few days, with no one contacting me.",
+    "q4": "After landing in Honolulu, walking on the beach, how do you feel about your relationship with the lively environment around you?",
+    "q4_opt1": "Watching groups of people, even though I enjoy being alone, I feel a subtle sense of isolation, like an 'outsider'.",
+    "q4_opt2": "It's hard to truly blend in and relax. My body is still tense, and I find myself subconsciously checking work emails.",
+    "q4_opt3": "I feel deeply exhausted, wishing to just close my eyes on the sand and let the sound of waves wash over me.",
+    "dominant_title": "Dominant Archetype",
+    "deficient_title": "Deficient Energy",
+    "deficient_teasers": {
+      "Wood": "Your weakest energy is Wood, meaning you are lacking the force of growth, vitality, and vision. You may feel unmotivated, directionless, or struggling to plan for the future.",
+      "Fire": "Your weakest energy is Fire, indicating a lack of warmth, joy, and emotional expansion. You may feel emotionally flat, cold, or disconnected from inspiration.",
+      "Earth": "Your weakest energy is Earth, representing a lack of grounding, stability, and nourishment. You may feel anxious, ungrounded, or constantly floating without a safe soil to land on.",
+      "Metal": "Your weakest energy is Metal, pointing to a lack of boundaries, clarity, and the ability to let go. You may feel overwhelmed by chaos, holding onto old emotional clutter.",
+      "Water": "Your weakest energy is Water, indicating a lack of rest, deep reserve, and inner quiet. You are running on empty, unable to access your deep baseline wisdom."
     }
   },
   "testimonials": {
