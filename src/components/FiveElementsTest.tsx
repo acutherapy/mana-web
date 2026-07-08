@@ -788,6 +788,8 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                   console.error("Failed to capture canvas image:", canvasErr);
                 }
 
+                const getSubElement = (charVal: string) => beads.find(b => b.type === 'subconscious' && b.char === charVal)?.element || 'Neutral';
+
                 try {
                   await fetch('/api/subscribe', {
                     method: 'POST',
@@ -798,7 +800,13 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                       element: dominantElement, 
                       deficient: deficientElement,
                       lang,
-                      talismanImage
+                      talismanImage,
+                      dob: baziData.date,
+                      tob: baziData.time,
+                      q1: getSubElement('念'),
+                      q2: getSubElement('心'),
+                      q3: getSubElement('意'),
+                      q4: getSubElement('神')
                     }),
                   });
                 } catch(err) {

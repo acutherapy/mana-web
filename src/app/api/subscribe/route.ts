@@ -117,7 +117,7 @@ const DEFICIENT_ELEMENT_ADVICE = {
 
 export async function POST(req: Request) {
   try {
-    const { name, email, element, deficient, lang = "en", talismanImage } = await req.json();
+    const { name, email, element, deficient, lang = "en", talismanImage, dob, tob, q1, q2, q3, q4 } = await req.json();
 
     if (!email || !element) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -142,6 +142,15 @@ export async function POST(req: Request) {
       : `✨ Your Personalized Energy Talisman & Diagnostic - Mana Reset`;
 
     const bookingUrl = `${BASE_URL}/${lang}/booking`;
+    
+    // Construct dynamic live deep-link URL back to the results page
+    const liveReportUrl = dob && tob
+      ? `${BASE_URL}/${lang}?dob=${dob}&tob=${tob}&q1=${q1}&q2=${q2}&q3=${q3}&q4=${q4}#test`
+      : `${BASE_URL}/${lang}/experience`;
+      
+    const liveReportButtonText = isZh 
+      ? "查看我的实时能量图谱与报告" 
+      : "View My Live Talisman & Report";
 
     // Process attachment if provided
     const attachments = [];
@@ -185,10 +194,10 @@ export async function POST(req: Request) {
               : `To help anchor your presence and harmonize this imbalance, <strong>we have attached your personalized "Digital Energy Talisman" image file directly to this email</strong>. We recommend saving the attachment to your phone and setting it as your lock screen wallpaper. Every time you wake your phone, let it serve as a gentle reminder to return to your breath and ground yourself.`}
           </p>
 
-          <!-- Explore More Button -->
+          <!-- Live Talisman Deep-Link Button -->
           <div style="text-align: center; margin: 32px 0;">
-            <a href="${BASE_URL}/${lang}" target="_blank" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
-              ${isZh ? `探索 Mana Reset 首页` : `Explore Mana Reset Homepage`}
+            <a href="${liveReportUrl}" target="_blank" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+              ${liveReportButtonText}
             </a>
           </div>
 
