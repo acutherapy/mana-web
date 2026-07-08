@@ -93,53 +93,53 @@ export async function POST(req: Request) {
         <!-- Header -->
         <div style="text-align: center; margin-bottom: 40px;">
           <h1 style="font-size: 24px; letter-spacing: 0.15em; font-weight: normal; margin: 0; color: #0A1C2A; text-transform: uppercase;">MANA RESET</h1>
-          <p style="font-size: 11px; letter-spacing: 0.2em; color: #C5A880; text-transform: uppercase; margin-top: 8px; margin-bottom: 0;">\${emailDict.location_city || "Honolulu, Hawaii"}</p>
+          <p style="font-size: 11px; letter-spacing: 0.2em; color: #C5A880; text-transform: uppercase; margin-top: 8px; margin-bottom: 0;">${emailDict.location_city || "Honolulu, Hawaii"}</p>
         </div>
 
         <!-- Body -->
         <div style="font-size: 16px; line-height: 1.8; color: #2C3E50;">
-          <p>\${emailDict.dear || "Dear"} \${name || emailDict.default_name || "Traveler"},</p>
+          <p>${emailDict.dear || "Dear"} ${name || emailDict.default_name || "Traveler"},</p>
           
           <p>
-            \${emailDict.thank_you || "Thank you for aligning with Mana energy flow."}
+            ${emailDict.thank_you || "Thank you for aligning with Mana energy flow."}
           </p>
 
           <p style="background-color: #F5EFEB; border-left: 3px solid #C5A880; padding: 16px 20px; font-style: italic; margin: 24px 0; border-radius: 0 8px 8px 0;">
-            <strong>\${emailDict.diagnostic_title || "Your Diagnostic:"}</strong><br/><br/>
-            <strong>\${testDict.dominant_title || "Dominant"}:</strong> \${teasers[userElement] || ""}<br/><br/>
-            <strong>\${testDict.deficient_title || "Deficient"}:</strong> \${deficientTeasers[deficientElement] || ""}
+            <strong>${emailDict.diagnostic_title || "Your Diagnostic:"}</strong><br/><br/>
+            <strong>${testDict.dominant_title || "Dominant"}:</strong> ${teasers[userElement] || ""}<br/><br/>
+            <strong>${testDict.deficient_title || "Deficient"}:</strong> ${deficientTeasers[deficientElement] || ""}
           </p>
 
           <p>
-            \${emailDict.attachment_info}
+            ${emailDict.attachment_info}
           </p>
 
           <!-- Live Talisman Deep-Link Button -->
           <div style="text-align: center; margin: 32px 0;">
-            <a href="\${liveReportUrl}" target="_blank" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
-              \${liveReportButtonText}
+            <a href="${liveReportUrl}" target="_blank" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+              ${liveReportButtonText}
             </a>
           </div>
 
           <p style="margin-top: 40px; border-top: 1px solid #EAE5D9; padding-top: 24px;">
-            <strong>\${emailDict.recommendation_title || "Our Recommendation:"}</strong><br/>
-            \${emailDict.recommendation_pre || "We recommend booking"} <strong>\${recommendationName}</strong>. \${recDesc}
+            <strong>${emailDict.recommendation_title || "Our Recommendation:"}</strong><br/>
+            ${emailDict.recommendation_pre || "We recommend booking"} <strong>${recommendationName}</strong>. ${recDesc}
           </p>
 
           <p>
-            \${emailDict.scarcity_info}
+            ${emailDict.scarcity_info}
           </p>
 
           <!-- Booking Link -->
           <div style="text-align: center; margin: 24px 0 40px 0;">
-            <a href="\${bookingUrl}#\${rec.anchor}" style="background-color: transparent; border: 1px solid #0A1C2A; color: #0A1C2A; text-decoration: none; padding: 12px 24px; font-size: 13px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
-              \${emailDict.button_booking || "Reserve My Session"}
+            <a href="${bookingUrl}#${rec.anchor}" style="background-color: transparent; border: 1px solid #0A1C2A; color: #0A1C2A; text-decoration: none; padding: 12px 24px; font-size: 13px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+              ${emailDict.button_booking || "Reserve My Session"}
             </a>
           </div>
 
           <!-- Signature -->
           <p style="margin-bottom: 0; font-style: italic; color: #7F8C8D; margin-top: 40px;">
-            \${emailDict.signature}
+            ${emailDict.signature}
           </p>
         </div>
       </div>

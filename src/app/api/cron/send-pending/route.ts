@@ -113,30 +113,30 @@ export async function GET(req: Request) {
             <div style="font-family: 'Georgia', 'Times New Roman', serif; background-color: #FDFBF7; color: #0A1C2A; max-width: 600px; margin: 0 auto; padding: 40px 24px; border: 1px solid #EAE5D9; border-radius: 12px;">
               <div style="text-align: center; margin-bottom: 40px;">
                 <h1 style="font-size: 24px; letter-spacing: 0.15em; font-weight: normal; margin: 0; color: #0A1C2A; text-transform: uppercase;">MANA RESET</h1>
-                <p style="font-size: 11px; letter-spacing: 0.2em; color: #C5A880; text-transform: uppercase; margin-top: 8px; margin-bottom: 0;">\${emailDict.location_city || "Honolulu, Hawaii"}</p>
+                <p style="font-size: 11px; letter-spacing: 0.2em; color: #C5A880; text-transform: uppercase; margin-top: 8px; margin-bottom: 0;">${emailDict.location_city || "Honolulu, Hawaii"}</p>
               </div>
               <div style="font-size: 16px; line-height: 1.8; color: #2C3E50;">
-                <p>\${emailDict.dear || "Dear"} \${name || emailDict.default_name || "Traveler"},</p>
+                <p>${emailDict.dear || "Dear"} ${name || emailDict.default_name || "Traveler"},</p>
                 
-                <p>\${body1}</p>
+                <p>${body1}</p>
                 
                 <p style="margin: 32px 0;">
-                  \${email2Dict.body_part2}
+                  ${email2Dict.body_part2}
                 </p>
 
                 <p style="background-color: #F5EFEB; border-left: 3px solid #C5A880; padding: 20px; font-style: italic; margin: 32px 0; border-radius: 0 8px 8px 0;">
-                  \${email2Dict.body_part3}
+                  ${email2Dict.body_part3}
                 </p>
 
                 <!-- Booking Link -->
                 <div style="text-align: center; margin: 40px 0 24px 0;">
-                  <a href="\${bookingUrl}" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
-                    \${emailDict.button_booking || "Reserve My Session"}
+                  <a href="${bookingUrl}" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+                    ${emailDict.button_booking || "Reserve My Session"}
                   </a>
                 </div>
 
                 <p style="margin-bottom: 0; font-style: italic; color: #7F8C8D; margin-top: 40px;">
-                  \${emailDict.signature}
+                  ${emailDict.signature}
                 </p>
               </div>
             </div>
@@ -153,31 +153,31 @@ export async function GET(req: Request) {
             <div style="font-family: 'Georgia', 'Times New Roman', serif; background-color: #FDFBF7; color: #0A1C2A; max-width: 600px; margin: 0 auto; padding: 40px 24px; border: 1px solid #EAE5D9; border-radius: 12px;">
               <div style="text-align: center; margin-bottom: 40px;">
                 <h1 style="font-size: 24px; letter-spacing: 0.15em; font-weight: normal; margin: 0; color: #0A1C2A; text-transform: uppercase;">MANA RESET</h1>
-                <p style="font-size: 11px; letter-spacing: 0.2em; color: #C5A880; text-transform: uppercase; margin-top: 8px; margin-bottom: 0;">\${emailDict.location_city || "Honolulu, Hawaii"}</p>
+                <p style="font-size: 11px; letter-spacing: 0.2em; color: #C5A880; text-transform: uppercase; margin-top: 8px; margin-bottom: 0;">${emailDict.location_city || "Honolulu, Hawaii"}</p>
               </div>
               <div style="font-size: 16px; line-height: 1.8; color: #2C3E50;">
-                <p>\${emailDict.dear || "Dear"} \${name || emailDict.default_name || "Traveler"},</p>
+                <p>${emailDict.dear || "Dear"} ${name || emailDict.default_name || "Traveler"},</p>
                 
-                <p>\${body1}</p>
+                <p>${body1}</p>
 
                 <p style="background-color: #F5EFEB; border-left: 3px solid #C5A880; padding: 16px 20px; font-style: italic; margin: 24px 0; border-radius: 0 8px 8px 0;">
-                  <strong>\${recommendationName}</strong><br/>
-                  \${recDesc}
+                  <strong>${recommendationName}</strong><br/>
+                  ${recDesc}
                 </p>
                 
                 <p style="margin: 32px 0;">
-                  \${email3Dict.body_part2 || ""}
+                  ${email3Dict.body_part2 || ""}
                 </p>
 
                 <!-- Booking Link -->
                 <div style="text-align: center; margin: 40px 0 24px 0;">
-                  <a href="\${bookingUrl}#\${rec.anchor}" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
-                    \${email3Dict.button_booking || "Reserve My Reset Spot"}
+                  <a href="${bookingUrl}#${rec.anchor}" style="background-color: #0A1C2A; color: #FFFFFF; text-decoration: none; padding: 14px 28px; font-size: 14px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+                    ${email3Dict.button_booking || "Reserve My Reset Spot"}
                   </a>
                 </div>
 
                 <p style="margin-bottom: 0; font-style: italic; color: #7F8C8D; margin-top: 40px;">
-                  \${emailDict.signature}
+                  ${emailDict.signature}
                 </p>
               </div>
             </div>
@@ -197,12 +197,12 @@ export async function GET(req: Request) {
         }
 
         // Update status to 'sent' in Supabase
-        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue?id=eq.\${id}`, {
+        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue?id=eq.${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
             "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
-            "Authorization": `Bearer \${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+            "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
           },
           body: JSON.stringify({
             status: "sent",
@@ -212,16 +212,16 @@ export async function GET(req: Request) {
 
         results.push({ id, status: "success" });
       } catch (err: any) {
-        console.error(`Failed to process email queue item \${id}:`, err);
+        console.error(`Failed to process email queue item ${id}:`, err);
         
         // Update status to 'failed' in Supabase
         try {
-          await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue?id=eq.\${id}`, {
+          await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue?id=eq.${id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",
               "apikey": process.env.SUPABASE_SERVICE_ROLE_KEY,
-              "Authorization": `Bearer \${process.env.SUPABASE_SERVICE_ROLE_KEY}`
+              "Authorization": `Bearer ${process.env.SUPABASE_SERVICE_ROLE_KEY}`
             },
             body: JSON.stringify({
               status: "failed",
