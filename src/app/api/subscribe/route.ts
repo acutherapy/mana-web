@@ -3,9 +3,6 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const WALLPAPER_BASE_URL = "https://www.manareset.com/images/talisman_wallpapers";
-const BOOKING_BASE_URL = "https://www.manareset.com";
-
 // Element recommendations mapping
 const ELEMENT_RECOMMENDATIONS = {
   Wood: {
@@ -28,7 +25,7 @@ const ELEMENT_RECOMMENDATIONS = {
     },
     zh: {
       name: "平衡 (The Balance - 90分钟) 或 放松 (The Unwind - 60分钟)",
-      desc: "专注于冷却过度活跃的神经系统、深层镇静呼吸和情绪着陆。",
+      desc: "专注于冷却过度活跃의 신경시스템、深层镇静呼吸和情绪着陆。",
       anchor: "balance"
     }
   },
@@ -80,16 +77,16 @@ const ELEMENT_ADVICE = {
     zh: "您的能量测算显示您目前火元素偏旺且有些干涸。您感觉自己像是在高摩擦力的燃料下运行——脑海里同时打开了20个网页浏览器，即使身在檀香山，您也很难静下来呼吸。"
   },
   Earth: {
-    en: "Your dominant energy balance indicates depleted Earth energy. You are constantly over-giving, holding space and worrying for everyone else around you, leaving no solid soil of your own to land on.",
-    zh: "您的能量测算显示您目前土元素能量流失。您一直在过度付出，照顾和担心身边的每一个人，却唯独没有留下一片属于自己的土壤让自己安稳着陆。"
+    en: "Your dominant energy balance indicates overactive Earth energy. You are constantly over-thinking, carrying everyone else's burdens and worries, leaving no solid soil of your own to land on.",
+    zh: "您的能量测算显示您目前土元素过盛。您一直在过度思考、担心和承担身边每一个人的重担，却唯独没有留下一片属于自己的土壤让自己安稳着陆。"
   },
   Metal: {
     en: "Your dominant energy balance indicates rigid Metal energy. Carrying too much chaotic structure and external demands has created a sense of heavy restriction. You are seeking minimalism, order, and space to let go.",
     zh: "您的能量测算显示您目前金元素过于紧绷。携带了太多混乱的规则和外界的要求，让您感到沉重的束缚。您正在寻找极简、秩序以及放手释放的空间。"
   },
   Water: {
-    en: "Your dominant energy balance indicates low Water energy. You are feeling physically and mentally exhausted, perhaps holding onto sub-conscious fear or absolute fatigue. Your deep reserves need careful replenishment.",
-    zh: "您的能量测算显示您目前水元素匮乏。您感到身体和精神双重疲惫，内心可能带着隐秘的焦虑或极度的倦怠。您的生命原力深处急需温和的灌溉与补充。"
+    en: "Your dominant energy balance indicates stagnant Water energy. Deep fatigue has set in, and your inner baseline reserves need gentle replenishment to overcome subconscious fear or absolute exhaustion.",
+    zh: "您的能量测算显示您目前水元素滞涩。深层的倦怠感已经侵入，您的生命原力深处急需温和的灌溉与补充，以消除潜意识中的恐惧或极度的疲惫。"
   }
 };
 
@@ -100,6 +97,12 @@ export async function POST(req: Request) {
     if (!email || !element) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
+
+    // Determine host dynamically for local dev vs production
+    const host = req.headers.get("host") || "www.manareset.com";
+    const protocol = host.includes("localhost") ? "http" : "https";
+    const BASE_URL = `${protocol}://${host}`;
+    const WALLPAPER_BASE_URL = `${BASE_URL}/images/talisman_wallpapers`;
 
     const isZh = lang === "zh";
     const userElement = (element || "Fire") as "Wood" | "Fire" | "Earth" | "Metal" | "Water";
@@ -113,7 +116,7 @@ export async function POST(req: Request) {
       : `✨ Your Personalized Energy Talisman & Diagnostic - Mana Reset`;
 
     const wallpaperUrl = `${WALLPAPER_BASE_URL}/${userElement.toLowerCase()}.png`;
-    const bookingUrl = `${BOOKING_BASE_URL}/${lang}/booking`;
+    const bookingUrl = `${BASE_URL}/${lang}/booking`;
 
     // Email HTML Template
     const htmlContent = `
@@ -161,13 +164,13 @@ export async function POST(req: Request) {
 
           <p>
             ${isZh
-              ? `由于疗愈师需要维护自身能量纯净，我们每周在威基基仅限接待 <strong>5 位</strong> 独立旅行的女性。如果您希望在夏威夷给自己安排一次真正的深度重启，请提前预留位置。`
+              ? `由于疗愈师需要维护自身能量纯净，我们每周在威基基仅限接待 <strong>5 位</strong> 独自旅行的女性。如果您希望在夏威夷给自己安排一次真正的深度重启，请提前预留位置。`
               : `To preserve the purity of our energetic space, our practitioner only accepts <strong>5 private resets</strong> each week for solo female travelers in Waikiki. If you wish to secure a space for true restoration during your stay, we invite you to reserve your spot early.`}
           </p>
 
           <!-- Booking Link -->
           <div style="text-align: center; margin: 24px 0 40px 0;">
-            <a href="${bookingUrl}/${lang}/booking#${recommendation.anchor}" style="background-color: transparent; border: 1px solid #0A1C2A; color: #0A1C2A; text-decoration: none; padding: 12px 24px; font-size: 13px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
+            <a href="${bookingUrl}#${recommendation.anchor}" style="background-color: transparent; border: 1px solid #0A1C2A; color: #0A1C2A; text-decoration: none; padding: 12px 24px; font-size: 13px; font-family: sans-serif; font-weight: bold; letter-spacing: 0.05em; border-radius: 4px; display: inline-block;">
               ${isZh ? `预订我的私密身心重置` : `Reserve My Reset Session`}
             </a>
           </div>

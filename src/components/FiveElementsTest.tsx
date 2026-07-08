@@ -310,11 +310,12 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
       if (step === 5) {
         setStep(6);
         setTimeout(() => {
-          // Calculate true dominant based on scores (Bazi weights + Question weights)
-          const finalScores = { ...scores };
-          newBeads.filter(b => b.type === 'subconscious').forEach(b => {
+          // Calculate true dominant by summing elements from the actual visual beads in the ring
+          const finalScores = { Wood: 0, Fire: 0, Earth: 0, Metal: 0, Water: 0 };
+          newBeads.forEach(b => {
+             const weight = b.type === 'subconscious' ? 1.5 : 1.0;
              if (finalScores[b.element as keyof typeof finalScores] !== undefined) {
-               finalScores[b.element as keyof typeof finalScores] += 1.5; // Questions have high weight
+               finalScores[b.element as keyof typeof finalScores] += weight;
              }
           });
           
@@ -751,13 +752,30 @@ export default function FiveElementsTest({ dict, lang = "en" }: { dict: any; lan
                 >
                   {dict.test.get_free_pass || "Get Free Pass"}
                 </button>
-                <a 
-                  href={`/images/talisman_wallpapers/${dominantElement ? dominantElement.toLowerCase() : 'fire'}.png`}
-                  download={`mana-talisman-${dominantElement ? dominantElement.toLowerCase() : 'fire'}.png`}
-                  className="mt-3 text-xs text-ocean hover:underline font-medium inline-flex items-center justify-center gap-1"
+                <button 
+                  onClick={() => {
+                    try {
+                      const canvas = document.querySelector('canvas');
+                      if (canvas) {
+                        const url = canvas.toDataURL('image/png');
+                        const a = document.createElement('a');
+                        a.style.display = 'none';
+                        a.href = url;
+                        a.download = `mana-talisman-${dominantElement ? dominantElement.toLowerCase() : 'fire'}.png`;
+                        document.body.appendChild(a);
+                        a.click();
+                        document.body.removeChild(a);
+                      } else {
+                        alert("Canvas not found.");
+                      }
+                    } catch (err) {
+                      alert("Failed to download wallpaper.");
+                    }
+                  }}
+                  className="mt-3 text-xs text-ocean hover:underline font-medium inline-flex items-center justify-center gap-1 cursor-pointer bg-transparent border-none outline-none"
                 >
                   <Download size={12} /> {dict?.test?.download_wallpaper || "Download Lockscreen Wallpaper"}
-                </a>
+                </button>
               </div>
 
               <div className="bg-white rounded-xl p-5 text-center flex flex-col shadow-xl border-2 border-ocean transform md:-translate-y-1 relative">
