@@ -608,5 +608,19 @@
         "location": "São Paulo"
       }
     ]
+  },
+  "email": {
+    "subject": "✨ Your Personalized Energy Talisman & Diagnostic - Mana Reset",
+    "location_city": "Honolulu, Hawaii",
+    "dear": "Dear",
+    "default_name": "Traveler",
+    "thank_you": "Thank you for taking a moment to align with Honolulu's Mana energy flow before your journey.",
+    "diagnostic_title": "Your Diagnostic:",
+    "attachment_info": "To help anchor your presence and harmonize this imbalance, <strong>we have attached your personalized \"Digital Energy Talisman\" image file directly to this email</strong>. We recommend saving the attachment to your phone and setting it as your lock screen wallpaper. Every time you wake your phone, let it serve as a gentle reminder to return to your breath and ground yourself.",
+    "recommendation_title": "Our Recommendation for Your Stay:",
+    "recommendation_pre": "Based on your elemental constitution, we highly recommend booking",
+    "scarcity_info": "To preserve the purity of our energetic space, our practitioner only accepts <strong>5 private resets</strong> each week for solo female travelers in Waikiki. If you wish to secure a space for true restoration during your stay, we invite you to reserve your spot early.",
+    "button_booking": "Reserve My Reset Session",
+    "signature": "With presence,<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>The Mana Reset Team</strong>"
   }
 }

@@ -608,5 +608,19 @@
         "location": "圣保罗"
       }
     ]
+  },
+  "email": {
+    "subject": "✨ 您的专属能量护身符与身心诊断报告 - Mana Reset",
+    "location_city": "檀香山，夏威夷",
+    "dear": "亲爱的",
+    "default_name": "旅行者",
+    "thank_you": "感谢您在踏上夏威夷旅程前，花时间与火奴鲁鲁的 Mana 能量场进行了链接。",
+    "diagnostic_title": "您的能量状态分析：",
+    "attachment_info": "为了帮您凝聚心神，并在接下来的旅程中调和这种失衡，<strong>我们已将您在网页上实时推算生成的专属“五行能量护身符”图片作为附件随信发送给您</strong>。建议您在邮件附件中直接保存此图片，并将其设置为手机的锁屏壁纸。在夏威夷的每一天，每次点亮屏幕，它都会温柔地提醒您——拉回呼吸，回到当下。",
+    "recommendation_title": "给您的夏威夷身心重启建议：",
+    "recommendation_pre": "结合您的能量图谱，我们强烈建议您在檀香山的酒店套房中，体验",
+    "scarcity_info": "由于疗愈师需要维护自身能量纯净，我们每周在威基基仅限接待 <strong>5 位</strong> 独自旅行的女性。如果您希望在夏威夷给自己安排一次真正的深度重启，请提前预留位置。",
+    "button_booking": "预订我的私密身心重置",
+    "signature": "静候与您在威基基相遇，<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>The Mana Reset Team</strong>"
   }
 }

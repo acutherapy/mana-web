@@ -608,5 +608,19 @@
         "location": "상파울루"
       }
     ]
+  },
+  "email": {
+    "subject": "✨ 귀하의 맞춤형 에너지 부적 및 심신 진단 보고서 - Mana Reset",
+    "location_city": "호놀룰루, 하와이",
+    "dear": "친애하는",
+    "default_name": "여행자",
+    "thank_you": "하와이 여정을 시작하기 전, 호놀룰루의 마나 에너지 흐름과 정렬하는 시간을 가져주셔서 감사합니다.",
+    "diagnostic_title": "귀하의 에너지 상태 분석:",
+    "attachment_info": "마음의 안정을 찾고 이 불균형을 조화롭게 돕기 위해, <strong>웹페이지에서 실시간으로 계산 및 생성된 귀하의 전용 \"디지털 에너지 부적\" 이미지를 본 이메일의 첨부 파일로 전송해 드렸습니다</strong>. 첨부된 이미지를 휴대폰에 저장하여 잠금 화면 배경화면으로 설정해 보세요. 하와이에서의 하루 동안 화면이 켜질 때마다 깊은 호흡을 유도하고 온전히 머무르도록 이끌어 줄 것입니다.",
+    "recommendation_title": "하와이 체류 기간 동안 권장해 드리는 추천 세션:",
+    "recommendation_pre": "귀하의 원소 체질에 맞춰 호놀룰루 호텔 스위트룸에서",
+    "scarcity_info": "테라피스트 자신의 에너지 순수성을 지키고 온전히 집중하기 위해, 와이키키에서 진행되는 프라이빗 세션은 매주 단 <strong>5명</strong>의 여성 홀로 여행자분들로 제한하고 있습니다. 깊은 치유와 휴식을 확보하고자 하신다면 서둘러 예약해 주시기 바랍니다.",
+    "button_booking": "나의 프라이빗 리셋 예약하기",
+    "signature": "고요한 평온을 담아,<br/><strong style='color: #0A1C2A; font-style: normal; font-family: sans-serif; font-size: 14px;'>The Mana Reset Team</strong>"
   }
 }
