@@ -21,8 +21,9 @@ export async function GET(req: Request) {
     }
 
     // 2. Fetch pending emails from Supabase queue where send_at <= now
+    const cleanSupabaseUrl = process.env.SUPABASE_URL.replace(/\/rest\/v1\/?$/, "").replace(/\/+$/, "");
     const nowStr = new Date().toISOString();
-    const queryUrl = `${process.env.SUPABASE_URL}/rest/v1/email_queue?status=eq.pending&send_at=lte.${nowStr}`;
+    const queryUrl = `${cleanSupabaseUrl}/rest/v1/email_queue?status=eq.pending&send_at=lte.${nowStr}`;
     
     const queueRes = await fetch(queryUrl, {
       method: "GET",
@@ -197,7 +198,7 @@ export async function GET(req: Request) {
         }
 
         // Update status to 'sent' in Supabase
-        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue?id=eq.${id}`, {
+        await fetch(`${cleanSupabaseUrl}/rest/v1/email_queue?id=eq.${id}`, {
           method: "PATCH",
           headers: {
             "Content-Type": "application/json",
@@ -216,7 +217,7 @@ export async function GET(req: Request) {
         
         // Update status to 'failed' in Supabase
         try {
-          await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue?id=eq.${id}`, {
+          await fetch(`${cleanSupabaseUrl}/rest/v1/email_queue?id=eq.${id}`, {
             method: "PATCH",
             headers: {
               "Content-Type": "application/json",

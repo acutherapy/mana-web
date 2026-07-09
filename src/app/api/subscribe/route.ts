@@ -184,13 +184,15 @@ export async function POST(req: Request) {
 
     // Queue Email 2 and Email 3 in Supabase email_queue for drip automation
     if (process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      // Resilient cleanup of Supabase URL to strip rest/v1 suffixes if present
+      const cleanSupabaseUrl = process.env.SUPABASE_URL.replace(/\/rest\/v1\/?$/, "").replace(/\/+$/, "");
       try {
         const now = new Date();
         const sendAt2 = new Date(now.getTime() + 24 * 60 * 60 * 1000).toISOString();
         const sendAt3 = new Date(now.getTime() + 48 * 60 * 60 * 1000).toISOString();
 
         // Enqueue Email 2 (24 Hours Later)
-        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue`, {
+        await fetch(`${cleanSupabaseUrl}/rest/v1/email_queue`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -210,7 +212,7 @@ export async function POST(req: Request) {
         });
 
         // Enqueue Email 3 (48 Hours Later)
-        await fetch(`${process.env.SUPABASE_URL}/rest/v1/email_queue`, {
+        await fetch(`${cleanSupabaseUrl}/rest/v1/email_queue`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
