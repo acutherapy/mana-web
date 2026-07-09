@@ -189,6 +189,7 @@ export async function GET(req: Request) {
         const sendRes = await resend.emails.send({
           from: "Mana Reset Partners <partners@manareset.com>",
           to: [email],
+          replyTo: "leyzax@gmail.com",
           subject: subject,
           html: emailHtml
         });
