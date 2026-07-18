@@ -78,8 +78,8 @@ export default async function Footer({ lang }: { lang: 'en'|'zh'|'ja'|'ko'|'es' 
               {dict.footer?.terms}
             </NavItem>
 
-            {/* 🔥 sitemap 也统一控制 */}
-            <NavItem href="/sitemap.xml" external>
+            {/* 🔥 sitemap 统一指向 HTML 站点地图 */}
+            <NavItem href={`/${lang}/sitemap`}>
               {dict.footer?.sitemap}
             </NavItem>
           </div>
