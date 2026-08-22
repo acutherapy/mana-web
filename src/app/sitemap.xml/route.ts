@@ -19,7 +19,7 @@ export async function GET() {
     '/blog/stress-relief-retreat-hawaii-emotional-release'
   ]
 
-  const lastmod = '2026-07-18'
+  const lastmod = '2026-08-22'
 
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 `
