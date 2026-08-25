@@ -312,6 +312,43 @@ const articles: Record<string, {
           <p>물론입니다. 많은 여성들이 이 여행을 예방적 투자로 선택합니다——완전히 소진되기 전에 의도적으로 충전하기 위해.</p>
         </>
       ),
+      es: (
+        <>
+          <p>Llevas años dando. A tu trabajo, a tu familia, a tus clientes, a tu comunidad. Tienes la agenda llena y la batería interna en rojo. Sabes que necesitas parar, pero no sabes cómo dejar de correr. Eso es el <em>quemarse</em>—y en la cultura del esfuerzo y el sacrificio que muchas cargamos desde pequeñas, reconocerlo ya es un acto valiente.</p>
+          <p>Un <strong>viaje de reseteo a Hawái</strong> no es una recompensa para cuando termines tu lista de pendientes. Es la intervención que tu cuerpo lleva meses pidiendo.</p>
+
+          <h2>Por qué Hawái para recuperarse del burnout</h2>
+          <p>Hawái tiene algo que los spas urbanos y los retiros de fin de semana no pueden replicar: distancia real. Cuando estás a miles de kilómetros del trabajo, la familia y las notificaciones del teléfono, tu sistema nervioso empieza a creer que puede bajar la guardia. A eso se suma la ciencia: el aire de la costa hawaiana tiene una concentración de iones negativos entre las más altas del mundo, y los estudios muestran que estos iones aumentan los niveles de serotonina y reducen el cortisol. El proceso empieza antes de que llegues siquiera al hotel.</p>
+          <p>Y luego está el <em>Mana</em>—el concepto hawaiano de fuerza vital que existe en la naturaleza, el océano y la tierra. Las mujeres que llegan agotadas y se quedan tres días con frecuencia describen sentir algo aflojándose—como si algo que llevaban apretado durante meses empezara a soltarse.</p>
+
+          <h2>Las señales de que necesitas más que unas vacaciones normales</h2>
+          <ul>
+            <li><strong>Entumecimiento emocional</strong>—las cosas que antes te emocionaban ahora solo te dan cansancio</li>
+            <li><strong>Dormir no alcanza</strong>—ocho horas y te despiertas sin energía</li>
+            <li><strong>Pérdida de creatividad</strong>—donde antes fluían las ideas, ahora hay silencio</li>
+            <li><strong>No puedes desconectarte</strong>—revisas el correo a medianoche aunque te juraste que no lo harías</li>
+            <li><strong>El cuerpo habla</strong>—tensión crónica en cuello y hombros, mandíbula apretada, respiración superficial</li>
+          </ul>
+          <p>Si te reconociste en tres o más, lo que necesitas no es otro fin de semana. Necesitas un reseteo real.</p>
+
+          <h2>Cómo luce un viaje de reseteo de tres días</h2>
+          <p><strong>Día 1—Llegada y permiso para no hacer nada.</strong> No hagas reservas. Llega, haz el check-in, y deja que el cuerpo empiece a entender que no hay emergencias. Siéntate en el balcón. Pide servicio de habitación. Mira el atardecer.</p>
+          <p><strong>Día 2—La sesión central.</strong> Reserva una sesión privada de bienestar en tu habitación. Una practicante llega a tu espacio y guía una experiencia somática diseñada para el tipo de tensión que cargas. Después, descansa de verdad.</p>
+          <p><strong>Día 3—Integración.</strong> Es común que las emociones suban con más fuerza en el tercer día. Permítetelo. Una caminata en la orilla, escribir en un diario, sentir lo que surja. Este es el momento en que empiezas a pensar con claridad qué quieres cambiar cuando regreses.</p>
+
+          <h2>Por qué las sesiones privadas en habitación superan al spa del hotel</h2>
+          <p>El spa de hotel está diseñado para el volumen. Esperas en sala de espera, te atienden en tiempo estipulado, tienes que comportarte de cierta manera. Una sesión privada en tu habitación es lo opuesto: la practicante viene a tu espacio, sin presión de tiempo, sin testigos. Puedes llorar, quedarte en silencio, lo que sea. La seguridad del entorno es lo que permite la liberación profunda.</p>
+          <p>Eso es exactamente para lo que fue creado Mana Reset: llevar apoyo de bienestar profesional a mujeres hospedadas en hoteles de Honolulú que no quieren, o no pueden, salir de su habitación para encontrar alivio.</p>
+
+          <h2>Preguntas frecuentes</h2>
+          <h3>¿Cuántos días necesito para un reseteo significativo?</h3>
+          <p>Incluso dos noches producen un cambio medible. Tres a cinco días permiten una regulación real del sistema nervioso. Una semana completa es transformadora.</p>
+          <h3>¿Tengo que prepararme de alguna manera?</h3>
+          <p>No. Llega exactamente como estás—agotada está bien, abrumada está bien. La experiencia te recibe donde estás, no donde crees que deberías estar.</p>
+          <h3>¿Esto es solo para casos de burnout severo?</h3>
+          <p>Para nada. Muchas mujeres hacen este viaje como mantenimiento preventivo—antes de llegar al límite. Piénsalo como servicio regular para tu activo más valioso: tu capacidad de funcionar, crear y conectar.</p>
+        </>
+      ),
     }
   },
 
@@ -457,6 +494,48 @@ const articles: Record<string, {
           <p>와이키키에 머문다면 필요 없습니다. 노스쇼어나 카일루아에 가고 싶다면 하루 렌트가 가치 있습니다.</p>
           <h3>호놀룰루에서 믿을 수 있는 프라이빗 세션을 어떻게 찾나요?</h3>
           <p>소마틱 워크나 신경계 조절을 전문으로 하는 치료사를 찾고, 호텔 방문 세션이 가능한지 반드시 확인하세요.</p>
+        </>
+      ),
+      es: (
+        <>
+          <p>Viajar sola es uno de los actos de confianza en ti misma más poderosos que puedes hacer. La pregunta que más escuchamos es: <em>¿Hawái es seguro para mujeres que viajan solas?</em> La respuesta es sí—y esta guía te explica cómo diseñar un viaje que sea a la vez seguro y profundamente restaurador.</p>
+
+          <h2>¿Hawái es seguro para mujeres viajeras solas?</h2>
+          <p>Hawái es consistentemente uno de los estados más seguros de los Estados Unidos para viajeros. Waikiki, Ala Moana y Kaimuki son zonas con alta densidad peatonal, bien iluminadas y extremadamente amigables con el turismo. Puedes cenar sola en restaurantes excelentes, hacer senderismo al amanecer en Diamond Head y caminar por la playa al atardecer sin preocupaciones.</p>
+          <p>Como en cualquier lugar, el sentido común aplica: mantente en zonas concurridas después de oscurecer, cuida tus pertenencias en la playa y confía en tu intuición. La gran mayoría de mujeres que visitan Oahu solas reportan sentirse bienvenidas y seguras durante toda su estadía.</p>
+
+          <h3>Barrios que funcionan bien para mujeres solas</h3>
+          <p><strong>Waikiki</strong> es la opción más completa—máxima oferta de servicios, caminable y con alta densidad de hoteles. <strong>Kaimuki</strong> es más tranquilo, con una atmósfera de barrio real y excelente gastronomía local. <strong>Kahala</strong> es para quienes quieren lujo y privacidad.</p>
+
+          <h2>Diseñando un itinerario de autocuidado real</h2>
+          <p>El error más común que cometen las mujeres viajeras en Hawái es importar el ritmo de su vida cotidiana. Snorkeling a las 7 AM, crucero al atardecer a las 5 PM, luau en el medio—y llegan a casa más agotadas que cuando se fueron. Un viaje de autocuidado verdadero luce muy diferente.</p>
+
+          <h3>Mañanas: lentas e intencionales</h3>
+          <p>Despierta sin alarma. Ve a la playa antes de que lleguen los turistas. La franja de arena frente al Moana Surfrider a las 6 AM es casi meditativa. Lleva un diario. Observa cómo cambia la luz sobre Diamond Head. Toma café en una pequeña cafetería local en lugar del lobby del hotel. Estas pequeñas decisiones marcan el tono de todo el día.</p>
+
+          <h3>Tardes: la sesión privada en habitación</h3>
+          <p>En vez de pelear por un turno en el spa del hotel, considera reservar una sesión que llegue a ti. Una practicante llega a tu habitación. Te quedas en tu espacio, cómoda, sin ningún desempeño social requerido. Esto es bienestar moderno: apoyo profundo y personalizado, en el lugar donde estás.</p>
+
+          <h2>Qué llevar en un viaje de bienestar solo</h2>
+          <ul>
+            <li>Ropa cómoda y transpirable en tonos neutros</li>
+            <li>Un diario y un buen bolígrafo</li>
+            <li>Un libro que llevas tiempo queriendo leer</li>
+            <li>Protector solar de alta calidad y un sombrero de ala ancha</li>
+            <li>Botella de agua reutilizable—la hidratación es innegociable con el calor hawaiano</li>
+            <li>Si puedes, deja la laptop en casa</li>
+          </ul>
+
+          <h2>Crear tu santuario privado</h2>
+          <p>Uno de los aspectos más subestimados de un viaje sola es la libertad de tener control total sobre tu tiempo. No hay que negociar con nadie adónde ir o qué comer. Úsala con intención: cierra las cortinas, prepara un baño, pide exactamente lo que quieres del servicio de habitaciones, reserva la sesión de bienestar privado que llevas años diciéndote que harás &quot;algún día&quot;. En este viaje, conviértela en el evento principal.</p>
+
+          <h2>Preguntas frecuentes</h2>
+          <h3>¿Cuál es la mejor época del año para un viaje de bienestar solo a Hawái?</h3>
+          <p>Primavera (abril–mayo) y otoño (septiembre–octubre) ofrecen la mejor combinación de buen clima, multitudes manejables y precios más accesibles. El invierno trae algo de lluvia pero también la temporada de ballenas, que vale mucho la pena.</p>
+          <h3>¿Necesito alquilar un coche?</h3>
+          <p>No si te quedas en Waikiki. El barrio es muy caminable y tiene buena cobertura de transporte público. Si quieres explorar la North Shore o Kailua, un día de alquiler vale la pena.</p>
+          <h3>¿Cómo encuentro practicantes de bienestar privado confiables en Honolulú?</h3>
+          <p>Busca especialistas en trabajo somático o regulación del sistema nervioso, y pregunta específicamente si ofrecen sesiones en tu hotel.</p>
         </>
       ),
     }
@@ -606,6 +685,41 @@ const articles: Record<string, {
           <p>생각보다 적게. 반나절에 하나의 의미 있는 경험이면 충분합니다. 여백을 남겨두세요.</p>
         </>
       ),
+      es: (
+        <>
+          <p>La mayoría de las guías de viaje a Hawái fueron escritas para familias y parejas. Si viajas sola, tu itinerario debería verse completamente diferente. Las mejores <strong>cosas que hacer sola en Hawái</strong> no están en los autobuses turísticos—son tranquilas, personales, y están diseñadas para llenarte, no para agotarte más. Piensa en tu tiempo en Oahu como un <strong>retiro de mente y cuerpo</strong>, no como un sprint de turismo.</p>
+
+          <h2>1. Caminatas en la playa al amanecer</h2>
+          <p>Antes de que aparezcan las sombrillas y los barcos de snorkeling, Waikiki pertenece a los madrugadores. Pon la alarma a las 5:45. La luz del amanecer sobre Diamond Head es extraordinaria. Camina despacio. Deja los audífonos en la habitación. Deja que el sonido del océano haga lo que siempre ha hecho: recalibrar el sistema nervioso, ralentizar la respiración, aquietar la mente.</p>
+
+          <h2>2. Mañanas en el mercado de agricultores</h2>
+          <p>El KCC Farmers Market (sábado por la mañana) y el Kapiolani Park Farmers Market (domingo por la mañana) son instituciones locales genuinas. Compra papaya fresca, mantequilla de maracuyá y café de Kona tostado localmente. Desayuna en una mesa de picnic bajo los árboles, sin agenda y sin ningún lugar al que ir.</p>
+
+          <h2>3. Una tarde en Kailua</h2>
+          <p>Cruza las montañas Koolau hasta el lado de barlovento de Oahu. La playa de Kailua es constantemente clasificada como una de las más hermosas del mundo—arena blanca, agua turquesa y mucho menos turistas que Waikiki. Lleva un libro. Nada. Tímbate al sol. Regresa cuando estés lista.</p>
+
+          <h2>4. Comer sola, conscientemente</h2>
+          <p>Hawái tiene una cultura gastronómica extraordinaria construida sobre tradiciones japonesas, chinas, filipinas, hawaianas y del Pacífico. Comer sola en un buen restaurante es uno de los actos de autorrespeto más radicales que puedes practicar. Pide un asiento en la barra o una mesa junto a la ventana. Pide lo que realmente quieres. Tómate tu tiempo entre platos. Deja el teléfono en el bolsillo.</p>
+
+          <h2>5. La caminata al cráter Diamond Head</h2>
+          <p>Esta caminata de 2.5 km de ida y vuelta ofrece una vista panorámica de Waikiki y el Pacífico que lo pone todo en perspectiva. Ve temprano—las puertas abren a las 6 AM—para evitar el calor y las multitudes. Estar en la cima sola, mirando el océano sin que nadie te necesite para nada, es un momento genuino de retiro de mente y cuerpo.</p>
+
+          <h2>6. Una sesión privada de bienestar en tu habitación</h2>
+          <p>Esta es la pieza central de un viaje solo verdaderamente restaurador, y la actividad que la mayoría de las viajeras pasan por alto completamente. Una sesión privada en habitación sucede en tu propio espacio, a tu horario, sin ninguna fricción social. Trabajo somático dirigido, respiración guiada, apoyo para el sistema nervioso—todo adaptado específicamente a ti. Esto es lo que separa unas vacaciones ordinarias de un reseteo genuino.</p>
+
+          <h2>7. Atardecer en Magic Island</h2>
+          <p>Magic Island, la península en el extremo occidental del Ala Moana Beach Park, ofrece quizás la mejor vista del atardecer en Oahu. Lleva una manta. Siéntate en el pasto. Observa cómo cambian los colores. Permítete sentir lo que surja. Los atardeceres sola no son solitarios; son íntimos.</p>
+
+          <h2>8. Escribir en un diario en una cafetería tranquila</h2>
+          <p>Kaimuki y Manoa tienen excelentes cafeterías independientes con esa energía lenta de barrio que invita a la reflexión. Abre tu cuaderno. Escribe sin agenda—conciencia de flujo, preguntas que has estado evitando, cosas por las que estás agradecida, cosas que estás lista para soltar.</p>
+
+          <h2>Preguntas frecuentes</h2>
+          <h3>¿Es raro hacer estas actividades sola?</h3>
+          <p>La primera hora puede sentirse un poco diferente. Pero para el segundo día, la mayoría de las mujeres describen una sensación profunda de libertad. La cultura de Hawái da la bienvenida a las viajeras solas.</p>
+          <h3>¿Cuántas actividades debo planificar por día?</h3>
+          <p>Menos de lo que crees. Una experiencia significativa por media jornada es suficiente. Deja espacio para lo inesperado.</p>
+        </>
+      ),
     }
   },
 
@@ -708,6 +822,32 @@ const articles: Record<string, {
           <p>호텔 스파는 표준화되고 시간에 쫓깁니다. 프라이빗 방문 세션은 개별화되고, 서두르지 않으며, 자신의 방이라는 친밀한 공간에서 이루어집니다.</p>
           <h3>더 오래 머물면서 여러 번 세션을 받을 수 있나요?</h3>
           <p>가능합니다. 5일 이상 체류 시, 2~3일 간격으로 두 번 받으면 가장 뚜렷한 효과가 나타납니다.</p>
+        </>
+      ),
+      es: (
+        <>
+          <p>La frase <strong>retiro de bienestar para mujeres en Hawái</strong> evoca imágenes de ecolodges remotos en Kauai o Maui. Pero ¿qué pasa si quieres el lujo de un hotel de primera en Honolulú, la flexibilidad de tu propio horario y la profundidad de una experiencia de sanación genuina—todo al mismo tiempo? Puedes tener las tres cosas. Honolulú, con el enfoque correcto, es una de las mejores ciudades del mundo para un retiro privado y personalizado.</p>
+
+          <h2>Por qué Honolulú funciona como destino de bienestar</h2>
+          <p>Honolulú a menudo se subestima como destino de bienestar porque también es una gran ciudad. Pero esa infraestructura urbana es exactamente lo que la hace ideal. Tienes acceso a gastronomía excepcional, hoteles de clase mundial, transporte confiable y el Océano Pacífico—todo a pocos minutos entre sí. A diferencia de los centros de retiro remotos, no dependes de una sola instalación para todo.</p>
+
+          <h2>El auge del micro-retiro privado</h2>
+          <p>Ha surgido una nueva categoría de experiencia de bienestar para mujeres de alto rendimiento. El micro-retiro privado tiene tres características definitorias: viene a ti (una practicante llega a tu habitación de hotel); se adapta a tu horario; y no requiere ningún desempeño social—sin círculos grupales, sin compartir con desconocidas.</p>
+          <p>Para muchas mujeres, especialmente las que están profundamente fatigadas, este formato es el único que realmente funciona. Los retiros grupales requieren un nivel de energía social que las mujeres quemadas simplemente no tienen.</p>
+
+          <h2>Qué incluye una sesión privada en habitación</h2>
+          <p>Una sesión de Mana Reset es una combinación cuidadosamente diseñada de toque somático, respiración guiada y equilibrio energético que se dirige a los patrones específicos de tensión que tu cuerpo ha desarrollado. Las sesiones comienzan con una breve conversación—suficiente contexto para que la practicante entienda si necesitas liberación, anclaje o restauración. Sin camilla de masajes, sin aceites pesados. El ambiente es completamente tuyo—tu iluminación, tu temperatura, tu nivel de comodidad.</p>
+
+          <h2>Cómo estructurar tus días</h2>
+          <p><strong>Día 1: Llegada y permiso para descansar.</strong> Haz el check-in. No hagas nada estructurado. Deja que tu cuerpo reconozca que es seguro ir más despacio.</p>
+          <p><strong>Día 2: La sesión y la integración.</strong> Programa tu sesión privada. Descansa después. Ve a la playa por la tarde sin agenda.</p>
+          <p><strong>Día 3: Exploración suave.</strong> Desde un lugar de descanso genuino, explora lo que te llame. Un mercado de agricultores. Un desayuno lento con vista. La diferencia es significativa: te mueves desde la plenitud, no desde el agotamiento.</p>
+
+          <h2>Preguntas frecuentes</h2>
+          <h3>¿En qué se diferencia esto de reservar un tratamiento en el spa del hotel?</h3>
+          <p>Los spas de hotel son estandarizados, con presión de tiempo y en un entorno clínico. Una sesión privada en habitación es personalizada, sin prisas, y sucede en el espacio íntimo de tu propia habitación—lo que permite una liberación significativamente más profunda.</p>
+          <h3>¿Puedo reservar varias sesiones durante una estadía más larga?</h3>
+          <p>Sí. Para estadías de cinco días o más, dos sesiones separadas por dos o tres días suelen producir los resultados más significativos. La primera sesión abre y libera; la segunda integra y estabiliza.</p>
         </>
       ),
     }
@@ -840,6 +980,39 @@ const articles: Record<string, {
           <p>이 세션들은 치료가 아닙니다. 스트레스와 감정의 신체적·에너지적 차원을 다룹니다.</p>
         </>
       ),
+      es: (
+        <>
+          <p>Vivimos en una era de estrés crónico. La mujer de alto rendimiento de hoy gestiona una carga de trabajo, un hogar, una agenda social y un flujo constante de información que habría sido inimaginable para generaciones anteriores. Tu sistema nervioso no fue diseñado para esto. Lleva años haciendo un simulacro de incendio, sin parar. Un <strong>retiro de alivio del estrés en Hawái</strong> no es un lujo—es la intervención que tu cuerpo ha estado pidiendo.</p>
+
+          <h2>Por qué el cuerpo guarda el estrés (y por qué importa)</h2>
+          <p>El estrés no es solo psicológico. Vive en el cuerpo—en los hombros tensos, la mandíbula apretada, el abdomen crónicamente contraído, la respiración superficial que nunca llega del todo al vientre. Cuando el estrés se acumula durante meses y años sin una liberación adecuada, crea patrones físicos que persisten incluso cuando la situación estresante ha pasado.</p>
+          <p>Por eso una sola vacación a veces no es suficiente. Puedes estar tumbada en una playa hermosa en Hawái y seguir sintiendo la tensión en el cuello. El cuerpo necesita más que un cambio de escenario—necesita liberación activa.</p>
+
+          <h3>Qué significa realmente la liberación emocional</h3>
+          <p>La liberación emocional describe un proceso fisiológico natural. Cuando el cuerpo finalmente se siente lo suficientemente seguro para soltar el estrés acumulado—a través de toque específico, patrones de respiración o trabajo somático guiado—libera esa tensión almacenada. Esto puede parecerse a lágrimas espontáneas, temblor involuntario, suspiros profundos, o simplemente una profunda sensación de que un peso se levanta. Estas respuestas no son colapsos. Son aperturas.</p>
+
+          <h2>Por qué Hawái facilita la liberación emocional de manera tan efectiva</h2>
+          <h3>El reinicio del sistema nervioso con el aire de la isla</h3>
+          <p>La concentración de iones negativos en el aire costero de Hawái se encuentra entre las más altas medidas en cualquier parte del mundo. Los iones negativos aumentan los niveles de serotonina, mejoran el estado de ánimo y reducen los marcadores fisiológicos del estrés. Dentro de pocas horas de llegada, la mayoría de las personas notan un cambio medible en su nivel de ansiedad de base—no por relajación, sino por química.</p>
+
+          <h3>La estructura de permiso de estar lejos de casa</h3>
+          <p>Estar lejos de tu vida cotidiana crea permiso psicológico para ser diferente. En Hawái, no eres la persona responsable de todo. Eres visitante. Ese cambio de rol crea espacio para que partes de ti emerjan que normalmente están suprimidas bajo el peso de las responsabilidades.</p>
+
+          <h3>El contenedor cultural del Aloha</h3>
+          <p><em>Aloha</em> no es solo un saludo—es una cosmovisión. <em>Ha</em> significa aliento en hawaiano, y aloha significa literalmente &quot;la presencia del aliento&quot;. Estar en un lugar donde el valor cultural dominante es la presencia y la conexión tiene un efecto medible en los visitantes. El permiso para ir más despacio está integrado en el entorno mismo.</p>
+
+          <h2>El enfoque de Mana Reset para la liberación emocional</h2>
+          <p>Las sesiones incluyen típicamente trabajo corporal somático—toque suave y dirigido que comunica seguridad a un sistema nervioso que ha olvidado cómo se siente la seguridad; respiración guiada que activa el sistema nervioso parasimpático; y equilibrio energético. Porque las sesiones ocurren en la privacidad de tu habitación de hotel, no se requiere ningún desempeño social. Puedes llorar. Puedes estar en silencio. El ambiente está diseñado para tu experiencia auténtica, sea lo que sea.</p>
+
+          <h2>Preguntas frecuentes</h2>
+          <h3>¿Me sentiré emocionalmente vulnerable después de la sesión?</h3>
+          <p>Algunas personas sí, brevemente. Esto es una señal de que el trabajo fue efectivo. La sensación típicamente se resuelve en unas pocas horas, dejando claridad y calma en su lugar. Siempre recomendamos programar las sesiones en días donde tengas tiempo no estructurado después.</p>
+          <h3>¿Qué pasa si nunca he hecho trabajo somático?</h3>
+          <p>La mayoría de los clientes no tienen experiencia previa, y eso está completamente bien. La practicante explicará cada elemento antes de que comience y verificará durante todo el proceso. Tu comodidad y sentido de seguridad son la máxima prioridad.</p>
+          <h3>¿En qué se diferencia esto de la terapia o el asesoramiento?</h3>
+          <p>Estas sesiones no son terapia. Abordan las dimensiones físicas y energéticas del estrés en lugar de las dimensiones psicológicas y narrativas. Muchos clientes encuentran que el trabajo somático complementa su terapia existente al liberar lo que los enfoques basados en el habla no han podido alcanzar.</p>
+        </>
+      ),
     }
   },
 };
@@ -893,6 +1066,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
   const localContent = article.content[lang] ?? article.content['en'];
   const h1 = h1s[slug]?.[lang] ?? h1s[slug]?.['en'] ?? article.defaultTitle;
 
+  const ctaText: Record<string, { heading: string; button: string }> = {
+    zh: { heading: '准备好让自己真正呼吸了吗？', button: '探索私人上门疗愈体验' },
+    ja: { heading: 'もう一度、深く息をする準備はできていますか？', button: 'プライベート出張セッションを見る' },
+    ko: { heading: '이제 진짜로 숨 쉴 준비가 되셨나요?', button: '프라이빗 방문 세션 알아보기' },
+    es: { heading: '¿Lista para dejar de sobrevivir y volver a respirar?', button: 'Explorar Nuestros Paquetes de Reseteo Privado' },
+  };
+  const cta = ctaText[lang] ?? { heading: 'Ready to stop surviving and start breathing again?', button: 'Explore Our Private In-Room Reset Packages' };
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -925,9 +1106,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ lang:
           {localContent}
         </div>
         <div className="mt-16 p-8 bg-sand/30 rounded-xl border border-sand text-center">
-          <h3 className="text-2xl font-serif text-ocean mb-4">Ready to stop surviving and start breathing again?</h3>
+          <h3 className="text-2xl font-serif text-ocean mb-4">{cta.heading}</h3>
           <Link href={`/${lang}/booking`} className="inline-block bg-ocean text-white px-8 py-3 rounded font-medium hover:bg-ocean-light transition">
-            Explore Our Private In-Room Reset Packages
+            {cta.button}
           </Link>
         </div>
       </article>
